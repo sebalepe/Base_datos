@@ -44,3 +44,14 @@ tree
 exit
 tree
 exit
+tree
+psql
+git status
+psql
+git add .
+git commit -m 'creating tables'
+git push
+exit
+tree
+psql
+psql
