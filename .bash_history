@@ -55,3 +55,90 @@ exit
 tree
 psql
 psql
+tree
+cd Entrega1
+ls
+cd CSV/
+ls
+cd ..
+ls
+psql
+tree
+psql
+tree
+psql
+git status
+git add .
+git commit -m ' testing for db'
+git push
+psql
+git status
+git checkout main
+git fetch
+git pull
+tree
+psql
+git fetch
+git pull
+psql
+git fetch
+tree
+git pull
+tree
+psql
+git fetch
+git pull
+tree
+psql
+git fetch
+git pull
+psql
+exit
+tree
+psql
+tree
+psql
+git fetch
+git pull
+psql
+git fetch
+git pull
+tree
+\dt
+psql
+exit
+git fetch
+git pull
+psql
+git fetch
+git pull
+psql
+tree
+ls
+psql
+tree
+psql
+git fetch
+git pull
+git fetch
+git pull
+tree
+\dt
+git fetch
+git pull
+tree
+exit
+cd
+ls
+cd Entrega1
+psql
+cd Entrega1
+cd
+cd Entrega1
+ls
+psql
+jupyter notebook
+tree
+cd Sites
+ls
+cat > ejemplo.txt
