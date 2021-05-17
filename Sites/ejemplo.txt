@@ -1,8 +1,0 @@
-hola
-q
-
-
-hola
-exit
-
-
