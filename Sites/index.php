@@ -1,6 +1,7 @@
 <?php include('templates/header.html');   ?>
 
 <body>
+
   <h1 align="center">Biblioteca Pokemón </h1>
   <p style="text-align:center;">Aquí podrás encontrar información sobre pokemones.</p>
 
@@ -48,6 +49,7 @@
   <br>
 
   <h3 align="center">¿Quieres buscar todos los pokemones por tipo?</h3>
+
 <!--
   <?php
   #Primero obtenemos todos los tipos de pokemones
