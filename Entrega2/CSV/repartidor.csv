@@ -411,7 +411,6 @@ rut,vehículo,tipo_licencia
 68035652-1,50,no es necesaria
 54570173-1,15,moto
 99108730-3,23,vehiculo de carga
-95423202-6,80,moto
 82429778-9,114,auto
 89576450-7,85,auto
 26100581-6,28,auto
@@ -770,7 +769,6 @@ rut,vehículo,tipo_licencia
 27626683-7,99,auto
 10619776-8,105,auto
 30680313-1,77,auto
-81881771-1,105,auto
 90601826-8,61,moto
 66295586-8,105,auto
 96213582-k,91,moto
@@ -837,7 +835,6 @@ rut,vehículo,tipo_licencia
 36692442-6,105,auto
 27626683-7,107,vehiculo de carga
 12205074-2,36,auto
-80885102-4,53,no es necesaria
 84593882-2,4,auto
 92931585-5,110,auto
 93207016-2,55,auto
@@ -1060,7 +1057,6 @@ rut,vehículo,tipo_licencia
 58496906-7,104,no es necesaria
 87094740-2,44,no es necesaria
 56944351-2,113,auto
-75328775-2,62,no es necesaria
 49159506-k,115,vehiculo de carga
 77785207-8,39,auto
 87772349-6,91,moto
@@ -1083,7 +1079,6 @@ rut,vehículo,tipo_licencia
 62036438-k,34,no es necesaria
 41234355-7,89,moto
 53038300-8,103,auto
-49628420-8,40,auto
 16836029-0,3,moto
 79725852-0,28,auto
 26849996-2,55,auto
@@ -1215,7 +1210,6 @@ rut,vehículo,tipo_licencia
 92946711-6,74,no es necesaria
 37780063-k,47,no es necesaria
 66866166-1,17,vehiculo de carga
-75129314-3,87,auto
 58366562-5,49,vehiculo de carga
 69167855-5,104,no es necesaria
 33199896-6,81,auto
@@ -1313,7 +1307,6 @@ rut,vehículo,tipo_licencia
 29295221-k,20,vehiculo de carga
 50511840-5,104,no es necesaria
 36205098-7,72,moto
-64367868-3,28,auto
 34039148-9,75,auto
 53038300-8,2,auto
 12460058-8,97,moto
@@ -1333,7 +1326,6 @@ rut,vehículo,tipo_licencia
 80640357-1,102,auto
 79344858-9,71,auto
 25002692-7,54,vehiculo de carga
-25002692-7,108,no es necesaria
 56474633-9,83,vehiculo de carga
 66169613-3,69,moto
 59854747-5,12,auto
@@ -1540,7 +1532,6 @@ rut,vehículo,tipo_licencia
 91258242-6,60,no es necesaria
 68225683-4,50,no es necesaria
 21823347-3,4,auto
-35656775-7,105,auto
 97632307-6,115,vehiculo de carga
 93635199-9,35,no es necesaria
 70638696-3,82,no es necesaria
@@ -1562,10 +1553,8 @@ rut,vehículo,tipo_licencia
 56781936-1,60,no es necesaria
 79974368-k,40,auto
 20467855-3,60,no es necesaria
-56093204-9,106,auto
 14197251-0,34,no es necesaria
 73543707-0,20,vehiculo de carga
-95435510-1,82,no es necesaria
 96863860-2,92,moto
 93066103-1,4,auto
 76160177-6,21,no es necesaria
@@ -1573,7 +1562,6 @@ rut,vehículo,tipo_licencia
 44626695-0,63,moto
 96213582-k,60,no es necesaria
 32211035-9,25,auto
-59890575-4,8,moto
 12815044-7,71,auto
 53331281-0,41,auto
 10537138-1,34,no es necesaria
@@ -1595,7 +1583,6 @@ rut,vehículo,tipo_licencia
 84593882-2,98,moto
 96735305-1,109,auto
 10348170-8,67,no es necesaria
-54451953-0,94,no es necesaria
 92060023-9,87,auto
 65485230-8,110,auto
 91957637-5,17,vehiculo de carga
@@ -1626,7 +1613,6 @@ rut,vehículo,tipo_licencia
 58496906-7,6,no es necesaria
 34012878-8,44,no es necesaria
 31726652-9,86,vehiculo de carga
-69822376-6,77,auto
 27003910-3,58,auto
 90730270-9,25,auto
 12969098-4,110,auto
