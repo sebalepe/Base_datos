@@ -16,10 +16,7 @@
   $largo = count($vehiculos) 
   ?>
 
-  <?php
-  if ($largo>0){
-  }
-  ?>
+  <?php if ($largo > 0): ?>
   	<table>
       <tr>
         <th>ID</th>
@@ -40,10 +37,9 @@
   	}
     ?>
   	</table>
-  <?php 
-  else{
-    echo "<p> Ups, no hay ninguna unidad en esa Comuna </p>" 
-  }
-  ?>
+  <?php else: ?>
+    <p> Ups, no hay ninguna unidad en esa Comuna </p>
+  <?php endif ?>
+  
 
 <?php include('../templates/footer.html'); ?>
