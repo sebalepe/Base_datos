@@ -2,13 +2,15 @@
 
 <body>
 
-  <h1 align="center">Biblioteca Pokemón </h1>
-  <p style="text-align:center;">Aquí podrás encontrar información sobre pokemones.</p>
+  <h1 align="center">Administracion de Unidades </h1>
+  <p style="text-align:center;">
+    Todo lo que necesitas para administrar tu negocio
+  </p>
 
   <br>
 
   <h3 align="center">
-   Muestre las direcciones de todas las unidades de la empresa de despachos
+   Muestre las direcciones de todas las mis Unidades
   </h3>
 
   <form align="center" action="consultas/direcciones_unidades.php" method="post">
