@@ -20,6 +20,7 @@
 	foreach ($direcciones as $direccion) {
   		echo "<tr> 
                 <td>$direccion[0]</td> 
+                <td>$direccion[1]</td> 
             </tr>";
 	}
   ?>
