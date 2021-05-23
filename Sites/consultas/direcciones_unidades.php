@@ -6,7 +6,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
- 	$query = "SELECT direccion_id FROM unidades;";
+ 	$query = "SELECT direcciones.nombre FROM unidades,direcciones WHERE unidades.direccion_id = direcciones.id;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$direcciones = $result -> fetchAll();
