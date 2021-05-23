@@ -7,7 +7,9 @@
 
   #Se obtiene el valor del input del usuario
   $comuna = $_POST["comuna"];
+  $comuna = strtolower($comuna);
   $año = $_POST["año"];
+
 
   #Se construye la consulta como un string
  	$query = "SELECT * FROM vehiculos,(SELECT vehiculo FROM direcciones,
