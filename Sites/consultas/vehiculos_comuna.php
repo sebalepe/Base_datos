@@ -13,26 +13,37 @@
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
+  $largo = count($vehiculos) 
   ?>
-	<table>
-    <tr>
-      <th>ID</th>
-      <th>patente</th>
-      <th>estado</th>
-      <th>tipo</th>
-      <th>unidad</th>
-    </tr>
+
   <?php
-	foreach ($vehiculos as $vehiculo) {
-  		echo "<tr>
-              <td>$vehiculo[0]</td>
-              <td>$vehiculo[1]</td>
-              <td>$vehiculo[2]</td>
-              <td>$vehiculo[3]</td>
-              <td>$vehiculo[4]</td>
-            </tr>";
-	}
+  if ($largo>0){
+  }
   ?>
-	</table>
+  	<table>
+      <tr>
+        <th>ID</th>
+        <th>patente</th>
+        <th>estado</th>
+        <th>tipo</th>
+        <th>unidad</th>
+      </tr>
+    <?php
+  	foreach ($vehiculos as $vehiculo) {
+    		echo "<tr>
+                <td>$vehiculo[0]</td>
+                <td>$vehiculo[1]</td>
+                <td>$vehiculo[2]</td>
+                <td>$vehiculo[3]</td>
+                <td>$vehiculo[4]</td>
+              </tr>";
+  	}
+    ?>
+  	</table>
+  <?php 
+  else{
+    echo "<p> Ups, no hay ninguna unidad en esa Comuna </p>" 
+  }
+  ?>
 
 <?php include('../templates/footer.html'); ?>
