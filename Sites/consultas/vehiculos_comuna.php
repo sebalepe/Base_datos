@@ -17,7 +17,7 @@
   ?>
 
   <?php if ($largo > 0): ?>
-  	<table>
+  	<table class='table'>
       <tr>
         <th>ID</th>
         <th>patente</th>
