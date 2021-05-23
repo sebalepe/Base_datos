@@ -38,11 +38,15 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres conocer los Pokemones más altos que: ?</h3>
+  <h3 align="center"> ingrese una comuna y selecciona un año. Muestre todos los vehiculos que hayan realizado un
+  despacho a esa comuna en ese año</h3>
 
-  <form align="center" action="consultas/consulta_altura.php" method="post">
-    Altura Mínima:
-    <input type="text" name="altura">
+  <form align="center" action="consultas/despacho_año_comuna.php" method="post">
+    Comuna:
+    <input type="text" name="comuna">
+    <br/><br/>
+    Año:
+    <input type="text" name="año">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>

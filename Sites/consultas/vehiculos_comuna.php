@@ -13,7 +13,7 @@
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
-  $largo = count($vehiculos) 
+    $largo = count($vehiculos);
   ?>
 
   <?php if ($largo > 0): ?>
