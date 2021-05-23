@@ -6,13 +6,13 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
- 	$query = "SELECT direccion_id FROM unidades;";
+ 	$query = "SELECT direcciones.nombre FROM unidades,direcciones WHERE unidades.direccion_id = direcciones.id;";
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$direcciones = $result -> fetchAll();
   ?>
 
-	<table>
+	<table class='table'>
     <tr>
       <th>direcciones</th>
     </tr>
@@ -20,6 +20,7 @@
 	foreach ($direcciones as $direccion) {
   		echo "<tr> 
                 <td>$direccion[0]</td> 
+                <td>$direccion[1]</td> 
             </tr>";
 	}
   ?>
