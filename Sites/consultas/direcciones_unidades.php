@@ -12,7 +12,7 @@
 	$direcciones = $result -> fetchAll();
   ?>
 
-	<table>
+	<table class='table'>
     <tr>
       <th>direcciones</th>
     </tr>
