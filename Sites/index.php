@@ -90,7 +90,7 @@
   <h3 align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
 <div align="center">
   <form align="center" action="consultas/max_tipo.php" method="post">
-    <div class="form-group" style="margin-left:1000px;width: 200px;" align="center">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
       <label> Tipo </label>
       <select class="form-control" name="tipo">
         <option>Auto</option>
