@@ -31,6 +31,9 @@
     $result = $db -> prepare($query);
     $result -> execute();
     $comunas = $result -> fetchAll();
+
+    echo "$comunas"
+
   ?>
   <form align="center" action="consultas/vehiculos_comuna.php" method="post">
     <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
