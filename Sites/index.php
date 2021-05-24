@@ -59,12 +59,20 @@
   y cuyo repartidor tiene una edad entre el rango seleccionado.?</h3>
 
   <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
-    Tipo vehiculo:
-    <input type="text" name="tipo">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Tipo </label>
+      <select class="form-control" name="tipo">
+        <option>Auto</option>
+        <option>Moto</option>
+        <option>Camioneta</option>
+        <option>Bicicleta</option>
+        <option> Camion</option>
+      </select>
+    </div>
     <br/><br/>
     Rango Edades:
-    <input type="number" name="edad1" min="18" max="100">
-    <input type="number" name="edad2" min="18" max="100">
+    <input class="form-control" type="number" name="edad1" min="18" max="100">
+    <input class="form-control" type="number" name="edad2" min="18" max="100">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
@@ -88,7 +96,6 @@
   <br>
 
   <h3 align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
-<div align="center">
   <form align="center" action="consultas/max_tipo.php" method="post">
     <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
       <label> Tipo </label>
@@ -102,7 +109,6 @@
     </div>
     <input type="submit" value="Buscar">
   </form>
-</div>
   <br>
   <br>
   <br>
