@@ -8,8 +8,12 @@
   #Se obtiene el valor del input del usuario
   $tipo = $_POST["tipo"];
   $tipo = strtolower($tipo);
+?>
+  <?php if ($tipo = 'camion'): ?>
+    <?php  $tipo = ' camion' ?>
+  <?php endif ?>
 
-
+<?php
   #Se construye la consulta como un string
  	$query = "SELECT * FROM (SELECT * FROM unidades, (SELECT count(tipo), unidad FROM vehiculos WHERE tipo = '$tipo' GROUP BY unidad) AS cantidad WHERE cantidad.unidad = unidades.uid) AS und, (SELECT max(cantidad.count) AS max_c FROM unidades, (SELECT count(tipo), unidad FROM vehiculos WHERE tipo = '$tipo' GROUP BY unidad) AS cantidad WHERE cantidad.unidad = unidades.uid) AS max WHERE und.count = max.max_c;";
 
