@@ -13,11 +13,11 @@
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
-  $largo = count($vehiculos) 
+    $largo = count($vehiculos);
   ?>
 
   <?php if ($largo > 0): ?>
-  	<table>
+  	<table class='table'>
       <tr>
         <th>ID</th>
         <th>patente</th>

@@ -38,11 +38,15 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres conocer los Pokemones más altos que: ?</h3>
+  <h3 align="center"> ingrese una comuna y selecciona un año. Muestre todos los vehiculos que hayan realizado un
+  despacho a esa comuna en ese año</h3>
 
-  <form align="center" action="consultas/consulta_altura.php" method="post">
-    Altura Mínima:
-    <input type="text" name="altura">
+  <form align="center" action="consultas/despacho_año_comuna.php" method="post">
+    Comuna:
+    <input type="text" name="comuna">
+    <br/><br/>
+    Año:
+    <input type="text" name="año">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
@@ -50,7 +54,24 @@
   <br>
   <br>
 
-  <h3 align="center">¿Quieres buscar todos los pokemones por tipo?</h3>
+  <h3 align="center">Ingrese un tipo de veh ́ıculo y seleccione dos nu ́meros.
+  Muestre todos los despachos realizados por un veh́ıculo del tipo ingresado,
+  y cuyo repartidor tiene una edad entre el rango seleccionado.?</h3>
+
+  <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
+    Tipo vehiculo:
+    <input type="text" name="tipo">
+    <br/><br/>
+    Rango Edades:
+    <input type="number" name="edad1" min="18" max="100">
+    <input type="number" name="edad2" min="18" max="100">
+    <br/><br/>
+    <input type="submit" value="Buscar">
+  </form>
+  <br>
+  <br>
+  <br>
+
 
 <!--
   <?php
