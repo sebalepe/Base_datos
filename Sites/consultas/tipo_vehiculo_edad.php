@@ -13,7 +13,7 @@
     $edad1 = $_POST["edad2"];
     $edad2 = $_POST["edad1"];
   endif
-  
+
   ?>
   <?php if ($tipo = 'camion'): ?>
     <?php  $tipo = ' camion' ?>
@@ -22,10 +22,7 @@
 <?php
 
 
-  $query = "SELECT * FROM despacho, (SELECT id FROM vehiculos,
-  (SELECT vehiculo FROM personal, p_repartidor WHERE personal.rut = p_repartidor.rut AND edad BETWEEN $edad1 AND $edad2)
-  AS repartidor WHERE vehiculos.id = repartidor.vehiculo AND vehiculos.tipo = '$tipo')
-  AS vh WHERE vh.id = despacho.vehiculo;";
+  $query = "SELECT * FROM vehiculos, despacho, personal WHERE despacho.vehiculo = vehiculos.id AND vehiculos.tipo = '$tipo' AND despacho.repartidor = personal.id AND personal.edad BETWEEN $edad1 AND $edad2;";
   $result = $db -> prepare($query);
   $result -> execute();
   $despachos = $result -> fetchAll();
@@ -43,18 +40,20 @@
           <th>Id_compra</th>
           <th>Vehiculo</th>
           <th>Repartidor</th>
+          <th>Edad</th>
         </tr>
 
           <?php
             foreach ($despachos as $despacho) {
               echo "<tr>
-                        <td>$despacho[0]</td>
-                        <td>$despacho[1]</td>
-                        <td>$despacho[2]</td>
-                        <td>$despacho[3]</td>
-                        <td>$despacho[4]</td>
                         <td>$despacho[5]</td>
                         <td>$despacho[6]</td>
+                        <td>$despacho[7]</td>
+                        <td>$despacho[8]</td>
+                        <td>$despacho[9]</td>
+                        <td>$despacho[10]</td>
+                        <td>$despacho[11]</td>
+                        <td>$despacho[16]</td>
                     </tr>";
           }
           ?>
