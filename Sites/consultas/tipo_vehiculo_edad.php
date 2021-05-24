@@ -14,6 +14,7 @@
     $edad2 = $_POST["edad1"];
   if ($tipo = 'camion'):
     $tipo = ' camion' ;
+  endif
   
 
 
