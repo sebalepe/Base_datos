@@ -26,10 +26,25 @@
   <h3 align="center"> 
     Quieres buscar los vehiculos disponibles en las unidades ubicadas en una comuna en especifico?
   </h3>
+  <?php require("../config/conexion.php"); ?>
+  <?php
+    $query = "SELECT DISCINCT(comuna) FROM DIRECCIONES;";
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $comunas = $result -> fetchAll();
+  ?>
 
   <form align="center" action="consultas/vehiculos_comuna.php" method="post">
-    Comuna:
-    <input type="text" name="comuna_elegida">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Comuna: </label>
+      <select class="form-control" name="comuna_elegida">
+        <?php
+            foreach ($comunas as $comuna) {
+              echo "<option>$comuna[0]</option>";
+          }
+          ?>
+      </select>
+    </div>
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
