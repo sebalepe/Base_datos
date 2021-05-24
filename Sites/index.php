@@ -27,12 +27,10 @@
     Quieres buscar los vehiculos disponibles en las unidades ubicadas en una comuna en especifico?
   </h3>
   <?php require("config/conexion.php");
-    $query = "SELECT DISCINCT(comuna) FROM direcciones;";
+    $query = "SELECT DISTINCT(comuna) FROM direcciones;";
     $result = $db -> prepare($query);
     $result -> execute();
     $comunas = $result -> fetchAll();
-
-    echo "$comunas"
 
   ?>
   <form align="center" action="consultas/vehiculos_comuna.php" method="post">
