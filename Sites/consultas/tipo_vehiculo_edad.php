@@ -12,12 +12,9 @@
   if ($edad1 > $edad2):
     $edad1 = $_POST["edad2"];
     $edad2 = $_POST["edad1"];
-  endif
-
-  
   if ($tipo = 'camion'):
     $tipo = ' camion' ;
-  endif 
+  
 
 
 
