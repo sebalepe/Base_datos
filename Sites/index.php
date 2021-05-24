@@ -56,8 +56,16 @@
   despacho a esa comuna en ese año</h3>
 
   <form align="center" action="consultas/despacho_año_comuna.php" method="post">
-    Comuna:
-    <input type="text" name="comuna">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Comuna: </label>
+      <select class="form-control" name="comuna">
+        <?php
+            foreach ($comunas as $comuna) {
+              echo "<option>$comuna[0]</option>";
+          }
+          ?>
+      </select>
+    </div>
     <br/><br/>
     Año:
     <input type="text" name="año">
@@ -97,11 +105,27 @@
   <h3 align="center">Ingrese dos comunas. Encuentre los jefes de las unidades que realizan despachos a ambas comunas.?</h3>
 
   <form align="center" action="consultas/jefes_comunas.php" method="post">
-    Comuna1:
-    <input type="text" name="comuna1">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Comuna 1: </label>
+      <select class="form-control" name="comuna1">
+        <?php
+            foreach ($comunas as $comuna) {
+              echo "<option>$comuna[0]</option>";
+          }
+          ?>
+      </select>
+    </div>
     <br/><br/>
-    Comuna2:
-     <input type="text" name="comuna2">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Comuna 2: </label>
+      <select class="form-control" name="comuna2">
+        <?php
+            foreach ($comunas as $comuna) {
+              echo "<option>$comuna[0]</option>";
+          }
+          ?>
+      </select>
+    </div>
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
