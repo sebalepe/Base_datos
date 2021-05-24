@@ -13,13 +13,12 @@
     $edad1 = $_POST["edad2"];
     $edad2 = $_POST["edad1"];
   endif
-  
-  ?>
-  <?php if ($tipo = 'camion'): ?>
-    <?php  $tipo = ' camion' ?>
-  <?php endif ?>
 
-<?php
+  
+  if ($tipo = 'camion'):
+    $tipo = ' camion' 
+  endif 
+
 
 
   $query = "SELECT * FROM despacho, (SELECT id FROM vehiculos,
