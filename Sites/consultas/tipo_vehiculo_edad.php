@@ -12,11 +12,16 @@
   if ($edad1 > $edad2):
     $edad1 = $_POST["edad2"];
     $edad2 = $_POST["edad1"];
-  if ($tipo = 'camion'):
-    $tipo = ' camion' ;
   endif
+  
   ?>
-  <?php
+  <?php if ($tipo = 'camion'): ?>
+    <?php  $tipo = ' camion' ?>
+  <?php endif ?>
+
+<?php
+
+
   $query = "SELECT * FROM despacho, (SELECT id FROM vehiculos,
   (SELECT vehiculo FROM personal, p_repartidor WHERE personal.rut = p_repartidor.rut AND edad BETWEEN $edad1 AND $edad2)
   AS repartidor WHERE vehiculos.id = repartidor.vehiculo AND vehiculos.tipo = '$tipo')
