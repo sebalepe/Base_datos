@@ -26,10 +26,24 @@
   <h3 align="center"> 
     Quieres buscar los vehiculos disponibles en las unidades ubicadas en una comuna en especifico?
   </h3>
+  <?php require("config/conexion.php");
+    $query = "SELECT DISTINCT(comuna) FROM direcciones;";
+    $result = $db -> prepare($query);
+    $result -> execute();
+    $comunas = $result -> fetchAll();
 
+  ?>
   <form align="center" action="consultas/vehiculos_comuna.php" method="post">
-    Comuna:
-    <input type="text" name="comuna_elegida">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Comuna: </label>
+      <select class="form-control" name="comuna_elegida">
+        <?php
+            foreach ($comunas as $comuna) {
+              echo "<option>$comuna[0]</option>";
+          }
+          ?>
+      </select>
+    </div>
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
@@ -42,8 +56,16 @@
   despacho a esa comuna en ese año</h3>
 
   <form align="center" action="consultas/despacho_año_comuna.php" method="post">
-    Comuna:
-    <input type="text" name="comuna">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Comuna: </label>
+      <select class="form-control" name="comuna">
+        <?php
+            foreach ($comunas as $comuna) {
+              echo "<option>$comuna[0]</option>";
+          }
+          ?>
+      </select>
+    </div>
     <br/><br/>
     Año:
     <input type="text" name="año">
@@ -59,8 +81,16 @@
   y cuyo repartidor tiene una edad entre el rango seleccionado.?</h3>
 
   <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
-    Tipo vehiculo:
-    <input type="text" name="tipo">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Tipo </label>
+      <select class="form-control" name="tipo">
+        <option>Auto</option>
+        <option>Moto</option>
+        <option>Camioneta</option>
+        <option>Bicicleta</option>
+        <option> Camion</option>
+      </select>
+    </div>
     <br/><br/>
     Rango Edades:
     <input type="number" name="edad1" min="18" max="100">
@@ -72,33 +102,54 @@
   <br>
   <br>
 
+  <h3 align="center">Ingrese dos comunas. Encuentre los jefes de las unidades que realizan despachos a ambas comunas.?</h3>
 
-<!--
-  <?php
-  #Primero obtenemos todos los tipos de pokemones
-  require("config/conexion.php");
-  $result = $db -> prepare("SELECT DISTINCT tipo FROM pokemones;");
-  $result -> execute();
-  $dataCollected = $result -> fetchAll();
-  ?>
-
-  <form align="center" action="consultas/consulta_tipo.php" method="post">
-    Seleccinar un tipo:
-    <select name="tipo">
-      <?php
-      #Para cada tipo agregamos el tag <option value=value_of_param> visible_value </option>
-      foreach ($dataCollected as $d) {
-        echo "<option value=$d[0]>$d[0]</option>";
-      }
-      ?>
-    </select>
-    <br><br>
-    <input type="submit" value="Buscar por tipo">
+  <form align="center" action="consultas/jefes_comunas.php" method="post">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Comuna 1: </label>
+      <select class="form-control" name="comuna1">
+        <?php
+            foreach ($comunas as $comuna) {
+              echo "<option>$comuna[0]</option>";
+          }
+          ?>
+      </select>
+    </div>
+    <br/><br/>
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Comuna 2: </label>
+      <select class="form-control" name="comuna2">
+        <?php
+            foreach ($comunas as $comuna) {
+              echo "<option>$comuna[0]</option>";
+          }
+          ?>
+      </select>
+    </div>
+    <br/><br/>
+    <input type="submit" value="Buscar">
   </form>
--->
   <br>
   <br>
   <br>
+
+  <h3 align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
+  <form align="center" action="consultas/max_tipo.php" method="post">
+    <div class="form-group" style="margin-left:600px;width: 200px;" align="center">
+      <label> Tipo </label>
+      <select class="form-control" name="tipo">
+        <option>Auto</option>
+        <option>Moto</option>
+        <option>Camioneta</option>
+        <option>Bicicleta</option>
+        <option> Camion</option>
+      </select>
+    </div>
+    <input type="submit" value="Buscar">
+  </form>
   <br>
+  <br>
+  <br>
+
 </body>
 </html>
