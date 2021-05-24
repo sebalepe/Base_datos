@@ -27,7 +27,7 @@
           <th>UID</th>
           <th>Direccion</th>
           <th>Jefe</th>
-          <th>Cantidad Autos</th>
+          <th>Cantidad <?php echo "$tipo" ?> </th>
         </tr>
 
           <?php
