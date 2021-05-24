@@ -71,8 +71,8 @@
     </div>
     <br/><br/>
     Rango Edades:
-    <input class="form-control" type="number" name="edad1" min="18" max="100">
-    <input class="form-control" type="number" name="edad2" min="18" max="100">
+    <input type="number" name="edad1" min="18" max="100">
+    <input type="number" name="edad2" min="18" max="100">
     <br/><br/>
     <input type="submit" value="Buscar">
   </form>
