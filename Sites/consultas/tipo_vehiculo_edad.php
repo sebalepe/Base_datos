@@ -15,10 +15,8 @@
   if ($tipo = 'camion'):
     $tipo = ' camion' ;
   endif
-  
-
-
-
+  ?>
+  <?php
   $query = "SELECT * FROM despacho, (SELECT id FROM vehiculos,
   (SELECT vehiculo FROM personal, p_repartidor WHERE personal.rut = p_repartidor.rut AND edad BETWEEN $edad1 AND $edad2)
   AS repartidor WHERE vehiculos.id = repartidor.vehiculo AND vehiculos.tipo = '$tipo')
