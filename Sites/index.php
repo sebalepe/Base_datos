@@ -9,7 +9,7 @@
     Todo lo que necesitas para administrar tu negocio
   </p>
   <div class="tile is-ancestor">
-    <div class="tile is-parent is-2">
+    <div class="tile is-parent is-3">
     </div>
     <div class="tile is-parent is-10 is-vertical">
       <div class="tile is-8 is-child box">
