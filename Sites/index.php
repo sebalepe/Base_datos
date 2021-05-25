@@ -10,7 +10,7 @@
   </p>
   <div class="tile is-ancestor">
     <div class="tile is-parent is-vertical">
-      <div class="tile is-child">
+      <div class="tile is-child box">
         <h3 class="title is-4" align="center">
          Muestre las direcciones de todas las mis Unidades
         </h3>
@@ -19,7 +19,7 @@
           <input class="button is-danger" type="submit" value="Buscar" >
         </form>
       </div>
-      <div class="tile is-parent is-vertical">
+      <div cclass="tile is-child box">
         <h3 class="title is-4" align="center"> 
           Quieres buscar los vehiculos disponibles en las unidades ubicadas en una comuna en especifico?
         </h3>
@@ -46,7 +46,7 @@
           </form>
         </div>
       </div>
-      <div class="tile is-parent is-vertical">
+      <div class="tile is-child box">
         <h3 class="title is-4" align="center"> ingrese una comuna y selecciona un año. Muestre todos los vehiculos que hayan realizado un
         despacho a esa comuna en ese año</h3>
 
@@ -70,7 +70,7 @@
           </form>
         </div>
       </div>
-      <div class="tile is-parent is-vertical">
+      <div class="tile is-child box">
         <h3 class="title is-4" align="center">Ingrese un tipo de veh ́ıculo y seleccione dos nu ́meros.
         Muestre todos los despachos realizados por un veh́ıculo del tipo ingresado,
         y cuyo repartidor tiene una edad entre el rango seleccionado.?</h3>
@@ -95,7 +95,7 @@
           </form>
         </div>
       </div>
-      <div class="tile is-parent is-vertical">
+      <div class="tile is-child box">
       <h3 class="title is-4" align="center">Ingrese dos comunas. Encuentre los jefes de las unidades que realizan despachos a ambas comunas.?</h3>
         <div align="center">
           <form align="center" action="consultas/jefes_comunas.php" method="post">
@@ -125,7 +125,7 @@
           </form>
         </div>
       </div>
-      <div class="tile is-parent is-vertical">
+      <div class="tile is-child box">
         <h3 class="title is-4" align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
         <div align="center">
           <form align="center" action="consultas/max_tipo.php" method="post">
