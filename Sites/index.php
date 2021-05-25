@@ -56,23 +56,26 @@
   <h3 class="title is-4" align="center"> ingrese una comuna y selecciona un año. Muestre todos los vehiculos que hayan realizado un
   despacho a esa comuna en ese año</h3>
 
-  <form align="center" action="consultas/despacho_año_comuna.php" method="post">
-    <div class="select" align="center">
-      <label> Comuna: </label>
-      <select  name="comuna">
-        <?php
-            foreach ($comunas as $comuna) {
-              echo "<option>$comuna[0]</option>";
-          }
-          ?>
-      </select>
-    </div>
-    <br/><br/>
-    Año:
-    <input type="text" name="año">
-    <br/><br/>
-    <input class="button is-danger" type="submit" value="Buscar">
-  </form>
+  <div align="center">
+    <label> Comuna: </label>
+    <form align="center" action="consultas/despacho_año_comuna.php" method="post">
+      <div class="select" align="center">
+        <label> Comuna: </label>
+        <select  name="comuna">
+          <?php
+              foreach ($comunas as $comuna) {
+                echo "<option>$comuna[0]</option>";
+            }
+            ?>
+        </select>
+      </div>
+      <br/><br/>
+      <label> Año: </label>
+      <input type="number" name="año" min="2000" max="2100">
+      <br/><br/>
+      <input class="button is-danger" type="submit" value="Buscar">
+    </form>
+  </div>
   <br>
   <br>
   <br>
