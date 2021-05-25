@@ -9,7 +9,7 @@
   $tipo = $_POST["tipo"];
   $tipo = strtolower($tipo);
 ?>
-  <?php if ($tipo = 'camion'): ?>
+  <?php if ($tipo == 'camion'): ?>
     <?php  $tipo = ' camion' ?>
   <?php endif ?>
 
