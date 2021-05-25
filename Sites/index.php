@@ -16,7 +16,7 @@
             </div>
             <div class="tile is-parent is-10 is-vertical">
               <div class="tile is-8 is-child box">
-                <h3 class="title is-4 is-black" align="center">
+                <h3 class="title is-4 has-text-black" align="center">
                  Muestre las direcciones de todas las mis Unidades
                 </h3>
 
@@ -25,7 +25,7 @@
                 </form>
               </div>
               <div class="tile is-8 is-child box">
-                <h3 class="title is-4 is-black" align="center">
+                <h3 class="title is-4 has-text-black" align="center">
                   Elige una comuna y verás los vehículos que se encuentran disponibles en esta.
                 </h3>
                 <div align="center">
@@ -43,7 +43,7 @@
                 </div>
               </div>
               <div class="tile is-8 is-child box">
-                <h3 class="title is-4 is-black" align="center"> Ingrese una comuna y selecciona un año. se mostraran los vehículos
+                <h3 class="title is-4 has-text-black" align="center"> Ingrese una comuna y selecciona un año. se mostraran los vehículos
                 que realizaron un despacho con estas características</h3>
 
                 <div align="center">
@@ -64,7 +64,7 @@
                 </div>
               </div>
               <div class="tile is-8 is-child box">
-                <h3 class="title is-4 is-black" align="center">Ingrese un tipo de vehículo y seleccione dos edades. Se mostrará
+                <h3 class="title is-4 has-text-black" align="center">Ingrese un tipo de vehículo y seleccione dos edades. Se mostrará
                 los despachos realizados por un repartidor en ese rango de edades y con su respectivo tipo de vehículo.
                 </h3>
                 <div align="center">
@@ -89,7 +89,7 @@
                 </div>
               </div>
               <div class="tile is-8 is-child box">
-              <h3 class="title is-4 is-black" align="center">Ingrese dos comunas. Se mostrarán los jefes que hacen despachos a
+              <h3 class="title is-4 has-text-black" align="center">Ingrese dos comunas. Se mostrarán los jefes que hacen despachos a
               ambas comunas</h3>
                 <div align="center">
                   <form align="center" action="consultas/jefes_comunas.php" method="post">
@@ -114,7 +114,7 @@
                 </div>
               </div>
               <div class="tile is-8 is-child box">
-                <h3 class="title is-4 is-black" align="center">Ingrese un tipo de vehículo. Se mostrará la unidad que maneja
+                <h3 class="title is-4 has-text-black" align="center">Ingrese un tipo de vehículo. Se mostrará la unidad que maneja
                 más vehículos de este tipo</h3>
                 <div align="center">
                   <form align="center" action="consultas/max_tipo.php" method="post">
