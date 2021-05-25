@@ -111,7 +111,6 @@
     <form align="center" action="consultas/jefes_comunas.php" method="post">
       <label> Comuna 1: </label>  
       <div class="select" align="center">
-        <label> Comuna 1: </label>
         <select name="comuna1">
           <?php
               foreach ($comunas as $comuna) {
@@ -123,7 +122,6 @@
       <br/><br/>
       <label> Comuna 2: </label>
       <div class="select" align="center">
-        <label> Comuna 2: </label>
         <select  name="comuna2">
           <?php
               foreach ($comunas as $comuna) {
@@ -142,7 +140,7 @@
 
   <h3 class="title is-4" align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
   <div align="center">
-    <label> Tipo </label>
+    <label> Tipo: </label>
     <form align="center" action="consultas/max_tipo.php" method="post">
       <div class="select" align="center">
         <select name="tipo">
