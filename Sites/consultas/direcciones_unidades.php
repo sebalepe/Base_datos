@@ -12,10 +12,12 @@
 	$direcciones = $result -> fetchAll();
   ?>
 
-	<table class='table'>
-    <tr>
-      <th>direcciones</th>
-    </tr>
+	<table class='table is-striped'>
+    <thead>
+      <tr>
+        <th>direcciones</th>
+      </tr>
+    </thead>
   <?php
 	foreach ($direcciones as $direccion) {
   		echo "<tr> 

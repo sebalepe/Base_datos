@@ -84,7 +84,7 @@
   y cuyo repartidor tiene una edad entre el rango seleccionado.?</h3>
   <div align="center">
     <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
-      <label> Tipo </label>
+      <label> Tipo: </label>
       <div class="select">
         <select name="tipo">
           <option>Auto</option>
