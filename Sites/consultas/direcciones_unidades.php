@@ -12,7 +12,7 @@
 	$direcciones = $result -> fetchAll();
   ?>
 
-  <div class='tile is-ancestor'>
+  <div class='tile is-ancestor' align="center">
     <div class='tile is-parent'>
       <div class='tile is-child notification'>
       	<table class='table is-striped'>
