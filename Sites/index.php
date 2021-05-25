@@ -35,7 +35,7 @@
   <div align="center">
     <label> Comuna: </label>
     <form align="center" action="consultas/vehiculos_comuna.php" method="post">
-      <div class="select" style="margin-left:600px;width: 200px;" align="center">
+      <div class="select" align="center">
         <select name="comuna_elegida">
           <?php
               foreach ($comunas as $comuna) {
@@ -57,7 +57,7 @@
   despacho a esa comuna en ese año</h3>
 
   <form align="center" action="consultas/despacho_año_comuna.php" method="post">
-    <div class="select" style="margin-left:600px;width: 200px;" align="center">
+    <div class="select" align="center">
       <label> Comuna: </label>
       <select  name="comuna">
         <?php
@@ -107,7 +107,7 @@
   <h3 class="title is-4" align="center">Ingrese dos comunas. Encuentre los jefes de las unidades que realizan despachos a ambas comunas.?</h3>
 
   <form align="center" action="consultas/jefes_comunas.php" method="post">
-    <div class="select" style="margin-left:600px;width: 200px;" align="center">
+    <div class="select" align="center">
       <label> Comuna 1: </label>
       <select name="comuna1">
         <?php
@@ -118,7 +118,7 @@
       </select>
     </div>
     <br/><br/>
-    <div class="select" style="margin-left:600px;width: 200px;" align="center">
+    <div class="select" align="center">
       <label> Comuna 2: </label>
       <select  name="comuna2">
         <?php
@@ -137,7 +137,7 @@
 
   <h3 class="title is-4" align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
   <form align="center" action="consultas/max_tipo.php" method="post">
-    <div class="select" style="margin-left:600px;width: 200px;" align="center">
+    <div class="select" align="center">
       <label> Tipo </label>
       <select name="tipo">
         <option>Auto</option>
