@@ -11,7 +11,7 @@
   <div class="tile is-ancestor" align="center">
     <div class="tile is-parent is-4">
     </div>
-    <div class="tile is-parent is-8 is-vertical">
+    <div class="tile is-parent is-10 is-vertical">
       <div class="tile is-8 is-child box">
         <h3 class="title is-4" align="center">
          Muestre las direcciones de todas las mis Unidades
