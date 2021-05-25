@@ -107,50 +107,55 @@
   <br>
 
   <h3 class="title is-4" align="center">Ingrese dos comunas. Encuentre los jefes de las unidades que realizan despachos a ambas comunas.?</h3>
-
-  <form align="center" action="consultas/jefes_comunas.php" method="post">
-    <div class="select" align="center">
-      <label> Comuna 1: </label>
-      <select name="comuna1">
-        <?php
-            foreach ($comunas as $comuna) {
-              echo "<option>$comuna[0]</option>";
-          }
-          ?>
-      </select>
-    </div>
-    <br/><br/>
-    <div class="select" align="center">
+  <div align="center">
+    <form align="center" action="consultas/jefes_comunas.php" method="post">
+      <label> Comuna 1: </label>  
+      <div class="select" align="center">
+        <label> Comuna 1: </label>
+        <select name="comuna1">
+          <?php
+              foreach ($comunas as $comuna) {
+                echo "<option>$comuna[0]</option>";
+            }
+            ?>
+        </select>
+      </div>
+      <br/><br/>
       <label> Comuna 2: </label>
-      <select  name="comuna2">
-        <?php
-            foreach ($comunas as $comuna) {
-              echo "<option>$comuna[0]</option>";
-          }
-          ?>
-      </select>
-    </div>
-    <br/><br/>
-    <input class="button is-danger" type="submit" value="Buscar">
-  </form>
+      <div class="select" align="center">
+        <label> Comuna 2: </label>
+        <select  name="comuna2">
+          <?php
+              foreach ($comunas as $comuna) {
+                echo "<option>$comuna[0]</option>";
+            }
+            ?>
+        </select>
+      </div>
+      <br/><br/>
+      <input class="button is-danger" type="submit" value="Buscar">
+    </form>
+  </div>
   <br>
   <br>
   <br>
 
   <h3 class="title is-4" align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
-  <form align="center" action="consultas/max_tipo.php" method="post">
-    <div class="select" align="center">
-      <label> Tipo </label>
-      <select name="tipo">
-        <option>Auto</option>
-        <option>Moto</option>
-        <option>Camioneta</option>
-        <option>Bicicleta</option>
-        <option> Camion</option>
-      </select>
-    </div>
-    <input class="button is-danger" type="submit" value="Buscar">
-  </form>
+  <div align="center">
+    <label> Tipo </label>
+    <form align="center" action="consultas/max_tipo.php" method="post">
+      <div class="select" align="center">
+        <select name="tipo">
+          <option>Auto</option>
+          <option>Moto</option>
+          <option>Camioneta</option>
+          <option>Bicicleta</option>
+          <option> Camion</option>
+        </select>
+      </div>
+      <input class="button is-danger" type="submit" value="Buscar">
+    </form>
+  </div>
   <br>
   <br>
   <br>
