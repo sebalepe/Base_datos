@@ -33,8 +33,8 @@
     $comunas = $result -> fetchAll();
   ?>
   <div align="center">
-    <label> Comuna: </label>
     <form align="center" action="consultas/vehiculos_comuna.php" method="post">
+      <label> Comuna: </label>
       <div class="select" align="center">
         <select name="comuna_elegida">
           <?php
@@ -57,8 +57,8 @@
   despacho a esa comuna en ese año</h3>
 
   <div align="center">
-    <label> Comuna: </label>
     <form align="center" action="consultas/despacho_año_comuna.php" method="post">
+      <label> Comuna: </label>
       <div class="select" align="center">
         <select  name="comuna">
           <?php
@@ -83,8 +83,8 @@
   Muestre todos los despachos realizados por un veh́ıculo del tipo ingresado,
   y cuyo repartidor tiene una edad entre el rango seleccionado.?</h3>
   <div align="center">
-    <label> Tipo </label>
     <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
+      <label> Tipo </label>
       <div class="select">
         <select name="tipo">
           <option>Auto</option>
@@ -140,8 +140,8 @@
 
   <h3 class="title is-4" align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
   <div align="center">
-    <label> Tipo: </label>
     <form align="center" action="consultas/max_tipo.php" method="post">
+      <label> Tipo: </label>
       <div class="select" align="center">
         <select name="tipo">
           <option>Auto</option>
