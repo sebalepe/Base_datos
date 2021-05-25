@@ -60,7 +60,6 @@
     <label> Comuna: </label>
     <form align="center" action="consultas/despacho_año_comuna.php" method="post">
       <div class="select" align="center">
-        <label> Comuna: </label>
         <select  name="comuna">
           <?php
               foreach ($comunas as $comuna) {
