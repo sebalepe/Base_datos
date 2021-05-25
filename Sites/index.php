@@ -9,6 +9,8 @@
     Todo lo que necesitas para administrar tu negocio
   </p>
   <div class="tile is-ancestor" align="center">
+    <div class="tile is-parent">
+    </div>
     <div class="tile is-parent is-vertical">
       <div class="tile is-8 is-child box">
         <h3 class="title is-4" align="center">
@@ -143,6 +145,8 @@
           </form>
         </div>
       </div>
+    </div>
+    <div class="tile is-parent">
     </div>
   </div>
 
