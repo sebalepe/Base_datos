@@ -33,7 +33,7 @@
         ?>
         <div align="center">
           <form align="center" action="consultas/vehiculos_comuna.php" method="post">
-            <label> Comuna: </label>
+            <!-- <label> Comuna: </label>
             <div class="select" align="center">
               <select name="comuna_elegida">
                 <?php
@@ -42,9 +42,16 @@
                   }
                   ?>
               </select>
+            </div> --!>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Comuna:" name="comuna_elegida">
+                    </p>
+                </div>
             </div>
             <br/><br/>
-            <input class="button is-danger" type="submit" value="Buscar">
+            <input class="button is-danger" type="submit" value="Buscar" >
           </form>
         </div>
       </div>
