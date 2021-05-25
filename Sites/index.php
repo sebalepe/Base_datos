@@ -4,11 +4,13 @@
   <br>
   <br>
   <section class="hero is-danger is-light is-fullheight">
-    <div class="hero-body">
-          <h1 class="title is-1" align="center">Administracion de Unidades </h1>
+    <div class="hero-head">
+        <h1 class="title is-1" align="center">Administracion de Unidades </h1>
           <p class='subtitle is-5' style="text-align:center;">
             Todo lo que necesitas para administrar tu negocio
           </p>
+    </div>
+    <div class="hero-body">
           <div class="tile is-ancestor">
             <div class="tile is-parent is-3">
             </div>
