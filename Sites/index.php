@@ -23,30 +23,14 @@
       </div>
       <div class="tile is-8 is-child box">
         <h3 class="title is-4" align="center"> 
-          Quieres buscar los vehiculos disponibles en las unidades ubicadas en una comuna en especifico?
+          Elige una comuna y verás los vehículos que se encuentran disponibles en esta.
         </h3>
-        <?php require("config/conexion.php");
-          $query = "SELECT DISTINCT(comuna) FROM direcciones;";
-          $result = $db -> prepare($query);
-          $result -> execute();
-          $comunas = $result -> fetchAll();
-        ?>
         <div align="center">
           <form align="center" action="consultas/vehiculos_comuna.php" method="post">
-            <!-- <label> Comuna: </label>
-            <div class="select" align="center">
-              <select name="comuna_elegida">
-                <?php
-                    foreach ($comunas as $comuna) {
-                      echo "<option>$comuna[0]</option>";
-                  }
-                  ?>
-              </select>
-            </div> --!>
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="Comuna:" name="comuna_elegida">
+                        <input class="input" type="text" placeholder="Ingresa una comuna" name="comuna_elegida">
                     </p>
                 </div>
             </div>
@@ -56,20 +40,17 @@
         </div>
       </div>
       <div class="tile is-8 is-child box">
-        <h3 class="title is-4" align="center"> ingrese una comuna y selecciona un año. Muestre todos los vehiculos que hayan realizado un
-        despacho a esa comuna en ese año</h3>
+        <h3 class="title is-4" align="center"> Ingrese una comuna y selecciona un año. se mostraran los vehículos
+        que realizaron un despacho con estas características</h3>
 
         <div align="center">
           <form align="center" action="consultas/despacho_año_comuna.php" method="post">
-            <label> Comuna: </label>
-            <div class="select" align="center">
-              <select  name="comuna">
-                <?php
-                    foreach ($comunas as $comuna) {
-                      echo "<option>$comuna[0]</option>";
-                  }
-                  ?>
-              </select>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Ingresa una comuna" name="comuna">
+                    </p>
+                </div>
             </div>
             <br/><br/>
             <label> Año: </label>
@@ -80,9 +61,9 @@
         </div>
       </div>
       <div class="tile is-8 is-child box">
-        <h3 class="title is-4" align="center">Ingrese un tipo de veh ́ıculo y seleccione dos nu ́meros.
-        Muestre todos los despachos realizados por un veh́ıculo del tipo ingresado,
-        y cuyo repartidor tiene una edad entre el rango seleccionado.?</h3>
+        <h3 class="title is-4" align="center">Ingrese un tipo de vehículo y seleccione dos edades. Se mostrará
+        los despachos realizados por un repartidor en ese rango de edades y con su respectivo tipo de vehículo.
+        </h3>
         <div align="center">
           <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
             <label> Tipo: </label>
@@ -105,29 +86,23 @@
         </div>
       </div>
       <div class="tile is-8 is-child box">
-      <h3 class="title is-4" align="center">Ingrese dos comunas. Encuentre los jefes de las unidades que realizan despachos a ambas comunas.?</h3>
+      <h3 class="title is-4" align="center">Ingrese dos comunas. Se mostrarán los jefes que hacen despachos a
+      ambas comunas</h3>
         <div align="center">
           <form align="center" action="consultas/jefes_comunas.php" method="post">
-            <label> Comuna 1: </label>  
-            <div class="select" align="center">
-              <select name="comuna1">
-                <?php
-                    foreach ($comunas as $comuna) {
-                      echo "<option>$comuna[0]</option>";
-                  }
-                  ?>
-              </select>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Ingresa una comuna" name="comuna1">
+                    </p>
+                </div>
             </div>
-            <br/><br/>
-            <label> Comuna 2: </label>
-            <div class="select" align="center">
-              <select  name="comuna2">
-                <?php
-                    foreach ($comunas as $comuna) {
-                      echo "<option>$comuna[0]</option>";
-                  }
-                  ?>
-              </select>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Ingresa una comuna diferente" name="comuna2">
+                    </p>
+                </div>
             </div>
             <br/><br/>
             <input class="button is-danger" type="submit" value="Buscar">
@@ -135,7 +110,8 @@
         </div>
       </div>
       <div class="tile is-8 is-child box">
-        <h3 class="title is-4" align="center">Ingrese un tipo de veh ́ıculo. Encuentre la unidad qu ́e maneja ma ́s veh ́ıculos de ese tipo?</h3>
+        <h3 class="title is-4" align="center">Ingrese un tipo de vehículo. Se mostrará la unidad que maneja
+        más vehículos de este tipo</h3>
         <div align="center">
           <form align="center" action="consultas/max_tipo.php" method="post">
             <label> Tipo: </label>
