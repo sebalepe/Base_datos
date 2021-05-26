@@ -15,7 +15,11 @@
 
 <?php
   #Se construye la consulta como un string
- 	$query = "SELECT * FROM (SELECT * FROM unidades, (SELECT count(tipo), unidad FROM vehiculos WHERE tipo = '$tipo' GROUP BY unidad) AS cantidad WHERE cantidad.unidad = unidades.uid) AS und, (SELECT max(cantidad.count) AS max_c FROM unidades, (SELECT count(tipo), unidad FROM vehiculos WHERE tipo = '$tipo' GROUP BY unidad) AS cantidad WHERE cantidad.unidad = unidades.uid) AS max WHERE und.count = max.max_c;";
+ 	$query = "SELECT * FROM (SELECT * FROM unidades, (SELECT count(tipo), unidad FROM vehiculos
+ 	WHERE tipo = '$tipo' GROUP BY unidad) AS cantidad WHERE cantidad.unidad = unidades.uid)
+ 	AS und, (SELECT max(cantidad.count) AS max_c FROM unidades, (SELECT count(tipo), unidad FROM vehiculos
+ 	WHERE tipo = '$tipo' GROUP BY unidad) AS cantidad WHERE cantidad.unidad = unidades.uid)
+ 	AS max WHERE und.count = max.max_c;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result = $db -> prepare($query);

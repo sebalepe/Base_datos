@@ -22,7 +22,8 @@
 <?php
 
 
-  $query = "SELECT * FROM vehiculos, despacho, personal WHERE despacho.vehiculo = vehiculos.id AND vehiculos.tipo = '$tipo' AND despacho.repartidor = personal.id AND personal.edad BETWEEN $edad1 AND $edad2;";
+  $query = "SELECT * FROM vehiculos, despacho, personal WHERE despacho.vehiculo = vehiculos.id AND
+  vehiculos.tipo = '$tipo' AND despacho.repartidor = personal.id AND personal.edad BETWEEN $edad1 AND $edad2;";
   $result = $db -> prepare($query);
   $result -> execute();
   $despachos = $result -> fetchAll();
