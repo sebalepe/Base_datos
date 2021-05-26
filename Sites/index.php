@@ -1,20 +1,24 @@
 <?php include('templates/header.html');   ?>
 
 <body>
-  <section class="hero is-danger is-light is-fullheight">
+  <section class="hero is-danger is-fullheight">
+    <br>
+    <div align="center">
+      <img class="image" src='storage/8fa.png' onmouseover="this.src='storage/cheems.png';" onmouseout="this.src='storage/8fa.png';" width="300" height="300" />
+    </div>
     <br>
     <br>
     <div class="hero-head">
-        <h1 class="title is-1" align="center">Administracion de Unidades </h1>
+        <h1 class="title is-1" align="center">CheemsCO </h1>
           <p class='subtitle is-5' style="text-align:center;">
             Todo lo que necesitas para administrar tu negocio
           </p>
     </div>
     <div class="hero-body">
           <div class="tile is-ancestor">
-            <div class="tile is-parent is-3">
+            <div class="tile is-parent is-2">
             </div>
-            <div class="tile is-parent is-10 is-vertical">
+            <div class="tile is-parent is-12 is-vertical">
               <div class="tile is-8 is-child box">
                 <h3 class="title is-4 has-text-black" align="center">
                  Muestre las direcciones de todas las mis Unidades
@@ -133,7 +137,7 @@
                 </div>
               </div>
             </div>
-            <div class="tile is-parent is-4">
+            <div class="tile is-parent is-2">
             </div>
           </div>
         <br/><br/>
