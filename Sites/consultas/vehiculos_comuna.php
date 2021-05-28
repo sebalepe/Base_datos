@@ -9,7 +9,7 @@
   $comuna = strtolower($comuna_elegida);
 
  	$query = "SELECT * FROM vehiculos (SELECT uid FROM direcciones, unidades WHERE
- 	unidades.direccion_id = direcciones.id AND direcciones.comuna like '%$comuna_elegida%')
+ 	unidades.direccion_id = direcciones.id AND direcciones.comuna LIKE '%$comuna%')
  	as unidades WHERE vehiculos.unidad = unidades.uid;";
   
 	$result = $db -> prepare($query);
