@@ -21,7 +21,7 @@
             <div class="tile is-parent is-12 is-vertical">
               <div class="tile is-8 is-child box">
                 <h3 class="title is-4 has-text-black" align="center">
-                 Muestre las direcciones de todas las mis Unidades
+                 Muestre las direcciones de todas las Unidades
                 </h3>
 
                 <form align="center" action="consultas/direcciones_unidades.php" method="post">
