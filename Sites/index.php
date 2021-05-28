@@ -116,7 +116,6 @@
                         ?>
                         </select>
                       </div>
-
                     <br/><br/>
                     <input class="button is-danger" type="submit" value="Buscar">
                   </form>
@@ -154,7 +153,7 @@
                     <label> Tipo: </label>
                     <input type="text" name="tipo">
                     <br><br>
-                    <input class="button is-danger" type="submit" value="Buscar">
+                    <input class="button is-danger" type="submit" value="Buscar" placeholder="Ingresa un tipo de vehiculo">
                   </form>
                 </div>
               </div>
