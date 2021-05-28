@@ -30,7 +30,7 @@
               </div>
               <div class="tile is-8 is-child box">
                 <h3 class="title is-4 has-text-black" align="center">
-                  Elige una comuna y verás los vehículos que se encuentran disponibles en esta.
+                  Ingresa el nombre de una comuna y verás los vehículos que se encuentran disponibles en esta.
                 </h3>
                 <div align="center">
                   <form align="center" action="consultas/vehiculos_comuna.php" method="post">
@@ -47,7 +47,7 @@
                 </div>
               </div>
               <div class="tile is-8 is-child box">
-                <h3 class="title is-4 has-text-black" align="center"> Ingrese una comuna y selecciona un año. se mostraran los vehículos
+                <h3 class="title is-4 has-text-black" align="center"> Ingrese el nombre de una comuna y selecciona un año. Se mostraran los vehículos
                 que realizaron un despacho con estas características</h3>
 
                 <div align="center">
@@ -100,8 +100,7 @@
                 </div>
               </div>
               <div class="tile is-8 is-child box">
-              <h3 class="title is-4 has-text-black" align="center">Ingrese dos comunas. Se mostrarán los jefes que hacen despachos a
-              ambas comunas</h3>
+              <h3 class="title is-4 has-text-black" align="center">Ingrese los nombres de dos comunas. Se mostrarán los jefes que hacen despachos en ambas</h3>
                 <div align="center">
                   <form align="center" action="consultas/jefes_comunas.php" method="post">
                     <div class="field-body">
