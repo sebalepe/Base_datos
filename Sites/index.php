@@ -4,7 +4,7 @@
   <section class="hero is-danger is-fullheight">
     <br>
     <div align="center">
-      <img class="image" src='storage/8fa.png' onmouseover="this.src='storage/cheems.png';" onmouseout="this.src='storage/8fa.png';" width="300" height="300" />
+      <img class="image" src='storage/espada1.png' onmouseover="this.src='storage/espada2.png';" onmouseout="this.src='storage/espada1.png';" width="300" height="300" />
     </div>
     <br>
     <br>

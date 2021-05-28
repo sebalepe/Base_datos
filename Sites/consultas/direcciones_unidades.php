@@ -12,26 +12,21 @@
 	$direcciones = $result -> fetchAll();
   ?>
 
-  <div class='tile is-ancestor' align="center">
-    <div class='tile is-parent'>
-      <div class='tile is-child notification'>
-      	<table class='table is-striped'>
-          <thead>
-            <tr>
-              <th>direcciones</th>
-            </tr>
-          </thead>
-        <?php
-      	foreach ($direcciones as $direccion) {
-        		echo "<tr> 
-                      <td>$direccion[0]</td> 
-                      <td>$direccion[1]</td> 
-                  </tr>";
-      	}
-        ?>
-      	</table>
-      </div>
-    </div>
-  </div>
+
+	<table class='table is-striped'>
+    <thead>
+      <tr>
+        <th>direcciones</th>
+      </tr>
+    </thead>
+  <?php
+	foreach ($direcciones as $direccion) {
+  		echo "<tr> 
+                <td>$direccion[0]</td> 
+                <td>$direccion[1]</td> 
+            </tr>";
+	}
+  ?>
+	</table>
 
 <?php include('../templates/footer.html'); ?>
