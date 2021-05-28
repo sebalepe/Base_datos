@@ -22,10 +22,11 @@
   	<table class='table'>
       <tr>
         <th>ID</th>
-        <th>patente</th>
-        <th>estado</th>
-        <th>tipo</th>
-        <th>unidad</th>
+        <th>Patente</th>
+        <th>Estado</th>
+        <th>Tipo</th>
+        <th>Unidad</th>
+        <th>Comuna</th>
       </tr>
     <?php
   	foreach ($vehiculos as $vehiculo) {
@@ -36,9 +37,7 @@
                 <td>$vehiculo[2]</td>
                 <td>$vehiculo[3]</td>
                 <td>$vehiculo[4]</td>
-                <td>$vehiculo[5]</td>
                 <td>$vehiculo[6]</td>
-                <td>$vehiculo[7]</td>
               </tr>";
   	}
     ?>
