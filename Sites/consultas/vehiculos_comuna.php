@@ -7,6 +7,7 @@
 
   $comuna= $_POST["comuna"];
   $comuna = strtolower($comuna);
+  echo "<p> $comuna </p>"
 
  	$query = "SELECT * FROM vehiculos (SELECT uid FROM direcciones, unidades WHERE
  	unidades.direccion_id = direcciones.id AND direcciones.comuna = '$comuna')
@@ -15,7 +16,7 @@
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
-    $largo = count($vehiculos);
+  $largo = count($vehiculos);
   ?>
 
   <?php if ($largo > 0): ?>
