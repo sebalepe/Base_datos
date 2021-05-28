@@ -5,7 +5,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $comuna= $_POST["comuna_elegida"];
+  $comuna= $_POST["comuna"];
   $comuna = strtolower($comuna);
 
  	$query = "SELECT * FROM vehiculos (SELECT uid FROM direcciones, unidades WHERE
