@@ -76,7 +76,7 @@
                     <label> Tipo: </label>
                     <div class="select">
                       <?php
-                      require("../config/conexion.php");
+                        require("../config/conexion.php");
                         $query = "SELECT DISTINCT(tipo) from vehiculos";
                         $result = $db -> prepare($query);
                         $result -> execute();
@@ -85,7 +85,7 @@
                       <select name="tipo">
                         <?php 
                           foreach ($tipos as $tipo) {
-                            echo "<option> $tipo[0] </option>"
+                            echo "<option> $tipo[0] </option>";
                           }
                         ?>
                       </select>
@@ -134,7 +134,7 @@
                       <select name="tipo">
                         <?php 
                           foreach ($tipos as $tipo) {
-                            echo "<option> $tipo[0] </option>"
+                            echo "<option> $tipo[0] </option>";
                           }
                         ?>
                       </select>
