@@ -8,7 +8,7 @@
   $comuna = $_POST["comuna"];
   $comuna = strtolower($comuna);
 
- 	$query = "SELECT * FROM vehiculos, (SELECT uid FROM direcciones, unidades WHERE
+ 	$query = "SELECT * FROM vehiculos, (SELECT uid, direcciones.comuna FROM direcciones, unidades WHERE
  	unidades.direccion_id = direcciones.id AND direcciones.comuna LIKE '%$comuna%')
  	as unidades WHERE vehiculos.unidad = unidades.uid;";
   
@@ -16,6 +16,7 @@
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
     $largo = count($vehiculos);
+  echo "<p> $vehiculos[0] </p>";
   ?>
 
   <?php if ($largo > 0): ?>
