@@ -16,7 +16,6 @@
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
     $largo = count($vehiculos);
-  echo "<p> $vehiculos[0] </p>";
   ?>
 
   <?php if ($largo > 0): ?>
@@ -30,7 +29,9 @@
       </tr>
     <?php
   	foreach ($vehiculos as $vehiculo) {
-    		echo "<tr>
+    		echo "
+              <p> $vehiculo</p>
+              <tr>
                 <td>$vehiculo[0]</td>
                 <td>$vehiculo[1]</td>
                 <td>$vehiculo[2]</td>
