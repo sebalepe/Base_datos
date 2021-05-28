@@ -76,7 +76,7 @@
                     <label> Tipo: </label>
                     <div class="select">
                       <?php
-                        require("../config/conexion.php");
+                        require("config/conexion.php");
                         $query = "SELECT DISTINCT(tipo) from vehiculos";
                         $result = $db -> prepare($query);
                         $result -> execute();
