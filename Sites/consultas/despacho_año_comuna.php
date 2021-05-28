@@ -11,7 +11,7 @@
 
 
   
- 	$query = "SELECT * FROM vehiculos,(SELECT vehiculo, direccion.comuna FROM direcciones,
+ 	$query = "SELECT * FROM vehiculos,(SELECT vehiculo FROM direcciones,
  	(SELECT * FROM despacho WHERE CAST(fecha AS text) LIKE '$año%') AS año_vehi
  	WHERE año_vehi.id_destino = direcciones.id AND direcciones.comuna LIKE '%$comuna%') AS v_año
  	WHERE vehiculos.id = v_año.vehiculo;";
