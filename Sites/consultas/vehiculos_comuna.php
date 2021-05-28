@@ -5,11 +5,11 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $comuna_elegida = $_POST["comuna_elegida"];
-  $comuna_elegida = strtolower($comuna_elegida);
+  $comuna= $_POST["comuna_elegida"];
+  $comuna = strtolower($comuna_elegida);
 
- 	$query = "SELECT * FROM vehiculos, (SELECT uid FROM direcciones, unidades WHERE
- 	unidades.direccion_id = direcciones.id AND direcciones.comuna = '$comuna_elegida')
+ 	$query = "SELECT * FROM vehiculos (SELECT uid FROM direcciones, unidades WHERE
+ 	unidades.direccion_id = direcciones.id AND direcciones.comuna like '%$comuna_elegida%')
  	as unidades WHERE vehiculos.unidad = unidades.uid;";
   
 	$result = $db -> prepare($query);

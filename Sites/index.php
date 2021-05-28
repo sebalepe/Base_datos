@@ -37,7 +37,7 @@
                     <div class="field-body">
                         <div class="field">
                             <p class="control">
-                                <input class="input" type="text" placeholder="Ingresa una comuna" name="comuna_elegida">
+                                <input class="input" type="text" placeholder="Ingresa una comuna" name="comuna">
                             </p>
                         </div>
                     </div>
