@@ -2,7 +2,7 @@
 
 <body>
 <?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+ 
   require("../config/conexion.php");
 
   $comuna = $_POST["comuna"];
@@ -10,7 +10,7 @@
 
  	$query = "SELECT * FROM vehiculos, (SELECT uid, direcciones.comuna FROM direcciones, unidades WHERE
  	unidades.direccion_id = direcciones.id AND direcciones.comuna LIKE '%$comuna%')
- 	as unidades WHERE vehiculos.unidad = unidades.uid;";
+ 	AS unidades WHERE vehiculos.unidad = unidades.uid;";
   
 	$result = $db -> prepare($query);
 	$result -> execute();
