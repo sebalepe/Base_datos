@@ -151,7 +151,7 @@
                 <div align="center">
                   <form align="center" action="consultas/max_tipo.php" method="post">
                     <label> Tipo: </label>
-                    <input type="text" name="tipo">
+                    <input  class="input" type="text" name="tipo">
                     <br><br>
                     <input class="button is-danger" type="submit" value="Buscar" placeholder="Ingresa un tipo de vehiculo">
                   </form>
