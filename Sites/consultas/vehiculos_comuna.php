@@ -29,9 +29,6 @@
       </tr>
     <?php
   	foreach ($vehiculos as $vehiculo) {
-        foreach ($vehiculo as $value) {
-          echo "<p> $value </p>";
-        }
     		echo "
               <tr>
                 <td>$vehiculo[0]</td>
@@ -39,6 +36,9 @@
                 <td>$vehiculo[2]</td>
                 <td>$vehiculo[3]</td>
                 <td>$vehiculo[4]</td>
+                <td>$vehiculo[5]</td>
+                <td>$vehiculo[6]</td>
+                <td>$vehiculo[7]</td>
               </tr>";
   	}
     ?>
