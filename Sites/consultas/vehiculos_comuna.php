@@ -7,7 +7,7 @@
 
   $comuna= $_POST["comuna"];
   $comuna = strtolower($comuna);
-  echo "<p> $comuna </p>"
+  echo "<p> $comuna </p>";
 
  	$query = "SELECT * FROM vehiculos (SELECT uid FROM direcciones, unidades WHERE
  	unidades.direccion_id = direcciones.id AND direcciones.comuna = '$comuna')
