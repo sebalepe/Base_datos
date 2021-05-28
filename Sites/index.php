@@ -69,7 +69,7 @@
                         $result_años -> execute();
                         $años = $result_años -> fetchAll(); 
                       ?>
-                      <select name="tipo">
+                      <select name="año">
                         <?php 
                           foreach ($años as $año) {
                             echo "<option> $año[0] </option>";
@@ -88,8 +88,13 @@
                 </h3>
                 <div align="center">
                   <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
-                    <label> Tipo: </label>
-                    <input type="text" name="tipo">
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Ingresa una tipo de vehiculo" name="tipo">
+                            </p>
+                        </div>
+                    </div>
                     <br/><br/>
                     <label> Rango Edades: </label>
                     <?php
@@ -150,8 +155,13 @@
                 más vehículos de este tipo</h3>
                 <div align="center">
                   <form align="center" action="consultas/max_tipo.php" method="post">
-                    <label> Tipo: </label>
-                    <input  class="input" type="text" name="tipo">
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Ingresa una tipo de vehiculo" name="tipo">
+                            </p>
+                        </div>
+                    </div>
                     <br><br>
                     <input class="button is-danger" type="submit" value="Buscar" placeholder="Ingresa un tipo de vehiculo">
                   </form>
