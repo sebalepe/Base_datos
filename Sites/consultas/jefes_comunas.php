@@ -43,9 +43,6 @@
                         <td>$jefe[2]</td>
                         <td>$jefe[3]</td>
                         <td>$jefe[4]</td>
-                        <td>$jefe[5]</td>
-                        <td>$jefe[6]</td>
-                        <td>$jefe[7]</td>
                     </tr>";
           }
           ?>
