@@ -61,7 +61,22 @@
                     </div>
                     <br/><br/>
                     <label> Año: </label>
-                    <input type="number" name="año" min="2000" max="2100">
+                    <div class="select">
+                      <?php
+                        require("config/conexion.php");
+                        $query_años = "SELECT DISTINCT(EXTRACT(year FROM fecha)) FROM despacho;";
+                        $result_años = $db -> prepare($query_años);
+                        $result_años -> execute();
+                        $años = $result_años -> fetchAll(); 
+                      ?>
+                      <select name="tipo">
+                        <?php 
+                          foreach ($años as $año) {
+                            echo "<option> $año[0] </option>";
+                          }
+                        ?>
+                      </select>
+                    </div>
                     <br/><br/>
                     <input class="button is-danger" type="submit" value="Buscar">
                   </form>
@@ -74,26 +89,34 @@
                 <div align="center">
                   <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
                     <label> Tipo: </label>
-                    <div class="select">
-                      <?php
-                        require("config/conexion.php");
-                        $query = "SELECT DISTINCT(tipo) from vehiculos";
-                        $result = $db -> prepare($query);
-                        $result -> execute();
-                        $tipos = $result -> fetchAll(); 
-                      ?>
-                      <select name="tipo">
-                        <?php 
-                          foreach ($tipos as $tipo) {
-                            echo "<option> $tipo[0] </option>";
-                          }
-                        ?>
-                      </select>
-                    </div>
+                    <input type="text" name="tipo">
                     <br/><br/>
-                    Rango Edades:
-                    <input type="number" name="edad1" min="18" max="100">
-                    <input type="number" name="edad2" min="18" max="100">
+                    <label> Rango Edades: </label>
+                    <?php
+                        $query_edades = "SELECT DISTINCT(edad) from personal ORDER BY edad;";
+                        $result_edades = $db -> prepare($query_edades);
+                        $result_edades -> execute();
+                        $edades = $result_edades -> fetchAll(); 
+                      ?>
+                      <div class='select'>
+                        <select name="edad1">
+                          <?php 
+                            foreach ($edades as $edad) {
+                              echo "<option> $edad[0] </option>";
+                            }
+                        ?>
+                        </select>
+                      </div>
+                      <div class='select'>
+                        <select name="edad2">
+                          <?php 
+                            foreach ($edades as $edad) {
+                              echo "<option> $edad[0] </option>";
+                            }
+                        ?>
+                        </select>
+                      </div>
+
                     <br/><br/>
                     <input class="button is-danger" type="submit" value="Buscar">
                   </form>
@@ -129,15 +152,8 @@
                 <div align="center">
                   <form align="center" action="consultas/max_tipo.php" method="post">
                     <label> Tipo: </label>
-                    <div class="select" align="center">
-                      <select name="tipo">
-                        <?php 
-                          foreach ($tipos as $tipo) {
-                            echo "<option> $tipo[0] </option>";
-                          }
-                        ?>
-                      </select>
-                    </div>
+                    <input type="text" name="tipo">
+                    <br><br>
                     <input class="button is-danger" type="submit" value="Buscar">
                   </form>
                 </div>
