@@ -6,7 +6,7 @@
   require("../config/conexion.php");
 
   $comuna= $_POST["comuna_elegida"];
-  $comuna = strtolower($comuna_elegida);
+  $comuna = strtolower($comuna);
 
  	$query = "SELECT * FROM vehiculos (SELECT uid FROM direcciones, unidades WHERE
  	unidades.direccion_id = direcciones.id AND direcciones.comuna LIKE '%$comuna%')
