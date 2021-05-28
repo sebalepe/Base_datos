@@ -75,12 +75,19 @@
                   <form align="center" action="consultas/tipo_vehiculo_edad.php" method="post">
                     <label> Tipo: </label>
                     <div class="select">
+                      <?php
+                      require("../config/conexion.php");
+                        $query = "SELECT DISTINCT(tipo) from vehiculos";
+                        $result = $db -> prepare($query);
+                        $result -> execute();
+                        $tipos = $result -> fetchAll(); 
+                      ?>
                       <select name="tipo">
-                        <option>Auto</option>
-                        <option>Moto</option>
-                        <option>Camioneta</option>
-                        <option>Bicicleta</option>
-                        <option> Camion</option>
+                        <?php 
+                          foreach ($tipos as $tipo) {
+                            echo "<option> $tipo[0] </option>"
+                          }
+                        ?>
                       </select>
                     </div>
                     <br/><br/>
@@ -125,11 +132,11 @@
                     <label> Tipo: </label>
                     <div class="select" align="center">
                       <select name="tipo">
-                        <option>Auto</option>
-                        <option>Moto</option>
-                        <option>Camioneta</option>
-                        <option>Bicicleta</option>
-                        <option> Camion</option>
+                        <?php 
+                          foreach ($tipos as $tipo) {
+                            echo "<option> $tipo[0] </option>"
+                          }
+                        ?>
                       </select>
                     </div>
                     <input class="button is-danger" type="submit" value="Buscar">
