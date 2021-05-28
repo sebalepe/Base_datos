@@ -30,7 +30,7 @@
     <?php
   	foreach ($vehiculos as $vehiculo) {
         foreach ($vehiculo as $value) {
-          echo "<p> $value </p>"
+          echo "<p> $value </p>";
         }
     		echo "
               <tr>
