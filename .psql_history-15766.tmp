@@ -1,0 +1,115 @@
+\conninf
+\conninfo
+CREATE TABLE UNIDAD (uid INT, direccion VARCHAR(250), PRIMARY KEY(uid);SELECT * FROM UNIDAD;
+\q
+SELECT * FROM UNIDADCREATE TABLE Capitanes(cid INT, cnombre VARCHAR(100), crating FLOAT, cedad INT);
+\q
+CREATE TABLE Capitanes(cid INT, cnombre VARCHAR(100), crating FLOAT, cedad INT);
+DROP TABLE IF EXISTS Capitanes;
+CREATE TABLE Unidad(uid INT, udirección VARCHAR(100), PRIMARY KEY(uid));
+SELECT * FROM Unidad;
+DROP TABLE IF EXISTS Unidad;
+CREATE TABLE Unidad(uid INT, udirección VARCHAR(100), PRIMARY KEY(uid));
+DROP TABLE IF EXISTS Unidad;
+CREATE TABLE Unidades(uid INT, udirección VARCHAR(100), PRIMARY KEY(uid));
+SELECT * FROM Unidades;
+\q
+SELECT * FROM Unidades;
+\q
+SELECT * FROM Unidades;
+\q
+\dt
+SELECT * FROM Unidades;
+INSERT INTO Unidades VALUES (1, 'avenida siempre viva 742');
+SELECT * FROM Unidades;
+\q
+\conninfo
+DROP TABLE Unidades;
+\dt
+CREATRE TABLE Unidades (uid INT PRIMARY KEY, direccion VARCHAR(250));
+CREATE TABLE Unidades (uid INT PRIMARY KEY, direccion VARCHAR(250));
+\dt
+SELECT * FROM unidades;
+\q
+SELECT * FROM UNIDADES;
+COPY Unidades from 'Entrega1/Unidades.csv' DELIMITER ',' CSV HEADER;
+\COPY Unidades from 'Entrega1/Unidades.csv' DELIMITER ',' CSV HEADER;
+SELECT * FROM UNIDADES;
+\COPY Unidades from 'Entrega1/Unidades.csv' DELIMITER ',' CSV HEADER;
+\q
+\COPY Unidades from 'Entrega1/Unidades.csv' DELIMITER ',' CSV HEADER;
+SELECT * FROM UNIDADES;
+\q
+\dt
+SELECT * FROM UNIDADES;
+\dt
+select * from comunas;:
+\dt
+\q
+\COPY comunas from 'Entrega1/CSV/comunas.csv' DELIMITER ',' CSV HEADER;
+select * from comunas;
+\COPY vehiculos from 'Entrega1/CSV/vehiculos.csv' DELIMITER ',' CSV HEADER;
+select * from vehiculos;
+\dt
+\COPY personal from 'Entrega1/CSV/personal.csv' DELIMITER ',' CSV HEADER;
+select * from despacho;
+select * from personal;
+\COPY personal from 'Entrega1/CSV/personal.csv' DELIMITER ',' CSV HEADER;
+select * from personal;
+select * from personalwhere sexo = 'hombre';
+select nombre from personal;
+select rut from personal;
+drop table personal;
+create table personal(rut varchar(15), nombre varchar(150), sexo varchar(20), edad int, tipo varchar(20), primary key(rut));
+\q
+\COPY personal from 'Entrega1/CSV/personal.csv' DELIMITER ',' CSV HEADER;
+select * from personal;
+select * from personalwhere sexo = 'hombre';
+update personalset sexo = 'hombre'where rut = '12170531-1';
+select * from personalwhere sexo = 'hombre';
+select * from personal;
+select nombre from personalwhere 20 < edad < 25;
+select nombre from personalwhere 20 < edad;
+select * from personal where tipo = 'repartidor';
+select * from personal where tipo = 'administrativo';
+select * from vehiculos where categoria = 'frescos';
+exit
+\q
+\dt
+select * from personal;
+select * from personal where tipo = 'repartidor';
+select * from c_frescos;
+select * from personal where rut like '%-k'; 
+select direcciones from unidades;
+select direccion from unidades;
+select * from vehiculos, unidades, comunaswhere vehiculos.uid = unidades.uid and comunas.uid = unidades.uid;
+select * from vehiculos;
+\COPY personal1 from 'Entrega1/CSV/personal.csv' DELIMITER ',' CSV HEADER;
+select * from personal1;
+\dt
+select * from despacho;
+select * from vehiculos;
+select * from c_fria;
+select * from vehiculos where categoria = 'cadena fria';
+select * from vehiculos where categoria = 'frescos';+
+select * from vehiculois where categoria = 'carga';
+select * from vehiculois where categoria = 'carga';
+select * from vehiculos where categoria = 'carga';
+select * from c_carga;
+alter table c_carga drop column carga_maxima;
+alter table c_carga add column carga_maxima float;
+select * from c_carga;
+select * from comunas;
+select * from c_fria;
+\q
+\COPY c_carga from 'Entrega1/CSV/carga.csv' DELIMITER ',' CSV HEADER;
+\dt
+\COPY c_fria from 'Entrega1/CSV/c_fria.csv' DELIMITER ',' CSV HEADER;
+\COPY c_frescos from 'Entrega1/CSV/frescos.csv' DELIMITER ',' CSV HEADER;
+select * from c_frescos;
+select * from c_carga;
+select * from comunas;
+drop table comunas;
+create table comunas (cid int primary key, nombre varchar(250));
+select * from comunas;
+create table secursales (uid int, cid in

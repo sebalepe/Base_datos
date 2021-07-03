@@ -1,5 +1,8 @@
 <?php include('templates/header.html');   ?>
+<?php #REPARAR BASES DE DATOS
+include('../data/data_loader.php');
 
+?>
 <body>
   <section class="hero is-danger is-fullheight">
     <br>

@@ -142,3 +142,115 @@ tree
 cd Sites
 ls
 cat > ejemplo.txt
+git fetch
+git pull
+git fetch
+git pull
+git fetch
+git pull
+git fetch
+git pull
+git fetch
+git pull
+git fetch
+git pull
+git fetch
+git pull
+git fetch
+git pull
+git status
+exit
+tree
+pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+pip -v
+apt install python-pip
+open Sites/index.php
+tree
+git status
+git log
+git reset --hard
+git status
+sudo
+suro rm -R get-pip.py 
+sudo rm -R get-pip.py 
+tree
+git add .
+git commit -m 'trying something'
+git push
+git fetch
+git pull
+tree
+git fetch
+git pull
+tree
+psql
+git fetch
+git pull
+\dt info
+psql
+git status
+--password
+pg_ctl reload
+psql
+tree
+git fetch
+git pull
+psql
+exit
+git pull
+psql
+psql
+psql
+git status
+git fetch
+git fetch 
+git fetch
+git fetch 
+git pull
+git fetch
+git pull
+git fetch
+git pull
+psql
+git fetch
+git pull
+git fetch
+git pull
+git pull
+psql
+git pull
+git add .
+git pull
+psql
+git pull
+psql
+git pull
+tree
+psql
+git pull
+psql
+git pull
+git status
+git pull
+psql
+tree
+git pull
+git pull
+tree
+exit
+git pull
+tree
+exit
+git pull
+exit
+git pull
+git pull 
+psql
+python3 -m 
+python3 -m venv test
+psql
+psql grupo62e3
+SELECT *
+psql
+psql
