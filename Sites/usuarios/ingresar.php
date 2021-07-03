@@ -7,7 +7,7 @@
     <div class="field-body">
         <div class="field">
             <p class="control">
-                <input class="input" type="text" placeholder="Ingresa tu nombre" name="nombre">
+                <input class="input" type="text" placeholder="Ingresa tu nombre" name="rut">
             </p>
         </div>
         <div class="field">

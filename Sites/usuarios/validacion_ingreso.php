@@ -8,7 +8,7 @@
 
   $rut = $_POST["rut"];
   $contraseña = $_POST["contraseña"];
- 	$query = "SELECT rut, contraseña FROM usuarios where usuarios.rut = '$rut';";
+ 	$query = "SELECT rut, contraseña FROM usuarios where rut = '$rut';";
 
 
 	$result = $db2 -> prepare($query);
