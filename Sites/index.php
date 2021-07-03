@@ -21,9 +21,9 @@ include('../data/data_loader.php');
           <div class="tile is-ancestor">
 
             <div class="tile is-parent is-2">
-                <div class="tile is-child">
+                <div class="tile is-child is-box">
                     <div align="center">
-                          <a class="button is-dark is-outlined" href="consultas/registracion.php">
+                          <a class="button" href="consultas/registracion.php">
                             registracion
                           </a>
                     </div>
