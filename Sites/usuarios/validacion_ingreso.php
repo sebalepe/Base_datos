@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+?>
+
 
 <?php include('../templates/header.html');   ?>
 
@@ -25,8 +29,7 @@
     <p> contraseña incorrecta </p>
     <?php else: ?>
         <?php 
-        session_start();
-        $_SESSION['current_user'] =  $usuario[0];
+        $_SESSION['current_user'] =  "$usuario[0]";
         $_SESSION['current_password'] =  $usuario[0];
         ?>
         <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
