@@ -23,7 +23,10 @@
     <?php if ($contraseña <> $nombres[1]): ?>
     <p> contraseña incorrecta </p>
     <?php else: ?>
-        <p> ingreso exitoso </p>
+        <?php
+        header("Location: http://codd.ing.puc.cl/~grupo62/index.php?");
+        die();
+        ?>
     <?php endif ?>
   <?php endif ?>
 
