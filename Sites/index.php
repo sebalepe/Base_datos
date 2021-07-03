@@ -3,6 +3,11 @@
 include('../data/data_loader.php');
 
 ?>
+
+<?php
+session_start();
+unset($_SESSION["current"]);
+?>
 <body>
   <section class="hero is-danger is-fullheight">
     <br>
