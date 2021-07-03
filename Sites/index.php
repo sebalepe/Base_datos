@@ -24,6 +24,16 @@ include('../data/data_loader.php');
             <div class="tile is-parent is-12 is-vertical">
               <div class="tile is-8 is-child box">
                 <h3 class="title is-4 has-text-black" align="center">
+                <?php
+                        require("config/conexion.php");
+                        $query_años = "SELECT nombre FROM usuarios;";
+                        $result_años = $db2 -> prepare($query_años);
+                        $result_años -> execute();
+                        $años = $result_años -> fetchAll();
+                        foreach ($años as $año) {
+                            echo "<p> $año[0] </p>";
+                            }
+                      ?>
                  Muestre las direcciones de todas las Unidades
                 </h3>
 
