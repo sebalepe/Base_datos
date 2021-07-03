@@ -20,7 +20,7 @@
     <p> nombre de usuario incorrecto </p>
 
   <?php else: ?>
-    <?php if ($contraseña <> $nombres[1] )?>
+    <?php if ($contraseña <> $nombres[1]): ?>
     <p> contraseña incorrecta </p>
     <?php else: ?>
         <p> ingreso exitoso </p>
