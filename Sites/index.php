@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+$_SESSION['current_user'] = '1';
+$_SESSION['current_password'] = '1';
+?>
+
+
 <?php include('templates/header.html');   ?>
 <?php #REPARAR BASES DE DATOS
 include('../data/data_loader.php');

@@ -1,3 +1,4 @@
 <?php 
-    echo "<p> $usuario[0] </p>";
+
+    echo $_SESSION['current_user'];
 ?>

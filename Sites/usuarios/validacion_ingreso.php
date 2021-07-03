@@ -1,3 +1,4 @@
+
 <?php include('../templates/header.html');   ?>
 
 <body>
@@ -5,9 +6,9 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $nombre = $_POST["nombre"];
+  $rut = $_POST["rut"];
   $contraseña = $_POST["contraseña"];
- 	$query = "SELECT nombre, contraseña FROM usuarios where usuarios.nombre = '$nombre';";
+ 	$query = "SELECT rut, contraseña FROM usuarios where usuarios.rut = '$rut';";
 
 
 	$result = $db2 -> prepare($query);
@@ -17,14 +18,14 @@
   ?>
 
   <?php if ($largo == 0): ?>
-    <p> nombre de usuario incorrecto </p>
+    <p> rut no encontrado </p>
 
   <?php else: ?>
     <?php if ($contraseña <> $usuario[1]): ?>
     <p> contraseña incorrecta </p>
     <?php else: ?>
         <?php 
-        global $usuario;
+        $_SESSION['current_user'] =  $usuario[0];
         ?>
         <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
     <?php endif ?>
