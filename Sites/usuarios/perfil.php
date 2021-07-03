@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	$rut = $_SESSION['current_user'];
 ?>
 
 
@@ -11,7 +12,7 @@
   require("../config/conexion.php");
 
 	
-	$query = "SELECT * FROM usuarios where rut = '$_SESSION['current_user']';";
+	$query = "SELECT * FROM usuarios where rut = '$rut';";
 
 
 	$result = $db2 -> prepare($query);
