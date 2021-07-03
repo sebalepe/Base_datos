@@ -13,7 +13,7 @@
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$nombres = $result -> fetchAll();
-	$largo = len($nombres);
+	$largo = count($nombres);
   ?>
 
   <?php if ($largo == 0): ?>
