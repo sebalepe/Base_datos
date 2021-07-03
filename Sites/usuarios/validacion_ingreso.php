@@ -24,7 +24,7 @@
     <p> contraseña incorrecta </p>
     <?php else: ?>
         <?php
-        $_SESSION["current"] = $nombres[0];
+        $_SESSION['current'] = $nombres[0];
         ?>
         <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
     <?php endif ?>
