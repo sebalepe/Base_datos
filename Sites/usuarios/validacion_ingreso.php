@@ -18,7 +18,7 @@
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$usuario = $result -> fetchAll();
-	$largo = count($usuario);
+	$largo = count($usuario[0]);
   ?>
 
   <?php if ($largo == 0): ?>
