@@ -19,7 +19,10 @@ include('../data/data_loader.php');
     </div>
     <div class="hero-body">
           <div class="tile is-ancestor">
-
+            <div class="tile is-parent">
+              <div class='tile is-child'>
+              </div>
+            </div>
             <div class="tile is-parent is-2">
                 <div class="tile is-child is-box">
                     <div align="center">
@@ -32,7 +35,10 @@ include('../data/data_loader.php');
                     </div>
                 </div>
             </div>
-
+            <div class="tle is-parent">
+              <div class='tile is-child'>
+              </div>
+            </div>
 
           </div>
         <br/><br/>

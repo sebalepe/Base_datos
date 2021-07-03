@@ -23,9 +23,9 @@
     <?php if ($contraseña <> $nombres[1]): ?>
     <p> contraseña incorrecta </p>
     <?php else: ?>
-        <?php
+        <?php session_start(); ?>
         $_SESSION['current'] = $nombres[0];
-        ?>
+        
         <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
     <?php endif ?>
   <?php endif ?>
