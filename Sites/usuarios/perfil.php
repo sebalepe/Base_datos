@@ -1,3 +1,3 @@
 <?php session_start();
-    echo $_SESSION['current'];
+    echo "<p> $_SESSION['current'] </p>";
 ?>
