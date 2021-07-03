@@ -23,8 +23,8 @@
     <?php if ($contraseña <> $usuario[1]): ?>
     <p> contraseña incorrecta </p>
     <?php else: ?>
-        <?php session_start();
-        $_SESSION['current'] = $usuario[0];
+        <?php 
+        global $usuario;
         ?>
         <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
     <?php endif ?>
