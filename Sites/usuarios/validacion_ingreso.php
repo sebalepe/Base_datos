@@ -12,19 +12,19 @@
 
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	$nombres = $result -> fetchAll();
-	$largo = count($nombres);
+	$usuario = $result -> fetchAll();
+	$largo = count($usuario);
   ?>
 
   <?php if ($largo == 0): ?>
     <p> nombre de usuario incorrecto </p>
 
   <?php else: ?>
-    <?php if ($contraseña <> $nombres[1]): ?>
+    <?php if ($contraseña <> $usuario[1]): ?>
     <p> contraseña incorrecta </p>
     <?php else: ?>
         <?php session_start();
-        $_SESSION['current'] = $nombres[0];
+        $_SESSION['current'] = $usuario[0];
         ?>
         
     <?php endif ?>
