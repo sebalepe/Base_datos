@@ -23,8 +23,11 @@ include('../data/data_loader.php');
             <div class="tile is-parent is-2">
                 <div class="tile is-child is-box">
                     <div align="center">
-                          <a class="button" href="consultas/registracion.php">
+                          <a class="button" href="usuarios/registracion.php">
                             registracion
+                          </a>
+                          <a class="button" href="usuarios/ingresar.php">
+                            ingreso
                           </a>
                     </div>
                 </div>
