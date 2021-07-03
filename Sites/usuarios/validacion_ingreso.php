@@ -26,7 +26,7 @@
         <?php session_start();
         $_SESSION['current'] = $usuario[0];
         ?>
-        
+        <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
     <?php endif ?>
   <?php endif ?>
 
