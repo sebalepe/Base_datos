@@ -1,3 +1,3 @@
 <?php
-    echo "<p>$_SESSION['current']</p>";
+    echo $_SESSION['current'];
 ?>
