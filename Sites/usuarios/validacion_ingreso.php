@@ -30,7 +30,7 @@
     <?php else: ?>
         <?php 
         $_SESSION['current_user'] =  $usuario[0];
-        $_SESSION['current_password'] =  $usuario[0];
+        $_SESSION['current_password'] =  $usuario[1];
         ?>
         <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
     <?php endif ?>
