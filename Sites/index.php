@@ -33,8 +33,8 @@ include('../data/data_loader.php');
               <h3 class="title is-4 has-text-black" align="center">
                 <?php
                         require("config/conexion.php");
-                        $query = "SELECT * FROM personal;";
-                        $result= $db -> prepare($query);
+                        $query = "SELECT * FROM tiendas;";
+                        $result= $db2 -> prepare($query);
                         $result -> execute();
                         $años = $result -> fetchAll();   
                         $len = count($años);
