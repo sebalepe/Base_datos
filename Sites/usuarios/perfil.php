@@ -33,10 +33,10 @@ echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
 		<div class='tile is-child box'>
 			<?php 
 			for ($i=0; $i<1; $i++) {
-		        echo "<p>". $info[$i][0] . "</p>";
-		        echo "<p>". $info[$i][1] . "</p>";
-		        echo "<p>". $info[$i][2] . "</p>";
-		        echo "<p>". $info[$i][3] . "</p>";
+		        echo "<p> Nombre: ". $info[$i][0] . "</p>";
+		        echo "<p> Edad: ". $info[$i][1] . "</p>";
+		        echo "<p> Rut: ". $info[$i][2] . "</p>";
+		        echo "<p> Direccion: ". $info[$i][3] . "</p>";
 		    }
 
 			?>
