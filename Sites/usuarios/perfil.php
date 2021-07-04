@@ -61,7 +61,7 @@
 
 				foreach ($compras as $compra) {
 
-					if (in_array($compra[0], $id_comestibles)):
+					if (in_array([$compra[0]], $id_comestibles)):
 						echo "wena";
 					else:
 						echo "casi";
