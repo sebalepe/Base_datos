@@ -38,8 +38,7 @@
 								<p> Comuna: $tienda[1] </p>
 								
 								<form align='center' action='Tiendas/show.php' method='post'>
-									<input name='id' value='$tienda[2]'>
-								    <input class='button is-danger' type='submit' value='Ver Tienda' >
+								    <button name='id' type='submit' value='$tiendas[2]'> Ver Tienda </button>
 								</form>
 							 </div>";
 					}

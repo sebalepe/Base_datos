@@ -8,7 +8,7 @@
   #Se obtiene el valor del input del usuario
   $id = $_POST["id"];
 
-  echo $id
+  echo $id;
 
   #Se construye la consulta como un string
  	$query = "SELECT * from tiendas where id = '$id' ;"
