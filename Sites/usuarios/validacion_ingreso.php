@@ -32,7 +32,7 @@
         $_SESSION['current_user'] =  $usuario[0][0];
         $_SESSION['current_password'] =  $usuario[0][1];
         ?>
-        <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
+        <meta http-equiv="refresh" content="0;url=../home.php">
     <?php endif ?>
   <?php endif ?>
 
