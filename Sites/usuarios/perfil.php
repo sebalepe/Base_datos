@@ -40,7 +40,7 @@
 
 				?>
 			</div>
-			<div class='tile is-child is-3 m-3'>
+			<div class='tile is-child is-3 m-3 box'>
 			<p class="subtitle is-5"> 
 				Tus compras:
 			</p>
@@ -49,9 +49,11 @@
 						FROM compras where id_comprador = '$id';";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
-				$compras = $result -> fetchAll(); 
-			
+				$compras = $result -> fetchAll();
+				$len = count($compras)
+
 				foreach ($compras as $compra) {
+					echo "<p> $len </p>"
 					echo "<p> id: ". $compra[0] . "</p>";
 					echo "<p> Cantidad: ". $compra[1] . "</p>";
 				}
