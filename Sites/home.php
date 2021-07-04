@@ -1,7 +1,5 @@
-
 <?php
-session_start();
-
+	session_start();
 ?>
 
 <?php include('templates/header.html');   ?>
@@ -25,7 +23,7 @@ session_start();
 	          <div class="tile is-parent is-vertical">
 
 	          	<?php 
-	          		require("../config/conexion.php");
+	          		require("config/conexion.php");
 	          		$query = "SELECT nombre, comuna_tienda from tiendas;"; 
 
 	          		$result = $db2 -> prepare($query);

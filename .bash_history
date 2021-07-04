@@ -254,3 +254,13 @@ psql grupo62e3
 SELECT *
 psql
 psql
+git status
+git add
+git add .
+git commit -m 'conectando base ettinier'
+git push
+git pull
+git pull 
+git pull
+git pull 
+git pull

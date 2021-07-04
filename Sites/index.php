@@ -8,6 +8,11 @@ $_SESSION['boss'] = '0';
 
 
 <?php include('templates/header.html');   ?>
+<<<<<<< HEAD
+=======
+<?php #REPARAR BASES DE DATOS
+#include('../data/data_loader.php');
+>>>>>>> 465aa2c56cd55f9726e2149cc98e0cf45183b364
 
 
 
