@@ -23,7 +23,7 @@
 <p class='title is-4'> Bienvenido a Tu Perfil! </p>
 
 <?php 
-echo "<p class='subtitle is-4> $info2[0] pasalo bien </p> ";
+echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
 ?>
 
 <div class='tile is-ancestor'>
