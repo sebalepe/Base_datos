@@ -53,7 +53,7 @@
 				$len = count($compras)
 
 				foreach ($compras as $compra) {
-					echo "<p> $len </p>"
+					echo "<p> $len </p>";
 					echo "<p> id: ". $compra[0] . "</p>";
 					echo "<p> Cantidad: ". $compra[1] . "</p>";
 				}
