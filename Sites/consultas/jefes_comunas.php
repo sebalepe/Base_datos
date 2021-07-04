@@ -14,7 +14,7 @@
 
   #Se construye la consulta como un string
  	$query = "SELECT * FROM personal, (SELECT jefe FROM unidades, (SELECT uid FROM zonas WHERE
- 	cobertura = '$comuna1' INTERSECT SELECT uid FROM zonas WHERE cobertura = '$comuna2')
+ 	cobertura LIKE '%$comuna1%' INTERSECT SELECT uid FROM zonas WHERE cobertura LIKE '%$comuna2%')
  	AS u WHERE unidades.uid = u.uid) AS jefes WHERE personal.id = jefes.jefe;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados

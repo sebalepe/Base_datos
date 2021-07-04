@@ -5,19 +5,18 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  #Se obtiene el valor del input del usuario
   $comuna = $_POST["comuna"];
   $comuna = strtolower($comuna);
   $año = $_POST["año"];
 
 
-  #Se construye la consulta como un string
- 	$query = "SELECT * FROM vehiculos,(SELECT vehiculo FROM direcciones,
+  
+ 	$query = "SELECT * FROM vehiculos,(SELECT vehiculo, comuna FROM direcciones,
  	(SELECT * FROM despacho WHERE CAST(fecha AS text) LIKE '$año%') AS año_vehi
- 	WHERE año_vehi.id_destino = direcciones.id AND direcciones.comuna = '$comuna') AS v_año
+ 	WHERE año_vehi.id_destino = direcciones.id AND direcciones.comuna LIKE '%$comuna%') AS v_año
  	WHERE vehiculos.id = v_año.vehiculo;";
 
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+ 
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$vehiculos = $result -> fetchAll();
@@ -33,6 +32,7 @@
           <th>Estado</th>
           <th>Tipo</th>
           <th>Unidad</th>
+          <th>Comuna</th>
         </tr>
 
           <?php
@@ -43,6 +43,7 @@
                         <td>$vehiculo[2]</td>
                         <td>$vehiculo[3]</td>
                         <td>$vehiculo[4]</td>
+                        <td>$vehiculo[6]</td>
                     </tr>";
           }
           ?>

@@ -2,15 +2,15 @@
 
 <body>
 <?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+ 
   require("../config/conexion.php");
 
-  $comuna_elegida = $_POST["comuna_elegida"];
-  $comuna_elegida = strtolower($comuna_elegida);
+  $comuna = $_POST["comuna"];
+  $comuna = strtolower($comuna);
 
- 	$query = "SELECT * FROM vehiculos, (SELECT uid FROM direcciones, unidades WHERE
- 	unidades.direccion_id = direcciones.id AND direcciones.comuna = '$comuna_elegida')
- 	as unidades WHERE vehiculos.unidad = unidades.uid;";
+ 	$query = "SELECT * FROM vehiculos, (SELECT uid, direcciones.comuna FROM direcciones, unidades WHERE
+ 	unidades.direccion_id = direcciones.id AND direcciones.comuna LIKE '%$comuna%')
+ 	AS unidades WHERE vehiculos.unidad = unidades.uid;";
   
 	$result = $db -> prepare($query);
 	$result -> execute();
@@ -22,19 +22,22 @@
   	<table class='table'>
       <tr>
         <th>ID</th>
-        <th>patente</th>
-        <th>estado</th>
-        <th>tipo</th>
-        <th>unidad</th>
+        <th>Patente</th>
+        <th>Estado</th>
+        <th>Tipo</th>
+        <th>Unidad</th>
+        <th>Comuna</th>
       </tr>
     <?php
   	foreach ($vehiculos as $vehiculo) {
-    		echo "<tr>
+    		echo "
+              <tr>
                 <td>$vehiculo[0]</td>
                 <td>$vehiculo[1]</td>
                 <td>$vehiculo[2]</td>
                 <td>$vehiculo[3]</td>
                 <td>$vehiculo[4]</td>
+                <td>$vehiculo[6]</td>
               </tr>";
   	}
     ?>
