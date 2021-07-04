@@ -54,7 +54,7 @@
 				$query = "SELECT id FROM comestibles;";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
-				$id_comestibles = $result -> fetchAll(); id_  = [[1],[2],[3],[4]]
+				$id_comestibles = $result -> fetchAll();
 
 
 
