@@ -18,30 +18,33 @@
 	$result -> execute();
 	$info = $result -> fetchAll(); 
 	$info2 = $info[0];
+	$id = $info2[4];
   ?>
+<div clas='m-6'>
+	<p class='title is-4'> Bienvenido a Tu Perfil! </p>
 
-<p class='title is-4'> Bienvenido a Tu Perfil! </p>
+	<?php 
+	echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
+	?>
 
-<?php 
-echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
-?>
+	<div class='tile is-ancestor'>
+		<div class='tile is-parent'>
+			<div class='tile is-child is-3 m-3'>
+			</div>
+			<div class='tile is-child box m-3'>
+				<?php 
+				for ($i=0; $i<1; $i++) {
+			        echo "<p> Nombre: ". $info[$i][0] . "</p>";
+			        echo "<p> Edad: ". $info[$i][1] . "</p>";
+			        echo "<p> Rut: ". $info[$i][2] . "</p>";
+			        echo "<p> Direccion: ". $info[$i][3] . "</p>";
+			    }
 
-<div class='tile is-ancestor'>
-	<div class='tile is-parent'>
-		<div class='tile is-child is-3'>
-		</div>
-		<div class='tile is-child box'>
-			<?php 
-			for ($i=0; $i<1; $i++) {
-		        echo "<p> Nombre: ". $info[$i][0] . "</p>";
-		        echo "<p> Edad: ". $info[$i][1] . "</p>";
-		        echo "<p> Rut: ". $info[$i][2] . "</p>";
-		        echo "<p> Direccion: ". $info[$i][3] . "</p>";
-		    }
+				?>
+			</div>
+			<div class='tile is-child is-3 m-3'>
 
-			?>
-		</div>
-		<div class='tile is-child is-3'>
+			</div>
 		</div>
 	</div>
 </div>
