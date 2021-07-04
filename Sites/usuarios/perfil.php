@@ -28,7 +28,7 @@
 	?>
 
 	<div class='tile is-ancestor'>
-		<div class='tile is-parent'>
+		<div class='tile is-parent is-vertical'>
 			<div class='tile is-child box m-3'>
 				<?php 
 				for ($i=0; $i<1; $i++) {
@@ -50,12 +50,26 @@
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$compras = $result -> fetchAll();
-				$len = count($compras);
+
+				$query = "SELECT id FROM comestibles;";
+				$result = $db2 -> prepare($query);
+				$result -> execute();
+				$id_comestibles = $result -> fetchAll(); id_  = [[1],[2],[3],[4]]
+
+
+
 
 				foreach ($compras as $compra) {
-					echo "<p> $len </p>";
+
+					if (in_array([$compra[0]], $id_comestibles)):
+							echo "wena";
+					else:
+						echo "casi";
+					endif
+
 					echo "<p> id: ". $compra[0] . "</p>";
 					echo "<p> Cantidad: ". $compra[1] . "</p>";
+					echo "<p> ----------------------------- </p>";
 				}
 			?>
 			</div>
