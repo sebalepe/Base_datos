@@ -33,12 +33,12 @@ include('../data/data_loader.php');
               <h3 class="title is-4 has-text-black" align="center">
                 <?php
                         require("config/conexion.php");
-                        $query = "SELECT * FROM tiendas;";
+                        $query = "SELECT rut, contraseña FROM usuarios;";
                         $result= $db2 -> prepare($query);
                         $result -> execute();
                         $años = $result -> fetchAll();   
                         $len = count($años);
-                        echo "<p> $len </p> ";
+                        echo "<p> $años[0], $años[1] </p> ";
                       
                 ?>
                 </h3>
