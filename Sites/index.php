@@ -8,7 +8,7 @@ $_SESSION['current_password'] = '1';
 
 <?php include('templates/header.html');   ?>
 <?php #REPARAR BASES DE DATOS
-include('../data/data_loader.php');
+#include('../data/data_loader.php');
 
 ?>
 
