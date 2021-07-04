@@ -40,7 +40,8 @@
 								<form align='center' action='Tiendas/show.php' method='post'>
 									<input name='id' value='$tienda[2]'>
 								    <input class='button is-danger' type='submit' value='Ver Tienda' >
-								</form>";
+								</form>
+							 </div>";
 					}
 	          	?>
 	          </div>	
