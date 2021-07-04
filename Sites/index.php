@@ -33,15 +33,14 @@ include('../data/data_loader.php');
               <h3 class="title is-4 has-text-black" align="center">
                 <?php
                         require("config/conexion.php");
-                        $query_años = "SELECT rut, contraseña FROM usuarios;";
-                        $result_años = $db2 -> prepare($query_años);
-                        $result_años -> execute();
-                        $años = $result_años -> fetchAll();
+                        $query = "SELECT rut, contraseña FROM usuarios;";
+                        $result= $db2 -> prepare($query);
+                        $result -> execute();
+                        $años = $result -> fetchAll();
                         foreach ($años as $año) {
                             echo "<p> $año[0], $año[1] </p>";
                             }
-                      ?>
-                 Muestre las direcciones de todas las Unidades
+                ?>
                 </h3>
               </div>
             </div>
