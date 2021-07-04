@@ -20,7 +20,7 @@
 	$result -> execute();
 	$usuario = $result -> fetchAll();
 	$largo = count($usuario[0]);
-  print_r($usuario[0]); 
+  print_r($usuario[0][0]); 
   ?>
 
   <?php if ($largo == 0): ?>
