@@ -14,7 +14,7 @@
  	$query = "SELECT * from tiendas where id = '$id' ;"
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	$result = $db -> prepare($query);
+	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$Tiendas = $result -> fetchAll();
   $Tienda = $Tiendas[0]
