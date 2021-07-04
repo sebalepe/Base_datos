@@ -67,9 +67,7 @@
 						echo "casi";
 					endif
 
-					echo "<p> id: ". $compra[0] . "</p>";
-					echo "<p> Cantidad: ". $compra[1] . "</p>";
-					echo "<p> ----------------------------- </p>";
+					
 				}
 			?>
 			</div>
