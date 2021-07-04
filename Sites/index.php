@@ -38,7 +38,8 @@ include('../data/data_loader.php');
                         $result -> execute();
                         $años = $result -> fetchAll();   
                         
-                        foreach ($año as $año) {
+                        
+                        foreach ($años as $año) {
                           echo "<p> $año[0], $año[1] </p> ";
                         }
 
