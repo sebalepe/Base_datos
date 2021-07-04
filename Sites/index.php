@@ -38,12 +38,9 @@ include('../data/data_loader.php');
                         $result -> execute();
                         $años = $result -> fetchAll();   
                         $len = count($años);
-                        foreach ($años as $año) {
-                          echo "<p>
-                                    $len, $año[0], $año[1]
-                                </p>";
-                          }
-                       ?>
+                        echo "<p> años </p> ";
+                      
+                ?>
                 </h3>
               </div>
             </div>
