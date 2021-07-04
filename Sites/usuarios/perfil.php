@@ -12,7 +12,7 @@
   require("../config/conexion.php");
 
 	
-	$query = "SELECT * FROM usuarios ;";
+	$query = "SELECT * FROM usuarios where rut = '$rut';";
 
 
 	$result = $db2 -> prepare($query);
