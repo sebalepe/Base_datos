@@ -65,8 +65,7 @@
 							echo "wena";
 					else:
 						echo "casi";
-					endif
-
+					endif;
 					
 				}
 			?>
