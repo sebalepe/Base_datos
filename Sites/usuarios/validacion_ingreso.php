@@ -23,7 +23,7 @@
 
 
   foreach ($usuario as $value) {
-    echo $value
+    echo $value;
    } 
   ?>
 
