@@ -38,7 +38,7 @@ include('../data/data_loader.php');
                         $result -> execute();
                         $años = $result -> fetchAll();   
                         $len = count($años);
-                        echo "<p> años </p> ";
+                        echo "<p> $años </p> ";
                       
                 ?>
                 </h3>
