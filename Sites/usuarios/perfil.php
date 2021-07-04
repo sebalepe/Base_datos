@@ -50,7 +50,7 @@
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$compras = $result -> fetchAll();
-				$len = count($compras)
+				$len = count($compras);
 
 				foreach ($compras as $compra) {
 					echo "<p> $len </p>";
