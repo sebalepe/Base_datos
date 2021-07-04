@@ -12,7 +12,6 @@
 
   $rut = $_POST["rut"];
   $contraseña = $_POST["contraseña"];
-  echo $contraseña;
  	$query = "SELECT rut, contraseña FROM usuarios where rut = '$rut';";
 
 
@@ -21,22 +20,16 @@
 	$usuario = $result -> fetchAll();
 	$largo = count($usuario[0]);
 
-
-  foreach ($usuario as $value) {
-    echo $value[0], $value[1];
-   } 
-  ?>
-
   <?php if ($largo == 0): ?>
     <p> rut no encontrado </p>
 
   <?php else: ?>
-    <?php if ($contraseña <> $usuario[1]): ?>
+    <?php if ($contraseña <> $usuario[0][1]): ?>
     <p> contraseña incorrecta </p>
     <?php else: ?>
         <?php 
-        $_SESSION['current_user'] =  $usuario[0];
-        $_SESSION['current_password'] =  $usuario[1];
+        $_SESSION['current_user'] =  $usuario[0][0];
+        $_SESSION['current_password'] =  $usuario[0][1];
         ?>
         <meta http-equiv="refresh" content="0;url=../usuarios/perfil.php">
     <?php endif ?>
