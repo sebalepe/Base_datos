@@ -19,6 +19,7 @@
 	$result -> execute();
 	$usuario = $result -> fetchAll();
 	$largo = count($usuario[0]);
+?>
 
   <?php if ($largo == 0): ?>
     <p> rut no encontrado </p>
