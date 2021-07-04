@@ -37,10 +37,22 @@ include('../data/data_loader.php');
                         $result= $db2 -> prepare($query);
                         $result -> execute();
                         $años = $result -> fetchAll();
+                    ?>
+
+                    <table class = 'table'>
+
+                          <tr>
+                            <th>rut</th>
+                            <th>contraseña</th>
+                          </tr>
+                      <?php     
                         foreach ($años as $año) {
-                            echo "<p> $año[0], $año[1] </p>";
-                            }
-                ?>
+                          echo "<tr>
+                                    <td>$año[0]</td>
+                                    <td>$año[1]</td>
+                                </tr>";
+                          }
+                       ?>
                 </h3>
               </div>
             </div>
