@@ -37,8 +37,11 @@ include('../data/data_loader.php');
                         $result= $db2 -> prepare($query);
                         $result -> execute();
                         $años = $result -> fetchAll();   
-                        $len = count($años);
-                        echo "<p> $años[0], $años[1] </p> ";
+                        
+                        foreach ($año as $año) {
+                          echo "<p> $año[0], $año[1] </p> ";
+                        }
+
                       
                 ?>
                 </h3>
