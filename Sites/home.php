@@ -33,12 +33,10 @@
 
 					foreach ($Tiendas as $tienda) {
 						echo "<div class='tile is-child box'>
-								
 								<p> Nombre: $tienda[0] </p>
 								<p> Comuna: $tienda[1] </p>
-								
 								<form align='center' action='Tiendas/show.php' method='post'>
-								    <button class='button is-danger'   name='id' type='submit' value='$tiendas[2]'> Ver Tienda </button>
+								    <button class='button is-danger'   name='id' type='submit' value='$tienda[2]'> Ver Tienda </button>
 								</form>
 							 </div>";
 					}
