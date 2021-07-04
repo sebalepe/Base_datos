@@ -33,7 +33,7 @@ include('../data/data_loader.php');
               <h3 class="title is-4 has-text-black" align="center">
                 <?php
                         require("config/conexion.php");
-                        $query = "SELECT rut FROM usuarios;";
+                        $query = "SELECT * FROM usuarios;";
                         $result= $db2 -> prepare($query);
                         $result -> execute();
                         $años = $result -> fetchAll();   
