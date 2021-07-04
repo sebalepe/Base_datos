@@ -24,7 +24,7 @@
 
 	          	<?php 
 	          		require("config/conexion.php");
-	          		$query = "SELECT nombre, comuna_tienda from tiendas;"; 
+	          		$query = "SELECT nombre, comuna_tienda, id from tiendas;"; 
 
 	          		$result = $db2 -> prepare($query);
 					$result -> execute();
@@ -33,11 +33,17 @@
 
 					foreach ($Tiendas as $tienda) {
 						echo "<div class='tile is-child box'>
-								<p> Nombre: $tienda[0] </p>
-								<p> Comuna: $tienda[1] </p>
-							  </div>";
+								<div align='center'>
+									<p> Nombre: $tienda[0] </p>
+									<p> Comuna: $tienda[1] </p>
+								</div>
+								<div align='center'>
+									<form align='center' action='Tiendas/show.php' method='post'>
+										<input name='id' value='$tienda[2]'>
+									    <input class='button is-danger' type='submit' value='Ver Tienda' >
+									</form>
+								</div>";
 					}
-
 	          	?>
 	          </div>	
           </div>
