@@ -53,6 +53,7 @@
 				$compras = $result -> fetchAll(); 
 			
 				foreach ($compras as $compra) {
+					echo $compra[0];
 					echo "<p> Nombre: ". $compra[0] . "</p>";
 					echo "<p> Precio: ". $compra[1] . "</p>";
 					echo "<p> Descripcion: ". $compra[2] . "</p>";
