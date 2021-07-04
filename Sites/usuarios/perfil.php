@@ -32,9 +32,9 @@ echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
 		</div>
 		<div class='tile is-child box'>
 			<?php 
-			foreach ($info2 as $value) {
-				echo "<p> $value </p>";
-			}
+			for ($i=0; $i<1; $i++) {
+		        echo "<p>". $info[$i][0] . "</p>";
+		    }
 
 			?>
 		</div>
