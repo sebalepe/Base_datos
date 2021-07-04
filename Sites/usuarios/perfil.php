@@ -29,8 +29,6 @@
 
 	<div class='tile is-ancestor'>
 		<div class='tile is-parent'>
-			<div class='tile is-child is-3 m-3'>
-			</div>
 			<div class='tile is-child box m-3'>
 				<?php 
 				for ($i=0; $i<1; $i++) {
@@ -43,7 +41,28 @@
 				?>
 			</div>
 			<div class='tile is-child is-3 m-3'>
+			<p class="subtitle is-5"> 
+				Tus compras:
+			</p>
+			<?php 
+				$query = "SELECT nombre, precio, descripción, cantidad_producto
+						FROM compras, comestibles, no_comestibles where id_comprador = '$id' and 
+						(id_producto = comestibles.id or id_producto = no_comestibles.id) ;";
+				$result = $db2 -> prepare($query);
+				$result -> execute();
+				$compras = $result -> fetchAll(); 
+			
+				foreach ($compras as $compra) {
+					echo "<p> Nombre: ". $compra[0] . "</p>";
+					echo "<p> Precio: ". $compra[1] . "</p>";
+					echo "<p> Descripcion: ". $compra[2] . "</p>";
+					echo "<p> Cantidad: ". $compra[3] . "</p>";
+				}
 
+
+			?>
+			</div>
+			<div class='tile is-child is-3 m-3'>
 			</div>
 		</div>
 	</div>
