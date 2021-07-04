@@ -12,6 +12,7 @@
 
   $rut = $_POST["rut"];
   $contraseña = $_POST["contraseña"];
+  echo $contraseña;
  	$query = "SELECT rut, contraseña FROM usuarios where rut = '$rut';";
 
 
