@@ -34,6 +34,9 @@ echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
 			<?php 
 			for ($i=0; $i<1; $i++) {
 		        echo "<p>". $info[$i][0] . "</p>";
+		        echo "<p>". $info[$i][1] . "</p>";
+		        echo "<p>". $info[$i][2] . "</p>";
+		        echo "<p>". $info[$i][3] . "</p>";
 		    }
 
 			?>
