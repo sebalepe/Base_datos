@@ -55,8 +55,7 @@
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$id_comestibles = $result -> fetchAll();
-
-
+				
 
 
 				foreach ($compras as $compra) {
