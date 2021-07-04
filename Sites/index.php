@@ -33,24 +33,14 @@ include('../data/data_loader.php');
               <h3 class="title is-4 has-text-black" align="center">
                 <?php
                         require("config/conexion.php");
-                        $query = "SELECT rut, contraseña FROM usuarios;";
-                        $result= $db2 -> prepare($query);
+                        $query = "SELECT rut, nombre FROM personal;";
+                        $result= $db -> prepare($query);
                         $result -> execute();
-                        $años = $result -> fetchAll();
-                    ?>
-
-                    <table class = 'table'>
-
-                          <tr>
-                            <th>rut</th>
-                            <th>contraseña</th>
-                          </tr>
-                      <?php     
+                        $años = $result -> fetchAll();   
                         foreach ($años as $año) {
-                          echo "<tr>
-                                    <td>$año[0]</td>
-                                    <td>$año[1]</td>
-                                </tr>";
+                          echo "<p>
+                                    $año[0], $año[1]
+                                </p>";
                           }
                        ?>
                 </h3>
