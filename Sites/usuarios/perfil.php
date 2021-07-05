@@ -63,6 +63,7 @@
 				    foreach ($id_comestibles as $id_com){
 				        if ($compra[0] == $id_com[0]){
 				            $value = 1;
+				            echo $id_com[0];
 				        }
 				    }
 				    if ($value == 1){
