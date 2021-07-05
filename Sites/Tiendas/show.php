@@ -227,7 +227,9 @@
         $lista_comunas = $comunas[0]; 
         $l_comunas = $lista_comunas[0]; 
         $comunas = explode(",", $l_comunas);
-        echo $comunas;
+        foreach ($comunas as $value) {
+          echo $value;
+        }
     
         if (in_array($n_comuna, $comunas)){
           echo "weeena";
