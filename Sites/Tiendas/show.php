@@ -15,7 +15,9 @@
 
   
   $id = $_POST["id"];
-  $_SESSION['tienda_actual'] = $id;
+  if(count($id) <> 0){
+    $_SESSION['tienda_actual'] = $id;
+  }
   echo $_SESSION['tienda_actual'];
 
   $query = "SELECT id, direccion, nombre, comunas, comuna_tienda 
@@ -50,7 +52,7 @@
                     <p class="title is-6 has-text-black"> Productos Comestibles </p>
                     <?php 
                         $id = $_SESSION['tienda_actual'];
-                        echo $id;
+                        echo $_SESSION['tienda_actual'];
                         $query = "SELECT nombre, precio, id  from comestibles where id_tienda = '$id' 
                                   order by precio limit 3;";
                         $result = $db2 -> prepare($query);
