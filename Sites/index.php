@@ -3,17 +3,11 @@ session_start();
 
 $_SESSION['current_user'] = '1';
 $_SESSION['current_password'] = '1';
-$_SESSION['boss'] = '0';
+$_SESSION['boss'] = '';
 ?>
 
 
 <?php include('templates/header.html');   ?>
-<<<<<<< HEAD
-=======
-<?php #REPARAR BASES DE DATOS
-#include('../data/data_loader.php');
->>>>>>> 465aa2c56cd55f9726e2149cc98e0cf45183b364
-
 
 
 <body>
@@ -27,7 +21,7 @@ $_SESSION['boss'] = '0';
     <div class="hero-head">
         <h1 class="title is-1" align="center">CheemsCO </h1>
           <p class='subtitle is-5' style="text-align:center;">
-            Todo lo que necesitas para administrar tu negocio
+            Bienvenido
           </p>
     </div>
     <div class="hero-body">

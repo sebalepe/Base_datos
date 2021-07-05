@@ -31,21 +31,41 @@
 
 ?>
 
-<div class="modal">
+<div id="modal" class="modal">
   <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Test</p>
-      <button class="delete" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-     WENA
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button">Volver</button>
-    </footer>
-  </div>
-</div>
+  <div class="modal-content">
+    <div class="box">
+      <article class="media">               
+        <div class="media-content">       
+          <div class="content">               
+            <p>                 
+                               
+            </p>                 
+          </div>                 
+        </div> 
+        <button class="button is-danger is-small" id="closebtn">Close Modal</button>                
+      </article>                
+    </div>                
+  </div>                
+  <button class="modal-close is-large" aria-label="close"></button>                
+</div>               
+<button class="button is-danger is-large" id="lanuchModal">Show Modal</button>               
+<script>                 
+$("#lanuchModal").click(function() {
+
+$(".modal").addClass("is-active");                 
+});
+
+$(".modal-close").click(function() {
+
+ $(".modal").removeClass("is-active");               
+});
+
+$("#closebtn").click(function() {
+ $(".modal").removeClass("is-active");              
+});
+
+</script>
 
 
 
