@@ -130,26 +130,26 @@
         $len1 = count($comestibles);
         $len2 = count($no_comestibles);
 
-        foreach ($comestibles as $producto) {
+        foreach ($comestibles as $com) {
           echo "<p>  
                   <div class='columns'>
                     <div class='column'>
-                      <p> $producto[0]: $producto[1] </p>
+                      <p> $com[0]: $com[1] </p>
                     </div>
                     <div class='column'>
-                      <p> $: $producto[2] </p>
+                      <p> $: $com[2] </p>
                     </div>
                   </div> 
                 </p>";
         }
-        foreach ($no_comestibles as $producto) {
+        foreach ($no_comestibles as $com) {
           echo "<p>  
                   <div class='columns'>
                     <div class='column'>
-                      <p> $producto[0]: $producto[1] </p>
+                      <p> $com[0]: $com[1] </p>
                     </div>
                     <div class='column'>
-                      <p> $: $producto[2] </p>
+                      <p> $: $com[2] </p>
                     </div>
                   </div> 
                 </p>";
