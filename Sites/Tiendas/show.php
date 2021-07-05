@@ -115,78 +115,48 @@
       if(isset($_POST['nombre'])){
         $nombre = $_POST['nombre'];
       
-        $query = "SELECT id FROM comestibles ;";
+        $query = "SELECT nombre, descripcion, precio, id FROM comestibles 
+                  where nombre like '%$nombre%' and id_tienda = $id ;";
         $result = $db2 -> prepare($query);
         $result -> execute();
-        $id_comestibles = $result -> fetchAll();
+        $comestibles = $result -> fetchAll(); 
 
-        $query = "SELECT id FROM no_comestibles ;";
+        $query = "SELECT nombre, descripcion, precio, id FROM no_comestibles 
+                  where nombre like '%$nombre%' and id_tienda = $id;";
         $result = $db2 -> prepare($query);
         $result -> execute();
-        $id_no_comestibles = $result -> fetchAll();
+        $no_comestibles = $result -> fetchAll();
 
-        $value = 0;
+        $len1 = count($comestibles)
+        $len2 = count($no_comestibles)
 
-        foreach ($compras as $compra) {
-            foreach ($id_comestibles as $id_com){
-                if ($compra[0] == $id_com[0]){
-                    $value = 1;
-                }
-            }
+        foreach ($comestibles as $producto) {
+          echo "<p>  
+                  <div class='columns'>
+                    <div class='column'>
+                      <p> $producto[0]: $producto[1] </p>
+                    </div>
+                    <div class='column'>
+                      <p> $: $producto[2] </p>
+                    </div>
+                  </div> 
+                </p>";
+        }
+        foreach ($no_comestibles as $producto) {
+          echo "<p>  
+                  <div class='columns'>
+                    <div class='column'>
+                      <p> $producto[0]: $producto[1] </p>
+                    </div>
+                    <div class='column'>
+                      <p> $: $producto[2] </p>
+                    </div>
+                  </div> 
+                </p>";
         }
 
-        foreach ($compras as $compra) {
-            foreach ($id_no_comestibles as $id_com){
-                if ($compra[0] == $id_com[0]){
-                    $value = 2;
-                }
-            }
-        }
-        if ($value == 1){
-          $query = "SELECT nombre, descripcion, precio FROM comestibles where 
-                    nombre like '%$nombre%' and id_tienda = $id;";
-          $result = $db2 -> prepare($query);
-          $result -> execute();
-          $comestibles = $result -> fetchAll();
-          foreach ($comestibles as $comestible) {
-            echo "
-                <p> 
-                <div class='columns'>
-                  <div class='column'>
-                    $comestible[0] : $comestible[1]
-                  </div>
-                  <div class='column'>
-                    $comestible[2]
-                  </div
-                </div>
-                </p>
-            ";
-          }
-        }
-
-        elseif ($value == 2){
-          $query = "SELECT nombre, descripcion, precio FROM no_comestibles where 
-                    nombre like '%$nombre%' and id_tienda = $id;";
-          $result = $db2 -> prepare($query);
-          $result -> execute();
-          $no_comestibles = $result -> fetchAll();
-          foreach ($no_comestibles as $no_omestible) {
-            echo "
-                <p> 
-                <div class='columns'>
-                  <div class='column'>
-                    $no_comestible[0] : $no_comestible[1]
-                  </div>
-                  <div class='column'>
-                    $no_comestible[2]
-                  </div
-                </div>
-                </p>
-            ";
-          }
-        }
-        elseif ($value == 0) {
-          echo "<p> Casi </p>";
+        if($len1 == 0 and $len2 == 0){
+          echo "<p> No vendemos el producto $nombre </p>"
         }
       }
     ?>
