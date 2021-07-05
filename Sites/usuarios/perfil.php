@@ -52,30 +52,21 @@
 				$result -> execute();
 				$compras = $result -> fetchAll();
 
-				$query = "SELECT id FROM comestibles;";
+				$query = "SELECT id FROM comestibles where id=395;";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$id_comestibles = $result -> fetchAll();
 
-				$query = "SELECT id FROM no_comestibles;";
+				$query = "SELECT id FROM no_comestibles where id = 395;";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$id_no_comestibles = $result -> fetchAll();
 
+				$len1 = count($id_comestibles);
+				$len2 = count($id_no_comestibles);
 
-				foreach ($compras as $compra) {
-				    echo $compra[0];
-
-					if (in_array([$compra[0]], $id_comestibles)):
-						echo "wena";
-
-					elseif (in_array([$compra[0]], $id_no_comestible)):
-					    echo "wena";
-					else:
-						echo "casi";
-					endif;
-					
-				}
+				echo $len1;
+				echo $len2;
 			?>
 			</div>
 			<div class='tile is-child is-3 m-3'>
