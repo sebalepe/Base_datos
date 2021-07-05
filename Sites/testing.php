@@ -1,6 +1,7 @@
 
 <?php include('templates/header.html');   ?>
 <?php include('templates/navbar.html');   ?>
+<?php include('../data/data_loader.php");   ?>
 
 <?php $array = [[1,2,3],[4,5,6]];
       $value = 0?>;
