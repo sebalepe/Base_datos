@@ -37,6 +37,7 @@
     </div>
 </section>
 
+<button onclick="history.go(-1);">Back </button>
 
 
 <?php include('../templates/footer.html'); ?>
