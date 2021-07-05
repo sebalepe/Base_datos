@@ -116,7 +116,7 @@
 
       <?php 
       if(isset($_POST['nombre'])){
-        $id = $Tienda[0];
+        $id = $_SESSION['tienda_actual'];
         $nombre = $_POST['nombre'];
       
         $query = "SELECT nombre, descripcion, precio, id FROM comestibles 
