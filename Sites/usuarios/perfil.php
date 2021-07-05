@@ -68,14 +68,14 @@
 
 				    foreach ($id_comestibles as $id_com){
 				        echo $compra[0];
-				        echo $id_com;
+				        echo $id_com[0];
 				        if ($compra[0] == $id_com){
 				            $value = 1;
 				        }
 				    }
 				    foreach ($id_no_comestibles as $id_no){
 				        echo $compra[0];
-				        echo $id_no;
+				        echo $id_no[0];
 				        if ($compra[0] == $id_no){
 				            $value = 2;
 				        }
