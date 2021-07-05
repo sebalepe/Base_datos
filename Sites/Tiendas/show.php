@@ -3,7 +3,7 @@
 
 <body>
 
-<div class="grid-block" style="background-image: url('../storage/fondo.png'); width: 100; height: 100vh; ">
+<div class="grid-block" style="background-image: url('../storage/fondo.png'); width: 100vh; height: 100vh; ">
 
 <?php
   
@@ -33,10 +33,7 @@
         </p>
     </div"
 
-
 ?>
-
-
   <div class="tile is-parent is-vertical">
     <div align="center" class="tile is-child m-3">
       <div id="modal" class="modal">
@@ -117,8 +114,6 @@
       </div>
   </div>
  
-          
-
 
 <script>                 
 $("#lanuchModal").click(function() {
@@ -141,10 +136,6 @@ $("#closebtn").click(function() {
 </div>
 
 </body>
-
-
-
-
 
 
 
