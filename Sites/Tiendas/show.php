@@ -25,8 +25,6 @@
   $result -> execute();
   $Tiendas = $result -> fetchAll(); 
   $Tienda = $Tiendas[0]; 
-  $id = $_SESSION['tienda_actual'];
-  echo $id;
   echo "
     <div align='center'>
         <p class='title is-3'>
@@ -50,7 +48,7 @@
                   <div class="content">               
                     <p class="title is-6 has-text-black"> Productos Comestibles </p>
                     <?php 
-                        $id = $Tienda[0];
+                        $id = $_SESSION['tienda_actual'];
                         $query = "SELECT nombre, precio, id  from comestibles where id_tienda = '$id' 
                                   order by precio limit 3;";
                         $result = $db2 -> prepare($query);
@@ -75,7 +73,7 @@
                   <div class="content"> 
                     <p class="title is-6 has-text-black"> Productos Toxicos </p>              
                     <?php 
-                        $id = $Tienda[0];
+                        $id = $_SESSION['tienda_actual'];
                         $query = "SELECT nombre, precio, id  from no_comestibles where id_tienda = '$id' 
                                   order by precio limit 3;";
                         $result = $db2 -> prepare($query);
