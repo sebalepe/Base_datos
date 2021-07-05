@@ -3,7 +3,7 @@
 
 <body>
 
-<div class="grid-block" style="background-image: url('../storage/fondo.png'); width: 100; height: 100; ">
+<div class="grid-block" style="background-image: url('../storage/fondo.png'); width: 100; height: 100vh; ">
 
 <?php
   
@@ -38,7 +38,7 @@
 
 
   <div class="tile is-parent is-vertical">
-    <div align="center" class="tile is-child box">
+    <div align="center" class="tile is-child m-3">
       <div id="modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
@@ -70,7 +70,7 @@
       <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos mas baratos (pobre qlo)</button>
     </div>
 
-    <div class="tile is-child box">
+    <div class="tile is-child box m-3">
       <form align="center" action="" method="post">
         <div class="field-body">
             <div class="field">
@@ -93,7 +93,7 @@
     ?>
     </div>
 
-    <div class="tile is-child box">
+    <div class="tile is-child box m-3">
         <form align="center" action="" method="post">
           <div class="field-body">
               <div class="field">
