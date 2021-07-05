@@ -6,9 +6,9 @@
 
     <div class="tile is-ancestor">
         <div class="tile is-parent is-vertical">
-            <div class="tile is-child is-6">
+            <div class="tile is-child is-6 m-6">
             </div>
-            <div class="tile is-child box">
+            <div class="tile is-child box m-6">
                 <form align="center" action="validacion_ingreso.php" method="post">
                     <div class="field-body">
                         <div class="field">
