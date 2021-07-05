@@ -46,7 +46,8 @@
                     <p class="title is-6 has-text-black"> Productos Comestibles </p>
                     <?php 
                         $id = $Tienda[0];
-                        $query = "SELECT nombre, precio, id  from comestibles where id_tienda = '$id' ;";
+                        $query = "SELECT nombre, precio, id  from comestibles where id_tienda = '$id' 
+                                  order by precio limit 3;";
                         $result = $db2 -> prepare($query);
                         $result -> execute();
                         $productos = $result -> fetchAll(); 
@@ -70,7 +71,8 @@
                     <p class="title is-6 has-text-black"> Productos Toxicos </p>              
                     <?php 
                         $id = $Tienda[0];
-                        $query = "SELECT nombre, precio, id  from no_comestibles where id_tienda = '$id' ;";
+                        $query = "SELECT nombre, precio, id  from no_comestibles where id_tienda = '$id' 
+                                  order by precio limit 3;";
                         $result = $db2 -> prepare($query);
                         $result -> execute();
                         $productos = $result -> fetchAll(); 
