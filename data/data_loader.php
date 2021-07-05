@@ -49,7 +49,7 @@ function generateRandomString($length = 30) {
 ?>
 
 
-<?php# Cargar jefes
+<?php 
     require ("../Sites/config/conexion.php");
 
     #Se construye la consulta como un string
