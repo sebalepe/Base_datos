@@ -200,20 +200,20 @@
         $id = $_SESSION['tienda_actual'];
         $rut = $_SESSION['current_user'];
 
-        $query = "SELECT comunas.nombre from usuarios, comunas 
-                  where rut = '$rut' and comunas.id = usuarios.direccion ;"; 
+        $query = "SELECT direcciones.comuna from usuarios, direcciones
+                  where rut = '$rut' and direcciones.id = usuarios.direccion ;"; 
         $result = $db2 -> prepare($query);
         $result -> execute();
-        $comunas = $result -> fetchAll();
-        $comuna = $comunas[0];
-        $n_comuna = $comuna[0];
+        $comunas = $result -> fetchAll(); 
+        $comuna = $comunas[0]; 
+        $n_comuna = $comuna[0]; 
         echo $n_comuna;
         
         $query = "SELECT comunas from tiendas 
                   where id = '$id';";  
         $result = $db2 -> prepare($query);
         $result -> execute();
-        $comunas = $result -> fetchAll(); 
+        $comunas = $result -> fetchAll();
         $lista_comunas = $comunas[0]; 
         $l_comunas = $lista_comunas[0]; 
         $comunas = explode(",", $l_comunas);
