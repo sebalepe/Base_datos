@@ -9,6 +9,7 @@
 <?php include('../templates/navbar.html');   ?>
 
 <body>
+<section class="hero is-danger is-fullheight">
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   	require("../config/conexion.php");
@@ -21,8 +22,8 @@
 	$info2 = $info[0];
 	$id = $info2[4];
   ?>
-<div clas='m-6'>
-	<p class='title is-4'> Bienvenido a Tu Perfil! </p>
+<div align="center">
+	<p class='title is-2'> Bienvenido a Tu Perfil! </p>
 
 	<?php 
 	echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
@@ -102,5 +103,5 @@
 	</div>
 </div>
 
-
+</section>
 <?php include('../templates/footer.html'); ?>
