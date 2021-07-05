@@ -2,8 +2,7 @@
 <?php include('../templates/navbar.html');   ?>
 
 <body>
-
-<div class="grid-block" style="background-image: url('../storage/fondo.png'); width: 100vh; height: 100vh; ">
+<section class="hero is-danger is-fullheight">
 
 <?php
   
@@ -133,8 +132,8 @@ $("#closebtn").click(function() {
 </script>
 
 
-</div>
 
+</section>
 </body>
 
 
