@@ -29,9 +29,6 @@ function send_base_87($valor)
         array_push($direc, $d[0]);
         array_push($direc, $d[1]);
     }
-    foreach ($direc as $d) {
-        echo $d;
-    }
 
     require ("../Sites/config/conexion.php");
 
@@ -52,9 +49,9 @@ function send_base_87($valor)
         $dato5 = $p[4]; # edad
         $dato6 = $p[5]; # direccion
         for ($i; $i < count($direc); $i++){
-            if (strval($direc[$i]) == $dato6) {
+            echo $dato6;
+            if (strval($direc[$i]) == strval($dato6)) {
                 $dato6 = intval($direc[$i-1]);
-                echo $dato6;
             }
         }
         $dato7 = $p[6]; # contraseña
