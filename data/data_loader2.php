@@ -1,19 +1,4 @@
-<?php
-function send_base_62($valor)
-{
-    $conn = @pg_connect("dbname=grupo62e3 user=grupo62 password=grupo62");
-    $envio = @pg_query($conn, strval($valor));
-    return $envio;
-}
-?>
-<?php
-function send_base_87($valor)
-{
-    $conn = @pg_connect("dbname=grupo87e3 user=grupo87 password=grupo87");
-    $envio = @pg_query($conn, strval($valor));
-    return $envio;
-}
-?>
+
 <?php # Migrar personal
     require ("../Sites/config/conexion.php");
 
