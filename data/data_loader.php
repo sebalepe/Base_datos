@@ -93,12 +93,14 @@ function generateRandomString($length = 30) {
     $result = $db->prepare($query);
     $result->execute();
     $Personal = $result->fetchAll();
+    $contador = 345;
     foreach ($Personal as $p) {
-        $dato1 = $p[0]; # id
+        $dato1 = $contador;
+        $contador = $contador + 1;
         $dato2 = $p[1]; # rut
         $dato3 = $p[2]; # nombre
         $dato4 = substr($p[3], 0, 1); # sexo
-        echo "<p>". $p[0] ."</p>";
+        echo "<p>". $dato4 ."</p>";
         $dato5 = $p[4]; # edad
         $dato6 = $p[5]; # direccion
         $dato7 = $p[6]; # contraseña
