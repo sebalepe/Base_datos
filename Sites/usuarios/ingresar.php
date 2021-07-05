@@ -5,7 +5,9 @@
 <div class="m-5" align="center">
 
     <div class="tile is-ancestor">
-        <div class="tile is-parent notification">
+        <div class="tile is-parent is-vertical">
+            <div class="tile is-child is-6">
+            </div>
             <div class="tile is-child box">
                 <form align="center" action="validacion_ingreso.php" method="post">
                     <div class="field-body">
@@ -23,8 +25,8 @@
                     <br/><br/>
                     <input class="button is-danger" type="submit" value="Ingresar" >
                 </form>
-            </div>
-       </div>
+           </div>
+        </div>
     </div>
 </div>
 
