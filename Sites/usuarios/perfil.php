@@ -52,23 +52,38 @@
 				$result -> execute();
 				$compras = $result -> fetchAll();
 
-				$query = "SELECT id FROM comestibles where id=395;";
+				$query = "SELECT id FROM comestibles ;";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$id_comestibles = $result -> fetchAll();
 
-				$query = "SELECT id FROM no_comestibles where id = 395;";
+				$query = "SELECT id FROM no_comestibles ;";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$id_no_comestibles = $result -> fetchAll();
 
-				$len1 = count($id_comestibles);
-				$len2 = count($id_no_comestibles);
-
-				echo $len1;
-				echo $len2;
-				echo $id_no_comestibles;
-				echo $id_comestibles;
+				$value = 0;
+				foreach ($compras as $compra) {
+				    foreach ($id_comestibles as $id_com){
+				        if ($compra[0] == $id_com){
+				            $value = 1;
+				        }
+				        endif;
+				    }
+				    foreach ($id_no_comestibles as $id_no){
+				        if ($compra[0] == $id_no){
+				            $value = 2;
+				        }
+				        endif;
+				    }
+				    if ($value == 1){
+				        echo "comestible";
+				    }
+				    elseif ($value == 2){
+				        echo "no comestible";
+				    }
+				    endif;
+				}
 			?>
 			</div>
 			<div class='tile is-child is-3 m-3'>
