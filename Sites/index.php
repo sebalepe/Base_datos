@@ -1,5 +1,6 @@
-<?php
 <?php include('../data/data_loader.php');   ?>
+<?php
+
 session_start();
 
 $_SESSION['current_user'] = '1';
