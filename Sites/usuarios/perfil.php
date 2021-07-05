@@ -17,7 +17,7 @@
 
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	$info = $result -> fetchAll(); 
+	$info = $result -> fetchAll();
 	$info2 = $info[0];
 	$id = $info2[4];
   ?>

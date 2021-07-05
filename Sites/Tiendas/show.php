@@ -18,7 +18,6 @@
   if(strlen($id) <> 0){
     $_SESSION['tienda_actual'] = $id;
   }
-  echo $_SESSION['tienda_actual'];
 
   $query = "SELECT id, direccion, nombre, comunas, comuna_tienda 
             from tiendas where id = '$id' ;";
@@ -52,7 +51,6 @@
                     <p class="title is-6 has-text-black"> Productos Comestibles </p>
                     <?php 
                         $id = $_SESSION['tienda_actual'];
-                        echo $_SESSION['tienda_actual'];
                         $query = "SELECT nombre, precio, id  from comestibles where id_tienda = '$id' 
                                   order by precio limit 3;";
                         $result = $db2 -> prepare($query);
@@ -122,6 +120,7 @@
       if(isset($_POST['nombre'])){
         $id = $_SESSION['tienda_actual'];
         $nombre = $_POST['nombre'];
+        $nombre = strtolower($nombre)
       
         $query = "SELECT nombre, descripcion, precio, id FROM comestibles 
                   where nombre like '%$nombre%' and id_tienda = $id;";
@@ -147,6 +146,12 @@
                     <div class='column'>
                       <p> $: $com[2] </p>
                     </div>
+                    <div class='column'>
+                      <button class='button is-danger'> Comprar </button>
+                    </div>
+                    <div class='column'>
+                      <button class='button is-danger'> Agregar al Carrito </button>
+                    </div>
                   </div> 
                 </p>";
         }
@@ -158,6 +163,12 @@
                     </div>
                     <div class='column'>
                       <p> $: $com[2] </p>
+                    </div>
+                    <div class='column'>
+                      <button class='button is-danger'> Comprar </button>
+                    </div>
+                    <div class='column'>
+                      <button class='button is-danger'> Agregar al Carrito </button>
                     </div>
                   </div> 
                 </p>";
@@ -185,8 +196,19 @@
 
         <?php 
       if(isset($_POST['id2'])){
+        $id_producto = $_POST['id2']
+        $id = $_SESSION['tienda_actual'];
 
-        echo $_POST['id2'];
+
+
+        
+
+
+
+
+
+
+        
 
       }
 
