@@ -200,40 +200,66 @@
         $id = $_SESSION['tienda_actual'];
         $rut = $_SESSION['current_user'];
 
-        
-        $query = "SELECT direccion from usuarios
-                  where rut = '$rut' ;"; 
+        #parte1
+        $query = "SELECT * from comestibles
+                  where id = '$id_producto' and id_tienda = '$id';"; 
         $result = $db2 -> prepare($query);
         $result -> execute();
-        $direcciones = $result -> fetchAll();
-        $comuna = $direcciones[0]; 
-        $id_comuna = $comuna[0]; 
-        $id_comuna = intval($n_comuna); 
+        $pro_com = $result -> fetchAll();
+        $len1 = count($pro_com)
+        
+        $query = "SELECT * from no_comestibles
+                  where id = '$id_producto' and id_tienda = '$id';"; 
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $pro_no_com = $result -> fetchAll();
+        $len2 = count($pro_no_com)
 
-        $query = "SELECT direcciones.comuna from direcciones
-                  where  direcciones.id = $id_comuna;"; 
-        $result = $db2 -> prepare($query);
-        $result -> execute();
-        $comunas = $result -> fetchAll();
-        $comuna = $comunas[0]; 
-        $n_comuna = $comuna[0]; 
-        echo $n_comuna;
+        if($len1 <> 0 or $len2 <> 0){
+            echo " <p> Tenemos disponible este producto </p>";
+            #parte2
+            $query = "SELECT direccion from usuarios
+                      where rut = '$rut' ;"; 
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $direcciones = $result -> fetchAll();
+            $comuna = $direcciones[0]; 
+            $id_comuna = $comuna[0]; 
+            $id_comuna = intval($n_comuna); 
+
+            $query = "SELECT direcciones.comuna from direcciones
+                      where  direcciones.id = $id_comuna;"; 
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $comunas = $result -> fetchAll();
+            $comuna = $comunas[0]; 
+            $n_comuna = $comuna[0]; 
+            
+            $query = "SELECT comunas from tiendas 
+                      where id = '$id';";  
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $comunas = $result -> fetchAll();
+            $lista_comunas = $comunas[0]; 
+            $l_comunas = $lista_comunas[0]; 
+            $comunas = explode(",", $l_comunas);
+          
         
-        $query = "SELECT comunas from tiendas 
-                  where id = '$id';";  
-        $result = $db2 -> prepare($query);
-        $result -> execute();
-        $comunas = $result -> fetchAll();
-        $lista_comunas = $comunas[0]; 
-        $l_comunas = $lista_comunas[0]; 
-        $comunas = explode(",", $l_comunas);
-        foreach ($comunas as $value) {
-          echo $value;
+            if (in_array($n_comuna, $comunas)){
+              echo "<p> Si vendo donde tu estas </p>";
+                #generar compra// Parte 3
+            }
+            else {
+              echo "<p> no vendo donde estas </p>";
+            }
+
         }
-    
-        if (in_array($n_comuna, $comunas)){
-          echo "weeena";
+        else{
+          echo "<p> no tenemos tu producto </p>";
         }
+
+
+
 
 
 
