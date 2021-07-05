@@ -3,15 +3,12 @@ session_start();
 
 $_SESSION['current_user'] = '1';
 $_SESSION['current_password'] = '1';
-$_SESSION['boss'] = '0';
+$_SESSION['boss'] = '';
 ?>
 
 
 <?php include('templates/header.html');   ?>
-<?php #REPARAR BASES DE DATOS
-#include('../data/data_loader.php');
 
-?>
 
 <body>
   <section class="hero is-danger is-fullheight">
@@ -24,7 +21,7 @@ $_SESSION['boss'] = '0';
     <div class="hero-head">
         <h1 class="title is-1" align="center">CheemsCO </h1>
           <p class='subtitle is-5' style="text-align:center;">
-            Todo lo que necesitas para administrar tu negocio
+            Bienvenido
           </p>
     </div>
     <div class="hero-body">
@@ -43,8 +40,6 @@ $_SESSION['boss'] = '0';
                         foreach ($años as $año) {
                           echo "<p> $año[0], $año[1] </p> ";
                         }
-
-                      
                 ?>
                 </h3>
               </div>

@@ -1,10 +1,9 @@
-
 <?php
-session_start();
-
+	session_start();
 ?>
 
 <?php include('templates/header.html');   ?>
+<?php include('templates/navbar.html');   ?>
 
 <body>
   <section class="hero is-danger is-fullheight">
@@ -25,8 +24,8 @@ session_start();
 	          <div class="tile is-parent is-vertical">
 
 	          	<?php 
-	          		require("../config/conexion.php");
-	          		$query = "SELECT nombre, comuna_tienda from tiendas;"; 
+	          		require("config/conexion.php");
+	          		$query = "SELECT nombre, comuna_tienda, id from tiendas;"; 
 
 	          		$result = $db2 -> prepare($query);
 					$result -> execute();
@@ -37,9 +36,11 @@ session_start();
 						echo "<div class='tile is-child box'>
 								<p> Nombre: $tienda[0] </p>
 								<p> Comuna: $tienda[1] </p>
-							  </div>";
+								<form align='center' action='Tiendas/show.php' method='post'>
+								    <button class='button is-danger'   name='id' type='submit' value='$tienda[2]'> Ver Tienda </button>
+								</form>
+							 </div>";
 					}
-
 	          	?>
 	          </div>	
           </div>
