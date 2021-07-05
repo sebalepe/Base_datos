@@ -100,7 +100,7 @@
         </div>                
         <button class="modal-close is-large" aria-label="close"></button>                
       </div> 
-      <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos mas baratos (pobre qlo)</button>
+      <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos más baratos</button>
     </div>
 
     <div class="tile is-child box m-6">
@@ -186,7 +186,33 @@
           <div class="field-body">
               <div class="field">
                   <p class="control">
-                      <input class="input" type="text" placeholder="Ingresa un ID" name="id2">
+                    <?php 
+                      $query = "SELECT id from comestibles
+                                where id_tienda = '$id';"; 
+                      $result = $db2 -> prepare($query);
+                      $result -> execute();
+                      $pro_com = $result -> fetchAll();
+
+                      $query = "SELECT id from no_comestibles
+                                where id_tienda = '$id';"; 
+                      $result = $db2 -> prepare($query);
+                      $result -> execute();
+                      $pro_no_com = $result -> fetchAll();
+
+                     ?>
+                       <select name="id2" id="cars">
+                        <option disabled selected>Selecciona un id </option>
+                        <?php foreach ($pro_com as $value) ?>
+                          <option> <? php echo "$value" ?></option>
+                        <?php endforeach; ?>
+                        <?php foreach ($pro_no_com as $value) ?>
+                          <option> <? php echo "$value" ?></option>
+                        <?php endforeach; ?>
+                      </select>
+  
+
+                    ?>
+                      <!-- <input class="input" type="text" placeholder="Ingresa un ID" name="id2"> -->
                   </p>
               </div>
           </div>
