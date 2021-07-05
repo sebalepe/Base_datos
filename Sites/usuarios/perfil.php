@@ -67,6 +67,8 @@
 
 				echo $len1;
 				echo $len2;
+				echo $id_no_comestibles;
+				echo $id_comestibles;
 			?>
 			</div>
 			<div class='tile is-child is-3 m-3'>
