@@ -67,7 +67,8 @@
 
 					if (in_array([$compra[0]], $id_comestibles)):
 						echo "wena";
-					if (in_array([$compra[0]], $id_no_comestible)):
+
+					elseif (in_array([$compra[0]], $id_no_comestible)):
 					    echo "wena";
 					else:
 						echo "casi";
