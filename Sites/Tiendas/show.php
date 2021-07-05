@@ -196,7 +196,7 @@
 
         <?php 
       if(isset($_POST['id2'])){
-        $id_producto = $_POST['id2']
+        $id_producto = $_POST['id2'];
         $id = $_SESSION['tienda_actual'];
         $rut = $_SESSION['current_user'];
 
