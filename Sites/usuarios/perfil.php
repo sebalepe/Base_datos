@@ -52,17 +52,23 @@
 				$result -> execute();
 				$compras = $result -> fetchAll();
 
-				$query = "SELECT id FROM no_comestibles;";
+				$query = "SELECT id FROM comestibles;";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$id_comestibles = $result -> fetchAll();
-				
+
+				$query = "SELECT id FROM no_comestibles;";
+				$result = $db2 -> prepare($query);
+				$result -> execute();
+				$id_no_comestibles = $result -> fetchAll();
 
 
 				foreach ($compras as $compra) {
 
 					if (in_array([$compra[0]], $id_comestibles)):
 						echo "wena";
+					if (in_array([$compra[0]], $id_no_comestible)):
+					    echo "wena";
 					else:
 						echo "casi";
 					endif;
