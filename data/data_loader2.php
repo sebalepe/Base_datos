@@ -58,7 +58,7 @@ function send_base_87($valor)
         $dato8 = $p[7]; # es_jefe
         #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
 
-        $query = "INSERT INTO usuarios(ru,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');";
+        $query = "INSERT INTO usuarios(rut,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');";
         echo $query;
         $result = $db2 ->prepare($query);
         $result ->execute();
