@@ -7,6 +7,12 @@
     <div class="tile is-ancestor">
         <div class="tile is-parent is-vertical">
             <div class="tile is-child is-6 m-6">
+                <h3 class="title is-3">
+                    Bienvenido de Vuelta! 
+                </h3>
+                <p class="subtitle is-4">
+                    Ingresa tus datos!
+                </p>
             </div>
             <div class="tile is-child box m-6">
                 <form align="center" action="validacion_ingreso.php" method="post">
