@@ -48,7 +48,7 @@ function send_base_87($valor)
         $dato3 = $p[2]; # nombre
         $dato4 = substr($p[3], 0, 1); # sexo
         $dato5 = $p[4]; # edad
-        $dato6 = $direc[$p[5]]; # direccion
+        $dato6 = $direc[$p[5]][0]; # direccion
         echo $dato6;
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
