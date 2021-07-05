@@ -35,7 +35,7 @@
 ?>
 <div class="tile is-ancestor">
   <div class="tile is-parent is-vertical">
-    <div align="center" class="tile is-child box">
+    <div align="center" class="tile is-child box m-6">
       <div id="modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
@@ -64,7 +64,7 @@
       <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos mas baratos (pobre qlo)</button>
     </div>
 
-    <div class="tile is-child box m-3">
+    <div class="tile is-child box m-6">
       <form align="center" action="" method="post">
         <div class="field-body">
             <div class="field">
@@ -87,7 +87,7 @@
     ?>
     </div>
 
-    <div class="tile is-child box m-3">
+    <div class="tile is-child box m-6">
         <form align="center" action="" method="post">
           <div class="field-body">
               <div class="field">
