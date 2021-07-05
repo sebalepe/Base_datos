@@ -33,8 +33,6 @@
     </div"
 
 ?>
-  <div class="tile is-parent is-vertical">
-    <div align="center" class="tile is-child m-3">
       <div id="modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
@@ -62,9 +60,12 @@
         </div>                
         <button class="modal-close is-large" aria-label="close"></button>                
       </div> 
-
-      <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos mas baratos (pobre qlo)</button>
-    </div>
+    <div class="tile is-parent is-vertical">
+      <div align="center" class="tile is-child m-3 box">
+        <button class="button is-danger is-large" id="lanuchModal">
+          Revisa nuestros productos mas baratos (pobre qlo)
+        </button>
+      </div>
 
     <div class="tile is-child box m-3">
       <form align="center" action="" method="post">

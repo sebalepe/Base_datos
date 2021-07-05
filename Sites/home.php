@@ -37,7 +37,7 @@
                   <div class='tile is-child box'>
       							<div class='columns is-gapless'>	
                       <div class='column is-one-quarter'>
-                        <img class='image' src='storage/tienda.png' width='30' height='30' />
+                        <img class='image' src='storage/tienda.png' width='50' height='50' />
                       </div>
                       <div class='column'>
                         <p> Nombre: $tienda[0] </p>
