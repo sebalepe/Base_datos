@@ -11,7 +11,6 @@
 <body>
 <section class="hero is-danger is-fullheight">
 <?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   	require("../config/conexion.php");
 	$query = "SELECT nombre, edad, rut, direccion, id FROM usuarios where rut = '$rut';";
 
