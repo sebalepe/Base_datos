@@ -28,7 +28,7 @@
 	echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
 	?>
 
-	<div class='tile is-ancestor'>
+	<div class='tile is-ancestor m-6'>
 		<div class='tile is-parent is-vertical'>
 			<div class='tile is-child box m-3'>
 				<?php 
