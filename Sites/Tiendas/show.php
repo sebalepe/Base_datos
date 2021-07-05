@@ -61,7 +61,7 @@
                           echo "
                                 <p> $producto[0]: $ $producto[1] 
                                   <form align='center' action='../Tiendas/eateable.php' method='post'>
-                                      <button class='button is-danger' name='id' type='submit' value='$product[2]'> Ver Producto 
+                                      <button class='button is-danger' name='id' type='submit' value='$producto[2]'> Ver Producto 
                                       </button>
                                   </form>  
                                 </p>                       
@@ -86,7 +86,7 @@
                           echo "
                                 <p> $producto[0]: $ $producto[1] 
                                   <form align='center' action='../Tiendas/toxic.php' method='post'>
-                                      <button class='button is-danger' name='id' type='submit' value='$product[2]'> Ver Producto 
+                                      <button class='button is-danger' name='id' type='submit' value='$producto[2]'> Ver Producto 
                                       </button>
                                   </form>  
                                 </p>                       

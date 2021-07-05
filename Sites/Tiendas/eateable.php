@@ -4,11 +4,10 @@
 
 <?php 
 	require("../config/conexion.php");
-	
+
  	$id = $_POST['id'];
  	$algo = "SELECT nombre, precio, descripcion, tipo_alimento, peso, metodo_conserva, fecha_expiracion, dias_expiracion
  	  from comestibles where id = $id;";
- 	echo $algo;
 	$result = $db2 -> prepare($algo);
 	$result -> execute();
 	$productos = $result -> fetchAll();
