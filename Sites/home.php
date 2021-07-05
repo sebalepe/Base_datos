@@ -35,9 +35,9 @@
       					foreach ($Tiendas as $tienda) {
       						echo "
                   <div class='tile is-child box'>
-      							<div class='columns'>	
+      							<div class='columns is-gapless'>	
                       <div class='column'>
-                        <img class='image' src='storage/.png' width='30' height='30' />
+                        <img class='image' src='storage/tienda.png' width='30' height='30' />
                       </div>
                       <div class='column'>
                         <p> Nombre: $tienda[0] </p>
