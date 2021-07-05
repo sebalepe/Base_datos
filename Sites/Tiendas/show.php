@@ -34,11 +34,10 @@
 
 ?>
   <div class="tile is-parent is-vertical">
-    <div align="center" class="tile is-child m-3 box">
+    <div align="center" class="tile is-child box">
       <div id="modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
-          <div class="box">
             <article class="media" >
                 <div class="media-content">       
                   <div class="content">               
@@ -57,12 +56,10 @@
                   </div>                 
                 </div>                 
             </article>                
-          </div>
           <button class="button is-danger is-small" id="closebtn">Close Modal</button>                
         </div>                
         <button class="modal-close is-large" aria-label="close"></button>                
       </div> 
-
       <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos mas baratos (pobre qlo)</button>
     </div>
 
