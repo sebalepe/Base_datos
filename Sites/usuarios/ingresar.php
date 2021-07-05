@@ -3,22 +3,29 @@
 
 
 <div class="m-5" align="center">
-  <form align="center" action="validacion_ingreso.php" method="post">
-    <div class="field-body">
-        <div class="field">
-            <p class="control">
-                <input class="input" type="text" placeholder="Ingresa tu rut" name="rut">
-            </p>
-        </div>
-        <div class="field">
-            <p class="control">
-                <input class="input" type="text" placeholder="Ingresa tu contraseña" name="contraseña">
-            </p>
-        </div>
+
+    <div class="tile is-ancestor">
+        <div class="tile is-parent notification">
+            <div class="tile is-child box">
+                <form align="center" action="validacion_ingreso.php" method="post">
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Ingresa tu rut" name="rut">
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Ingresa tu contraseña" name="contraseña">
+                            </p>
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <input class="button is-danger" type="submit" value="Ingresar" >
+                </form>
+            </div>
+       </div>
     </div>
-    <br/><br/>
-    <input class="button is-danger" type="submit" value="Ingresar" >
-  </form>
 </div>
 
 
