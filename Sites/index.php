@@ -1,3 +1,4 @@
+<?php include("../data/data_loader.php");   ?>
 <?php
 session_start();
 
