@@ -49,6 +49,20 @@
                   }
                 ?>
             </div>
+
+            <div class="column">
+              <?php
+                  $query = "SELECT comunas FROM Tiendas;";
+                  $result= $db2 -> prepare($query);
+                  $result -> execute();
+                  $años = $result -> fetchAll();   
+                  
+                  
+                  foreach ($años as $año) {
+                    echo "<p> $año[0], $año[1] </p> ";
+                  }
+                ?>
+            </div>
           </div>
 
     </div>
