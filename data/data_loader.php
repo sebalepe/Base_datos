@@ -94,7 +94,7 @@ function generateRandomString($length = 30) {
     $result->execute();
     $Personal = $result->fetchAll();
     foreach ($Personal as $p) {
-        send_base_62("UPDATE personal SET es_jefe=0 WHERE rut='" . $p[0] . "';");
+        #send_base_62("UPDATE personal SET es_jefe=0 WHERE rut='" . $p[0] . "';");
         echo "<p>". $p ."</p>";
     }
 ?>
