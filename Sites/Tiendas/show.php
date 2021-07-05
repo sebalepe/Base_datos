@@ -15,7 +15,7 @@
 
   
   $id = $_POST["id"];
-  if(count($id) <> 0){
+  if(strlen($id) <> 0){
     $_SESSION['tienda_actual'] = $id;
   }
   echo $_SESSION['tienda_actual'];
