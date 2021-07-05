@@ -56,5 +56,7 @@
         <br/><br/>
         <br/><br/>
     </div>
-  </section>
-<?php include('/templates/footer.html'); ?>
+
+<?php include('templates/footer.html'); ?>
+
+

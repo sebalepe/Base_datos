@@ -311,10 +311,6 @@ $("#closebtn").click(function() {
 
 
 
-</section>
-</body>
-
-
 
 <?php include('../templates/footer.html'); ?>
 

@@ -20,6 +20,5 @@
 
 
 
-  </section>
 
 <?php include('../templates/footer.html'); ?>
