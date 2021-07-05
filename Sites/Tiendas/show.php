@@ -33,6 +33,7 @@
     </div"
 
 ?>
+<div class="tile is-ancestor">
   <div class="tile is-parent is-vertical">
     <div align="center" class="tile is-child box">
       <div id="modal" class="modal">
@@ -109,6 +110,7 @@
       ?>
       </div>
   </div>
+</div>
  
 
 <script>                 
