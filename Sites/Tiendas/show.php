@@ -200,8 +200,20 @@
         $id = $_SESSION['tienda_actual'];
         $rut = $_SESSION['current_user'];
 
-        $query = "SELECT direcciones.comuna from usuarios, direcciones
-                  where rut = '$rut' and usuarios.direccion = 'direcciones.id' ;"; 
+        
+        $query = "SELECT direccion from usuarios
+                  where rut = '$rut' ;"; 
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $direcciones = $result -> fetchAll();
+        $comuna = $direcciones[0]; 
+        $id_comuna = $comuna[0]; 
+        echo count($id_comuna);
+        $id_comuna = intval($n_comuna); 
+
+
+        $query = "SELECT direcciones.comuna from direcciones
+                  where  direcciones.id = $id_comuna;"; 
         $result = $db2 -> prepare($query);
         $result -> execute();
         $comunas = $result -> fetchAll();
@@ -217,7 +229,6 @@
         $lista_comunas = $comunas[0]; 
         $l_comunas = $lista_comunas[0]; 
         $comunas = explode(",", $l_comunas);
-        echo $l_comunas;
     
         if (in_array($n_comuna, $comunas)){
           echo "weeena";
