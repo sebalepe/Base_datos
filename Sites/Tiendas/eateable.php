@@ -7,11 +7,11 @@
  	echo $id;
  	$query = "SELECT nombre, precio, descripcion, tipo_alimento, peso, metodo_conserva, fecha_expiracion, dias_expiracion
  	  from comestibles where id = '$id';";
- 	echo $query
+ 	echo $query;
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$productos = $result -> fetchAll();
-	$producto = $productos[0]
+	$producto = $productos[0];
 ?>
 
 <body>
