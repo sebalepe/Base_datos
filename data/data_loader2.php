@@ -26,7 +26,8 @@ function send_base_87($valor)
     $Direcciones = $result->fetchAll();
     $direc = array();
     foreach ($Direcciones as $d) {
-        $direc[$d[1]] => $d[0];
+        $direc[$d[1]] = $d[0];
+        var_dump($direc);
     }
 
 
@@ -48,7 +49,6 @@ function send_base_87($valor)
         $dato4 = substr($p[3], 0, 1); # sexo
         $dato5 = $p[4]; # edad
         $dato6 = $direc[$p[5]]; # direccion
-        var_dump($direc);
         echo $dato6;
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
