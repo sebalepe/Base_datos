@@ -112,11 +112,71 @@
       </form>
 
       <?php 
-    if(isset($_POST['nombre'])){
+      if(isset($_POST['nombre'])){
+        $nombre = $_POST['nombre'];
+      
+      $query = "SELECT id FROM comestibles ;";
+      $result = $db2 -> prepare($query);
+      $result -> execute();
+      $id_comestibles = $result -> fetchAll();
 
-      echo $_POST['nombre'];
+      $value = 0;
 
-    }
+      foreach ($compras as $compra) {
+          foreach ($id_comestibles as $id_com){
+              if ($compra[0] == $id_com[0]){
+                  $value = 1;
+              }
+          }
+      }
+      if ($value == 1){
+        $query = "SELECT nombre, descripcion, precio FROM comestibles where 
+                  nombre like '%$nombre%' and id_tienda = $id;";
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $comestibles = $result -> fetchAll();
+        foreach ($comestibles as $comestible) {
+          echo "
+              <p> 
+              <div class='columns'>
+                <div class='column'>
+                  $comestible[0] : $comestible[1]
+                </div>
+                <div class='column'>
+                  $comestible[2]
+                </div
+              </div>
+              </p>
+          ";
+        }
+      }
+
+      elseif ($value == 0){
+        $query = "SELECT nombre, descripcion, precio FROM no_comestibles where 
+                  nombre like '%$nombre%' and id_tienda = $id;";
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $no_comestibles = $result -> fetchAll();
+        foreach ($no_comestibles as $no_omestible) {
+          echo "
+              <p> 
+              <div class='columns'>
+                <div class='column'>
+                  $no_comestible[0] : $no_comestible[1]
+                </div>
+                <div class='column'>
+                  $no_comestible[2]
+                </div
+              </div>
+              </p>
+          ";
+        }
+      }
+
+      else{
+        echo "<p> No vendemos ningun producto con ese nombre ): tonto weon </p>" 
+      }
+
 
     ?>
     </div>
