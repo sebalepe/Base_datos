@@ -52,6 +52,7 @@ function send_base_87($valor)
             echo $dato6;
             if (strval($direc[$i]) == strval($dato6)) {
                 $dato6 = intval($direc[$i-1]);
+                break 2;
             }
         }
         $dato7 = $p[6]; # contraseña
