@@ -2,6 +2,9 @@
 <?php include('../templates/navbar.html');   ?>
 
 <body>
+
+<div class="grid-block" style="background-image: url('../storage/fondo.png'); width: 100; height: 100; ">
+
 <?php
   
   require("../config/conexion.php");
@@ -18,6 +21,7 @@
   $Tienda = $Tiendas[0]; 
 
 
+
   echo "
     <div align='center'>
         <p class='title is-3'>
@@ -32,7 +36,7 @@
 
 ?>
 
-<div class="tile is-ancestor">
+
   <div class="tile is-parent is-vertical">
     <div align="center" class="tile is-child box">
       <div id="modal" class="modal">
@@ -112,7 +116,7 @@
       ?>
       </div>
   </div>
-</div>  
+ 
           
 
 
@@ -134,9 +138,9 @@ $("#closebtn").click(function() {
 </script>
 
 
+</div>
 
-
-
+</body>
 
 
 
