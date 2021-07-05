@@ -120,12 +120,25 @@
       $result -> execute();
       $id_comestibles = $result -> fetchAll();
 
+      $query = "SELECT id FROM no_comestibles ;";
+      $result = $db2 -> prepare($query);
+      $result -> execute();
+      $id_no_comestibles = $result -> fetchAll();
+
       $value = 0;
 
       foreach ($compras as $compra) {
           foreach ($id_comestibles as $id_com){
               if ($compra[0] == $id_com[0]){
                   $value = 1;
+              }
+          }
+      }
+
+      foreach ($compras as $compra) {
+          foreach ($id_no_comestibles as $id_com){
+              if ($compra[0] == $id_com[0]){
+                  $value = 2;
               }
           }
       }
@@ -151,7 +164,7 @@
         }
       }
 
-      elseif ($value == 0){
+      elseif ($value == 2){
         $query = "SELECT nombre, descripcion, precio FROM no_comestibles where 
                   nombre like '%$nombre%' and id_tienda = $id;";
         $result = $db2 -> prepare($query);
@@ -172,12 +185,10 @@
           ";
         }
       }
-
-      else{
+      elseif ($value == 0){
         echo "<p> No vendemos ningun producto con ese nombre ): tonto weon </p>";
       }
-
-
+   
     ?>
     </div>
 
@@ -229,24 +240,6 @@ $("#closebtn").click(function() {
 </section>
 </body>
 
-
-
-  <!--
- 	$query = "SELECT * from tiendas where id = '$id' ;";
-
- 
-	$result = $db2 -> prepare($query);
-	$result -> execute();
-	$Tiendas = $result -> fetchAll(); 
-  $Tienda = $Tiendas[0]; 
-  
-
-  foreach ($Tienda as $value) {
-     echo "<p> $value </p>";
-  }
-
-?>
--->
 
 
 <?php include('../templates/footer.html'); ?>
