@@ -207,7 +207,7 @@
         $comunas = $result -> fetchAll(); 
         $comuna = $comunas[0]; 
         $n_comuna = $comuna[0]; 
-        echo $n_comuna;
+        echo count($comunas);
         
         $query = "SELECT comunas from tiendas 
                   where id = '$id';";  
