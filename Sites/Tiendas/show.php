@@ -201,10 +201,10 @@
         $rut = $_SESSION['current_user'];
 
         $query = "SELECT direcciones.comuna from usuarios, direcciones
-                  where rut = '$rut' and direcciones.id = usuarios.direccion ;"; 
+                  where rut = '$rut' and usuarios.direccion = 'direcciones.id' ;"; 
         $result = $db2 -> prepare($query);
         $result -> execute();
-        $comunas = $result -> fetchAll(); 
+        $comunas = $result -> fetchAll();
         $comuna = $comunas[0]; 
         $n_comuna = $comuna[0]; 
         echo count($comunas);
@@ -217,7 +217,7 @@
         $lista_comunas = $comunas[0]; 
         $l_comunas = $lista_comunas[0]; 
         $comunas = explode(",", $l_comunas);
-        echo $comunas;
+        echo $l_comunas;
     
         if (in_array($n_comuna, $comunas)){
           echo "weeena";
