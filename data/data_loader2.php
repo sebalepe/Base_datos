@@ -29,6 +29,9 @@ function send_base_87($valor)
         array_push($direc, $d[0]);
         array_push($direc, $d[1]);
     }
+    foreach ($direc as $d) {
+        echo $d;
+    }
 
     require ("../Sites/config/conexion.php");
 
