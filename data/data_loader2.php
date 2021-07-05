@@ -40,9 +40,6 @@ function send_base_87($valor)
     $result->execute();
     $Personal = $result->fetchAll();
     $contador = 365;
-    foreach ($direc as $d){
-        echo $d;
-    }
     foreach ($Personal as $p) {
         $dato1 = $contador; #ID
         $contador = $contador + 1; 
@@ -62,7 +59,7 @@ function send_base_87($valor)
         #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
 
         $query = "INSERT INTO usuarios(rut,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');";
-        #echo $dato6;
+        echo $query;
         $result = $db2 ->prepare($query);
         $result ->execute();
     }
