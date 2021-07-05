@@ -1,3 +1,10 @@
+
+<?php
+session_start();
+$_SESSION['tienda_actual'] = '1';
+?>
+
+
 <?php include('../templates/header.html');   ?>
 <?php include('../templates/navbar.html');   ?>
 
@@ -10,6 +17,7 @@
 
   
   $id = $_POST["id"];
+  $_SESSION['tienda_actual'] = $id;
 
   $query = "SELECT id, direccion, nombre, comunas, comuna_tienda 
             from tiendas where id = '$id' ;";
@@ -19,7 +27,7 @@
   $result -> execute();
   $Tiendas = $result -> fetchAll(); 
   $Tienda = $Tiendas[0]; 
-  $id = $Tienda[0];
+  $id = $_SESSION['tienda_actual'];
   echo $id;
   echo "
     <div align='center'>
