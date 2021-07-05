@@ -1,4 +1,5 @@
 <?php include('../templates/header.html');   ?>
+<?php include('templates/navbar.html');   ?>
 
 <body>
 <?php
@@ -31,25 +32,90 @@
 
 ?>
 
-<div id="modal" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="box">
-      <article class="media">               
-        <div class="media-content">       
-          <div class="content">               
-            <p>                 
-                               
-            </p>                 
-          </div>                 
-        </div> 
-        <button class="button is-danger is-small" id="closebtn">Close Modal</button>                
-      </article>                
-    </div>                
-  </div>                
-  <button class="modal-close is-large" aria-label="close"></button>                
-</div>               
-<button class="button is-danger is-large" id="lanuchModal">Show Modal</button>               
+<div class="tile is-ancestor">
+  <div class="tile is-parent is-vertical">
+    <div align="center" class="tile is-child box">
+      <div id="modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box">
+            <article class="media" >
+                <div class="media-content">       
+                  <div class="content">               
+                    <p class="title is-6 has-text-black"> Productos Comestibles </p>
+                    <p>  Producto Barato 1</p> 
+                    <p>  Producto Barato 2</p>  
+                    <p>  Producto Barato 3</p>                
+                  </div>                 
+                </div> 
+                <div class="media-content">       
+                  <div class="content"> 
+                    <p class="title is-6 has-text-black"> Productos Toxicos </p>              
+                    <p>  Producto Barato 1</p> 
+                    <p>  Producto Barato 2</p>  
+                    <p>  Producto Barato 3</p>                
+                  </div>                 
+                </div>                 
+            </article>                
+          </div>
+          <button class="button is-danger is-small" id="closebtn">Close Modal</button>                
+        </div>                
+        <button class="modal-close is-large" aria-label="close"></button>                
+      </div> 
+
+      <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos mas baratos (pobre qlo)</button>
+    </div>
+
+    <div class="tile is-child box">
+      <form align="center" action="" method="post">
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input" type="text" placeholder="Busca un Producto" name="nombre">
+                </p>
+            </div>
+        </div>
+        <br/><br/>
+        <input class="button is-danger" type="submit" value="Buscar" >
+      </form>
+
+      <?php 
+    if(isset($_POST['nombre'])){
+
+      echo $_POST['nombre'];
+
+    }
+
+    ?>
+    </div>
+
+    <div class="tile is-child box">
+        <form align="center" action="" method="post">
+          <div class="field-body">
+              <div class="field">
+                  <p class="control">
+                      <input class="input" type="text" placeholder="Ingresa un ID" name="id">
+                  </p>
+              </div>
+          </div>
+          <br/><br/>
+          <input class="button is-danger" type="submit" value="Consultar Disponibilidad" >
+        </form>
+
+        <?php 
+      if(isset($_POST['id'])){
+
+        echo $_POST['id'];
+
+      }
+
+      ?>
+      </div>
+  </div>
+</div>  
+          
+
+
 <script>                 
 $("#lanuchModal").click(function() {
 

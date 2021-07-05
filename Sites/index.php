@@ -40,8 +40,6 @@ $_SESSION['boss'] = '';
                         foreach ($años as $año) {
                           echo "<p> $año[0], $año[1] </p> ";
                         }
-
-                      
                 ?>
                 </h3>
               </div>
