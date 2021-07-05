@@ -52,6 +52,7 @@ function send_base_87($valor)
         for ($i; $i < count($direc); $i++){
             if (strval($direct[$i]) == $dato6) {
                 $dato6 = intval($direct[$i-1]);
+                echo intval($direct[$i-1]);
             }
         }
         $dato7 = $p[6]; # contraseña
@@ -59,7 +60,7 @@ function send_base_87($valor)
         #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
 
         $query = "INSERT INTO usuarios(rut,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');";
-        echo $dato6;
+        #echo $dato6;
         $result = $db2 ->prepare($query);
         $result ->execute();
     }
