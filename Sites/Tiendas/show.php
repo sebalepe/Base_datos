@@ -94,7 +94,7 @@
           <div class="field-body">
               <div class="field">
                   <p class="control">
-                      <input class="input" type="text" placeholder="Ingresa un ID" name="id">
+                      <input class="input" type="text" placeholder="Ingresa un ID" name="id2">
                   </p>
               </div>
           </div>
@@ -103,9 +103,9 @@
         </form>
 
         <?php 
-      if(isset($_POST['id'])){
+      if(isset($_POST['id2'])){
 
-        echo $_POST['id'];
+        echo $_POST['id2'];
 
       }
 

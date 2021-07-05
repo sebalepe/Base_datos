@@ -72,6 +72,9 @@
 				        $result -> execute();
 				        $info_compra = $result -> fetchAll();
 				        foreach ($info_compra as $info){
+				            
+				        	echo $info[0];
+
 				            echo "<p>  $info[0] </p>
 				                <p>  $info[1] </p>
 				                <p> $compra[1]  </p>";
