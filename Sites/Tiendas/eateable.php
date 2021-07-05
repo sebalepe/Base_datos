@@ -4,6 +4,7 @@
 
 <?php 
  	$id = $_POST['id'];
+ 	echo $id;
  	$query = "SELECT nombre, precio, descripcion, tipo_alimento, peso, metodo_conserva, fecha_expiracion, dias_expiracion
  	  from comestibles where id = '$id';";
 	$result = $db2 -> prepare($query);
@@ -11,7 +12,6 @@
 	$productos = $result -> fetchAll();
 	$producto = $productos[0]
 ?>
-
 
 <body>
   <section class="hero is-danger is-fullheight">
