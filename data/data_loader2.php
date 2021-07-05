@@ -40,7 +40,7 @@ function send_base_87($valor)
     $result = $db->prepare($query);
     $result->execute();
     $Personal = $result->fetchAll();
-    $contador = 345;
+    $contador = 365;
     foreach ($Personal as $p) {
         $dato1 = $contador; #ID
         $contador = $contador + 1; 
