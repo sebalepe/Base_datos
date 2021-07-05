@@ -5,7 +5,6 @@ $_SESSION['current_user'] = '1';
 $_SESSION['current_password'] = '1';
 $_SESSION['boss'] = '1';
 $_SESSION['tienda_actual'] = '1';
-echo 'wena'
 ?>
 
 

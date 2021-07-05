@@ -98,7 +98,7 @@ function generateRandomString($length = 30) {
         $dato2 = $p[1]; # rut
         $dato3 = $p[2]; # nombre
         $dato4 = substr($p[3], 0, 1); # sexo
-        echo "<p>". $dato4 ."</p>";
+        echo "<p>". $p ."</p>";
         $dato5 = $p[4]; # edad
         $dato6 = $p[5]; # direccion
         $dato7 = $p[6]; # contraseña
