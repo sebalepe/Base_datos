@@ -26,8 +26,8 @@ function send_base_87($valor)
     $Direcciones = $result->fetchAll();
     $direc = array();
     foreach ($Direcciones as $d) {
-        array_push($d[0]);
-        array_push($d[1]);
+        array_push($direc, $d[0]);
+        array_push($direc, $d[1]);
     }
 
 
