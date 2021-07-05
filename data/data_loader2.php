@@ -29,7 +29,6 @@ function send_base_87($valor)
         $direc[intval($d[0])] = strval($d[1]);
         var_dump($direc);
     }
-    echo $direc;
 
 
     require ("../Sites/config/conexion.php");
@@ -50,7 +49,7 @@ function send_base_87($valor)
         $dato4 = substr($p[3], 0, 1); # sexo
         $dato5 = $p[4]; # edad
         $dato6 = intval($direc[array_search($p[5], $direc)]); # direccion
-        #echo $dato6;
+        echo $dato6;
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
         #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
