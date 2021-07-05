@@ -264,3 +264,13 @@ git pull
 git pull
 git pull 
 git pull
+psql grupo62e3
+git pull
+git add .
+git commit -m 'nose'
+git pull
+git push
+git pull
+psql
+git pull
+psql grupo62e3

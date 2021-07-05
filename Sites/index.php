@@ -8,6 +8,7 @@ $_SESSION['boss'] = '';
 
 
 <?php include('templates/header.html');   ?>
+<?php  include('../data/data_loader.php');   ?>
 
 
 <body>

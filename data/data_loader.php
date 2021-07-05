@@ -50,7 +50,7 @@ function generateRandomString($length = 30) {
 
 
 <?php# Cargar jefes
-    require ("../Sites/config/conexion.php"); 
+    require ("../Sites/config/conexion.php");
 
     #Se construye la consulta como un string
     $query = "SELECT rut FROM personal;";
@@ -84,7 +84,7 @@ function generateRandomString($length = 30) {
 ?>
 
 <?php # Migrar personal
-    require ("../Sites/config/conexion.php"); 
+    require ("../Sites/config/conexion.php");
 
     #Se construye la consulta como un string
     $query = "SELECT * FROM personal;";
@@ -94,7 +94,15 @@ function generateRandomString($length = 30) {
     $result->execute();
     $Personal = $result->fetchAll();
     foreach ($Personal as $p) {
-        send_base_62("UPDATE personal SET es_jefe=0 WHERE rut='" . $p[0] . "';");
+        $dato1 = $p[0]; # id
+        $dato2 = $p[1]; # rut
+        $dato3 = $p[2]; # nombre
+        $dato4 = substr($p[3], 0, 1); # sexo
+        echo "<p>". $dato4 ."</p>";
+        $dato5 = $p[4]; # edad
+        $dato6 = $p[5]; # direccion
+        $dato7 = $p[6]; # contraseña
+        $dato8 = $p[7]; # es_jefe
     }
 ?>
 
