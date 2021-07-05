@@ -68,13 +68,11 @@
 				        if ($compra[0] == $id_com){
 				            $value = 1;
 				        }
-				        endif;
 				    }
 				    foreach ($id_no_comestibles as $id_no){
 				        if ($compra[0] == $id_no){
 				            $value = 2;
 				        }
-				        endif;
 				    }
 				    if ($value == 1){
 				        echo "comestible";
@@ -82,7 +80,6 @@
 				    elseif ($value == 2){
 				        echo "no comestible";
 				    }
-				    endif;
 				}
 			?>
 			</div>
