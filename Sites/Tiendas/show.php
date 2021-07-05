@@ -127,8 +127,8 @@
         $result -> execute();
         $no_comestibles = $result -> fetchAll();
 
-        $len1 = count($comestibles)
-        $len2 = count($no_comestibles)
+        $len1 = count($comestibles);
+        $len2 = count($no_comestibles);
 
         foreach ($comestibles as $producto) {
           echo "<p>  
@@ -156,7 +156,7 @@
         }
 
         if($len1 == 0 and $len2 == 0){
-          echo "<p> No vendemos el producto $nombre </p>"
+          echo "<p> No vendemos el producto $nombre </p>";
         }
       }
     ?>
