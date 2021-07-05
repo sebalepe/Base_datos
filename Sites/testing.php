@@ -18,20 +18,38 @@
           <p class='subtitle is-5' style="text-align:center;">
             Usuarios:
           </p>
-          <p>
-            <?php
-              require("config/conexion.php");
-              $query = "SELECT rut, contraseña FROM usuarios;";
-              $result= $db2 -> prepare($query);
-              $result -> execute();
-              $años = $result -> fetchAll();   
-              
-              
-              foreach ($años as $año) {
-                echo "<p> $año[0], $año[1] </p> ";
-              }
-            ?>
-          </p>
+          <div class="columns">
+            <div class="column">
+              <p>
+                <?php
+                  require("config/conexion.php");
+                  $query = "SELECT rut, contraseña FROM usuarios;";
+                  $result= $db2 -> prepare($query);
+                  $result -> execute();
+                  $años = $result -> fetchAll();   
+                  
+                  
+                  foreach ($años as $año) {
+                    echo "<p> $año[0], $año[1] </p> ";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="column">
+              <?php
+                  require("config/conexion.php");
+                  $query = "SELECT * FROM comestibles;";
+                  $result= $db2 -> prepare($query);
+                  $result -> execute();
+                  $años = $result -> fetchAll();   
+                  
+                  
+                  foreach ($años as $año) {
+                    echo "<p> $año[0], $año[1] </p> ";
+                  }
+                ?>
+            </div>
+          </div>
 
     </div>
     <div class="hero-body">
