@@ -57,30 +57,35 @@
 				$result -> execute();
 				$id_comestibles = $result -> fetchAll();
 
-				$query = "SELECT id FROM no_comestibles ;";
-				$result = $db2 -> prepare($query);
-				$result -> execute();
-				$id_no_comestibles = $result -> fetchAll();
-
 				$value = 0;
 
 				foreach ($compras as $compra) {
-
 				    foreach ($id_comestibles as $id_com){
 				        if ($compra[0] == $id_com[0]){
 				            $value = 1;
 				        }
 				    }
-				    foreach ($id_no_comestibles as $id_no){
-				        if ($compra[0] == $id_no[0]){
-				            $value = 2;
+				    if ($value == 1){
+				        $query = "SELECT nombre, precio FROM comestibles id = $compra[0];";
+				        $result = $db2 -> prepare($query);
+				        $result -> execute();
+				        $info_compra = $result -> fetchAll();
+				        foreach ($info_compra as $info){
+				            echo "<p>  $info[0] </p>
+				                <p>  $info[1] </p>
+				                <p> $compra[1]  </p>";
 				        }
 				    }
-				    if ($value == 1){
-				        echo "comestible";
-				    }
-				    elseif ($value == 2){
-				        echo "no comestible";
+				    elseif ($value == 0){
+				        $query = "SELECT nombre, precio FROM no_comestibles id = $compra[0];";
+				        $result = $db2 -> prepare($query);
+				        $result -> execute();
+				        $info_compra2 = $result -> fetchAll();
+				        foreach ($info_compra2 as $info2){
+				            echo "<p>  $info2[0] </p>
+				                <p>  $info2[1] </p>
+				                <p> $compra[1]  </p>";
+				        }
 				    }
 				}
 			?>
