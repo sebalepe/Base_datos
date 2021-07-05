@@ -26,8 +26,7 @@ function send_base_87($valor)
     $Direcciones = $result->fetchAll();
     $direc = array();
     foreach ($Direcciones as $d) {
-        array_push($direc, $d[0]);
-        array_push($direc, $d[1]);
+        $direc[$d[1]] => $d[0];
     }
 
 
@@ -48,13 +47,8 @@ function send_base_87($valor)
         $dato3 = $p[2]; # nombre
         $dato4 = substr($p[3], 0, 1); # sexo
         $dato5 = $p[4]; # edad
-        $dato6 = $p[5]; # direccion
+        $dato6 = $direc[$p[5]]; # direccion
         echo $dato6;
-        for ($i; $i < count($direc); $i++){
-            if (strval($direct[$i]) == $dato6) {
-                $dato6 = intval($direct[$i-1]);
-            }
-        }
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
         #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
