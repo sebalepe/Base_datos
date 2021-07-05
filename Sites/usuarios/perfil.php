@@ -52,7 +52,7 @@
 				$result -> execute();
 				$compras = $result -> fetchAll();
 
-				$query = "SELECT id FROM comestibles;";
+				$query = "SELECT id FROM no_comestibles;";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$id_comestibles = $result -> fetchAll();
