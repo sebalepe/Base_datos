@@ -42,8 +42,8 @@
 
 				?>
 			</div>
-			<div class='tile is-child is-3 m-3 box'>
-			<p class="subtitle is-5"> 
+			<div class='tile is-child m-3 box'>
+			<p class="subtitle is-5 has-text-black"> 
 				Tus compras:
 			</p>
 			<?php 
@@ -64,22 +64,30 @@
 				    foreach ($id_comestibles as $id_com){
 				        if ($compra[0] == $id_com[0]){
 				            $value = 1;
-				            echo $id_com[0];
 				        }
 				    }
 				    if ($value == 1){
-				        echo "$compra[0]";
 				        $query = "SELECT nombre, precio FROM comestibles where id = $compra[0];";
 				        $result = $db2 -> prepare($query);
 				        $result -> execute();
 				        $info_compra = $result -> fetchAll();
-				        $len = count($info_compra);
-				        echo $len;
 				        foreach ($info_compra as $info){
 
-				            echo "<p>  $info[0] </p>
-				                <p>  $info[1] </p>
-				                <p> $compra[1]  </p>";
+				            echo "
+				            	<div class='columns'>
+				            		<div class='column'>
+						            	<p> Nombre: $info[0] </p>
+						                <p> Precio: $info[1] </p>
+						                <p> Cantidad: $compra[1]  </p>
+						            </div>
+						            <div class='column'>
+						            	<form align='center' action='../Tiendas/products_show.php' method='post'>
+										    <button class='button is-danger' name='id' type='submit' value='$compra[0]'> Ver Producto 
+										    </button>
+										</form>
+						            </div>
+					            </div>
+				                ";
 				        }
 				    }
 				    elseif ($value == 0){
