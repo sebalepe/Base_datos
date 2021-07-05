@@ -66,7 +66,7 @@
                   echo count($comunas); 
 
                   foreach ($comunas as $comuna) {
-                     echo "<p> $comuna[0], $comuna[1] <p>"
+                     echo "<p> $comuna[0], $comuna[1] <p>";
                    } 
                   
                 ?>
