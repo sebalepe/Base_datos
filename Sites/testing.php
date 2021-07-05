@@ -53,15 +53,22 @@
 
             <div class="column">
               <?php
-                  $query = "SELECT comunas FROM Tiendas;";
-                  $result= $db2 -> prepare($query);
+                  $rut = $_SESSION['current_user'];
+
+                  $query = "SELECT * from usuarios, direcciones
+                            where rut = '$rut' and direcciones.id = usuarios.direccion;"; 
+
+                  $result = $db2 -> prepare($query);
                   $result -> execute();
-                  $años = $result -> fetchAll();   
+                  $comunas = $result -> fetchAll(); 
+                  $comuna = $comunas[0]; 
+                  $n_comuna = $comuna[0]; 
+                  echo count($comunas); 
+
+                  foreach ($comunas as $comuna) {
+                     echo "<p> $comuna[0], $comuna[1] <p>"
+                   } 
                   
-                  
-                  foreach ($años as $año) {
-                    echo "<p> $año[0], $año[1] </p> ";
-                  }
                 ?>
             </div>
           </div>
