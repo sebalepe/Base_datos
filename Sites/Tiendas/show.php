@@ -59,7 +59,7 @@
                         
                         foreach ($productos as $producto) {
                           echo "
-                                <p> $producto[0], $producto[1] 
+                                <p> $producto[0]: $ $producto[1] 
                                   <form align='center' action='../Tiendas/eateable.php' method='post'>
                                       <button class='button is-danger' name='id' type='submit' value='$product[2]'> Ver Producto 
                                       </button>
@@ -84,7 +84,7 @@
                         
                         foreach ($productos as $producto) {
                           echo "
-                                <p> $producto[0], $producto[1] 
+                                <p> $producto[0]: $ $producto[1] 
                                   <form align='center' action='../Tiendas/toxic.php' method='post'>
                                       <button class='button is-danger' name='id' type='submit' value='$product[2]'> Ver Producto 
                                       </button>
@@ -257,11 +257,6 @@
         else{
           echo "<p> no tenemos tu producto </p>";
         }
-
-
-
-
-
 
 
       }
