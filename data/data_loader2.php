@@ -30,7 +30,6 @@ function send_base_87($valor)
         array_push($direc, $d[1]);
     }
 
-
     require ("../Sites/config/conexion.php");
 
     #Se construye la consulta como un string
@@ -50,9 +49,9 @@ function send_base_87($valor)
         $dato5 = $p[4]; # edad
         $dato6 = $p[5]; # direccion
         for ($i; $i < count($direc); $i++){
-            if (strval($direct[$i]) == $dato6) {
-                $dato6 = intval($direct[$i-1]);
-                echo intval($direct[$i-1]);
+            if (strval($direc[$i]) == $dato6) {
+                $dato6 = intval($direc[$i-1]);
+                echo $dato6;
             }
         }
         $dato7 = $p[6]; # contraseña
