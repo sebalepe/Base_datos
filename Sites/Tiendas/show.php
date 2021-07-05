@@ -208,7 +208,7 @@
         $direcciones = $result -> fetchAll();
         $comuna = $direcciones[0]; 
         $id_comuna = $comuna[0]; 
-        echo count($comunas);
+        echo count($direcciones);
         $id_comuna = intval($n_comuna); 
 
 
