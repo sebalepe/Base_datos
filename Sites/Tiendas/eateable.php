@@ -6,7 +6,7 @@
  	$id = $_POST['id'];
  	echo $id;
  	$query = "SELECT nombre, precio, descripcion, tipo_alimento, peso, metodo_conserva, fecha_expiracion, dias_expiracion
- 	  from comestibles where id = '$id';";
+ 	  from comestibles where id = $id;";
  	echo $query;
 	$result = $db2 -> prepare($query);
 	$result -> execute();
