@@ -59,7 +59,8 @@
           <button class="button is-danger is-small" id="closebtn">Close Modal</button>                
         </div>                
         <button class="modal-close is-large" aria-label="close"></button>                
-      </div> 
+      </div>
+
     <div class="tile is-parent is-vertical">
       <div align="center" class="tile is-child m-3 box">
         <button class="button is-danger is-large" id="lanuchModal">
@@ -67,6 +68,7 @@
         </button>
       </div>
 
+    
     <div class="tile is-child box m-3">
       <form align="center" action="" method="post">
         <div class="field-body">
