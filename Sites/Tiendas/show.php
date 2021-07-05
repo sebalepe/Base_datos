@@ -203,10 +203,10 @@
                        <select name="id2" id="cars">
                         <option disabled selected>Selecciona un id </option>
                         <?php foreach ($pro_com as $value): ?>
-                          <option> <? php echo "$value"; ?></option>
+                          <option> <?php echo "$value"; ?></option>
                         <?php endforeach; ?>
                         <?php foreach ($pro_no_com as $value): ?>
-                          <option> <? php echo "$value"; ?></option>
+                          <option> <?php echo "$value"; ?></option>
                         <?php endforeach; ?>
                       </select> 
                       <!-- <input class="input" type="text" placeholder="Ingresa un ID" name="id2"> -->
