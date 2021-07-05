@@ -125,7 +125,11 @@ function generateRandomString($length = 30) {
         }
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
-        send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
+        #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
+
+        $query = "INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');";
+        $result = $db2 ->prepare($query);
+        $result ->execute();
     }
 ?>
 
