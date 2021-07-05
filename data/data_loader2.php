@@ -49,13 +49,12 @@ function send_base_87($valor)
         $dato4 = substr($p[3], 0, 1); # sexo
         $dato5 = $p[4]; # edad
         $dato6 = intval($direc[array_search($p[5], $direc)][1]); # direccion
-        #echo $dato6;
+        echo $dato6;
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
         #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
 
         $query = "INSERT INTO usuarios(ru,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');";
-        echo  $query;
         $result = $db2 ->prepare($query);
         $result ->execute();
     }
