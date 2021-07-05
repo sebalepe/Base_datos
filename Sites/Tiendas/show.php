@@ -35,11 +35,11 @@
 ?>
 <div class="tile is-ancestor">
   <div class="tile is-parent is-vertical">
-    <div align="center" class="tile is-child box m-6">
+    <div align="center" class="tile is-child box">
       <div id="modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
-            <article class="media" >
+            <article class="media notification" >
                 <div class="media-content">       
                   <div class="content">               
                     <p class="title is-6 has-text-black"> Productos Comestibles </p>
