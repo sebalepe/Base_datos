@@ -120,7 +120,7 @@
       if(isset($_POST['nombre'])){
         $id = $_SESSION['tienda_actual'];
         $nombre = $_POST['nombre'];
-        $nombre = strtolower($nombre)
+        $nombre = strtolower($nombre);
       
         $query = "SELECT nombre, descripcion, precio, id FROM comestibles 
                   where nombre like '%$nombre%' and id_tienda = $id;";
