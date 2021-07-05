@@ -30,6 +30,7 @@ function send_base_87($valor)
         array_push($direc, $d[1]);
     }
 
+
     require ("../Sites/config/conexion.php");
 
     #Se construye la consulta como un string
@@ -39,7 +40,7 @@ function send_base_87($valor)
     $result = $db->prepare($query);
     $result->execute();
     $Personal = $result->fetchAll();
-    $contador = 365;
+    $contador = 345;
     foreach ($Personal as $p) {
         $dato1 = $contador; #ID
         $contador = $contador + 1; 
@@ -48,17 +49,17 @@ function send_base_87($valor)
         $dato4 = substr($p[3], 0, 1); # sexo
         $dato5 = $p[4]; # edad
         $dato6 = $p[5]; # direccion
+        echo $dato6;
         for ($i; $i < count($direc); $i++){
-            if (strval($direc[$i]) == strval($dato6)) {
-                $dato6 = intval($direc[$i-1]);
-                break 1;
+            if (strval($direct[$i]) == $dato6) {
+                $dato6 = intval($direct[$i-1]);
             }
         }
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
-        $query = "INSERT INTO usuarios(rut,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES('$dato2','','$dato3',$dato5,'$dato4',$dato6,$dato1,'$dato7',$dato8,'');";
-        echo $query;
-        echo $dato3;
+        #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
+
+        $query = "INSERT INTO usuarios(ru,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');";
         $result = $db2 ->prepare($query);
         $result ->execute();
     }
