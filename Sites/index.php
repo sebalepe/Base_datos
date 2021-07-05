@@ -28,20 +28,6 @@ $_SESSION['boss'] = '';
           <div class="tile is-ancestor">
             <div class="tile is-parent">
               <div class='tile is-child'>
-              <h3 class="title is-4 has-text-black" align="center">
-                <?php
-                        require("config/conexion.php");
-                        $query = "SELECT rut, contraseña FROM usuarios;";
-                        $result= $db2 -> prepare($query);
-                        $result -> execute();
-                        $años = $result -> fetchAll();   
-                        
-                        
-                        foreach ($años as $año) {
-                          echo "<p> $año[0], $año[1] </p> ";
-                        }
-                ?>
-                </h3>
               </div>
             </div>
             <div class="tile is-parent is-2">

@@ -6,7 +6,7 @@
 
     <div class="tile is-ancestor">
         <div class="tile is-parent is-vertical">
-            <div class="tile is-child is-6 m-6">
+            <div class="tile is-child is-6 m-6" align="center">
                 <h3 class="title is-3">
                     Bienvenido de Vuelta! 
                 </h3>
