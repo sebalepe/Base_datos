@@ -36,7 +36,7 @@
       						echo "
                   <div class='tile is-child box'>
       							<div class='columns is-gapless'>	
-                      <div class='column'>
+                      <div class='column is-one-quarter'>
                         <img class='image' src='storage/tienda.png' width='30' height='30' />
                       </div>
                       <div class='column'>
