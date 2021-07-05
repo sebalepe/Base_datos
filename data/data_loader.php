@@ -120,7 +120,7 @@ function generateRandomString($length = 30) {
         $dato6 = $p[5]; # direccion
         for ($i; $i < count($direc); $i++){
             if (strval($direct[$i]) == $dato6) {
-                $dato6 = intval($direct[$i-1])
+                $dato6 = intval($direct[$i-1]);
             }
         }
         $dato7 = $p[6]; # contraseña
