@@ -174,7 +174,7 @@
       }
 
       else{
-        echo "<p> No vendemos ningun producto con ese nombre ): tonto weon </p>" 
+        echo "<p> No vendemos ningun producto con ese nombre ): tonto weon </p>";
       }
 
 
