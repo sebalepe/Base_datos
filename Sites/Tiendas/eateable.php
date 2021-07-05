@@ -43,5 +43,4 @@
 
   </section>
 
-</body>
-</html>
+<?php include('../templates/footer.html'); ?>

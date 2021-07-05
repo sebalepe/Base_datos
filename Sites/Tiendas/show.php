@@ -317,3 +317,4 @@ $("#closebtn").click(function() {
 
 
 <?php include('../templates/footer.html'); ?>
+
