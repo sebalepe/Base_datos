@@ -2,7 +2,7 @@
 <body>
 
 
-<div align="center">
+<div class="m-5" align="center">
   <form align="center" action="validacion_ingreso.php" method="post">
     <div class="field-body">
         <div class="field">
