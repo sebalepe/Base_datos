@@ -81,7 +81,7 @@
 						                <p> Cantidad: $compra[1]  </p>
 						            </div>
 						            <div class='column'>
-						            	<form align='center' action='../Tiendas/products_show.php' method='post'>
+						            	<form align='center' action='../Tiendas/product_show.php' method='post'>
 										    <button class='button is-danger' name='id' type='submit' value='$compra[0]'> Ver Producto 
 										    </button>
 										</form>
