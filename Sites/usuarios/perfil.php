@@ -71,9 +71,9 @@
 				        $result = $db2 -> prepare($query);
 				        $result -> execute();
 				        $info_compra = $result -> fetchAll();
+				        $len = count($info_compra);
+				        echo $len;
 				        foreach ($info_compra as $info){
-				            
-				        	echo $info[0];
 
 				            echo "<p>  $info[0] </p>
 				                <p>  $info[1] </p>
