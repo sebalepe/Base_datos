@@ -11,7 +11,8 @@
   
   $id = $_POST["id"];
 
-  $query = "SELECT * from tiendas where id = '$id' ;";
+  $query = "SELECT id, direccion, nombre, comunas, comuna_tienda 
+            from tiendas where id = '$id' ;";
 
  
   $result = $db2 -> prepare($query);
@@ -43,17 +44,48 @@
                 <div class="media-content">       
                   <div class="content">               
                     <p class="title is-6 has-text-black"> Productos Comestibles </p>
-                    <p>  Producto Barato 1</p> 
-                    <p>  Producto Barato 2</p>  
-                    <p>  Producto Barato 3</p>                
+                    <?php 
+                        $id = $Tienda[0];
+                        $query = "SELECT nombre, precio, id  from comestibles where id_tienda = '$id' ;";
+                        $result = $db2 -> prepare($query);
+                        $result -> execute();
+                        $productos = $result -> fetchAll(); 
+                        
+                        foreach ($productos as $producto) {
+                          echo "
+                                <p> $producto[0], $producto[1] 
+                                  <form align='center' action='../Tiendas/eateable.php' method='post'>
+                                      <button class='button is-danger' name='id' type='submit' value='$product[2]'> Ver Producto 
+                                      </button>
+                                  </form>  
+                                </p>                       
+                          ";
+                        }
+
+                    ?>
                   </div>                 
                 </div> 
                 <div class="media-content">       
                   <div class="content"> 
                     <p class="title is-6 has-text-black"> Productos Toxicos </p>              
-                    <p>  Producto Barato 1</p> 
-                    <p>  Producto Barato 2</p>  
-                    <p>  Producto Barato 3</p>                
+                    <?php 
+                        $id = $Tienda[0];
+                        $query = "SELECT nombre, precio, id  from no_comestibles where id_tienda = '$id' ;";
+                        $result = $db2 -> prepare($query);
+                        $result -> execute();
+                        $productos = $result -> fetchAll(); 
+                        
+                        foreach ($productos as $producto) {
+                          echo "
+                                <p> $producto[0], $producto[1] 
+                                  <form align='center' action='../Tiendas/toxic.php' method='post'>
+                                      <button class='button is-danger' name='id' type='submit' value='$product[2]'> Ver Producto 
+                                      </button>
+                                  </form>  
+                                </p>                       
+                          ";
+                        }
+                    ?>               
                   </div>                 
                 </div>                 
             </article>                

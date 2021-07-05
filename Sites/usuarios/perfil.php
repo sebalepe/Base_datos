@@ -73,32 +73,46 @@
 				        foreach ($info_compra as $info){
 
 				            echo "
+				            	<p>
+					            	<div class='columns'>
+					            		<div class='column'>
+							            	<p> Nombre: $info[0] </p>
+							                <p> Precio: $info[1] </p>
+							                <p> Cantidad: $compra[1]  </p>
+							            </div>
+							            <div class='column'>
+							            	<form align='center' action='../Tiendas/eateable.php' method='post'>
+											    <button class='button is-danger' name='id' type='submit' value='$compra[0]'> Ver Producto 
+											    </button>
+											</form>
+							            </div>
+						            </div>
+						        </p>
+				                ";
+				        }
+				    }
+				    elseif ($value == 0){
+	
+				        $query = "SELECT nombre, precio FROM no_comestibles where id = $compra[0];";
+				        $result = $db2 -> prepare($query);
+				        $result -> execute();
+				        $info_compra2 = $result -> fetchAll();
+				        foreach ($info_compra2 as $info2){
+				            echo "
 				            	<div class='columns'>
 				            		<div class='column'>
-						            	<p> Nombre: $info[0] </p>
-						                <p> Precio: $info[1] </p>
+						            	<p> Nombre: $info2[0] </p>
+						                <p> Precio: $info2[1] </p>
 						                <p> Cantidad: $compra[1]  </p>
 						            </div>
 						            <div class='column'>
-						            	<form align='center' action='../Tiendas/product_show.php' method='post'>
+						            	<form align='center' action='../Tiendas/toxic.php' method='post'>
 										    <button class='button is-danger' name='id' type='submit' value='$compra[0]'> Ver Producto 
 										    </button>
 										</form>
 						            </div>
 					            </div>
 				                ";
-				        }
-				    }
-				    elseif ($value == 0){
-				        echo "algo";
-				        $query = "SELECT nombre, precio FROM no_comestibles id = $compra[0];";
-				        $result = $db2 -> prepare($query);
-				        $result -> execute();
-				        $info_compra2 = $result -> fetchAll();
-				        foreach ($info_compra2 as $info2){
-				            echo "<p>  $info2[0] </p>
-				                <p>  $info2[1] </p>
-				                <p> $compra[1]  </p>";
 				        }
 				    }
 				}

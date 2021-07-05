@@ -35,5 +35,4 @@
         <meta http-equiv="refresh" content="0;url=../home.php">
     <?php endif ?>
   <?php endif ?>
-
-<?php include('../templates/footer.html'); ?>
+</body>
