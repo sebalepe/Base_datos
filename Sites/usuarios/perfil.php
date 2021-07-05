@@ -67,16 +67,12 @@
 				foreach ($compras as $compra) {
 
 				    foreach ($id_comestibles as $id_com){
-				        echo $compra[0];
-				        echo $id_com[0];
-				        if ($compra[0] == $id_com){
+				        if ($compra[0] == $id_com[0]){
 				            $value = 1;
 				        }
 				    }
 				    foreach ($id_no_comestibles as $id_no){
-				        echo $compra[0];
-				        echo $id_no[0];
-				        if ($compra[0] == $id_no){
+				        if ($compra[0] == $id_no[0]){
 				            $value = 2;
 				        }
 				    }
