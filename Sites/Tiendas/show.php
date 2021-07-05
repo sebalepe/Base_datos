@@ -206,14 +206,14 @@
         $result = $db2 -> prepare($query);
         $result -> execute();
         $pro_com = $result -> fetchAll();
-        $len1 = count($pro_com)
+        $len1 = count($pro_com);
         
         $query = "SELECT * from no_comestibles
                   where id = '$id_producto' and id_tienda = '$id';"; 
         $result = $db2 -> prepare($query);
         $result -> execute();
         $pro_no_com = $result -> fetchAll();
-        $len2 = count($pro_no_com)
+        $len2 = count($pro_no_com);
 
         if($len1 <> 0 or $len2 <> 0){
             echo " <p> Tenemos disponible este producto </p>";
