@@ -208,9 +208,7 @@
         $direcciones = $result -> fetchAll();
         $comuna = $direcciones[0]; 
         $id_comuna = $comuna[0]; 
-        echo count($direcciones);
         $id_comuna = intval($n_comuna); 
-
 
         $query = "SELECT direcciones.comuna from direcciones
                   where  direcciones.id = $id_comuna;"; 
@@ -219,7 +217,7 @@
         $comunas = $result -> fetchAll();
         $comuna = $comunas[0]; 
         $n_comuna = $comuna[0]; 
-        echo count($comunas);
+        echo $n_comuna;
         
         $query = "SELECT comunas from tiendas 
                   where id = '$id';";  
@@ -229,6 +227,7 @@
         $lista_comunas = $comunas[0]; 
         $l_comunas = $lista_comunas[0]; 
         $comunas = explode(",", $l_comunas);
+        echo $comunas;
     
         if (in_array($n_comuna, $comunas)){
           echo "weeena";
