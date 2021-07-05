@@ -118,6 +118,7 @@ function generateRandomString($length = 30) {
         $dato4 = substr($p[3], 0, 1); # sexo
         $dato5 = $p[4]; # edad
         $dato6 = $p[5]; # direccion
+        echo $dato6;
         for ($i; $i < count($direc); $i++){
             if (strval($direct[$i]) == $dato6) {
                 $dato6 = intval($direct[$i-1]);
