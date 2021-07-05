@@ -66,7 +66,7 @@
 				        }
 				    }
 				    if ($value == 1){
-				        echo "algo";
+				        echo "$compra[0]";
 				        $query = "SELECT nombre, precio FROM comestibles id = $compra[0];";
 				        $result = $db2 -> prepare($query);
 				        $result -> execute();
