@@ -37,7 +37,7 @@
             <div class='tile is-child box'>
 							<div class='columns'>	
                 <div class='column'>
-                  <img class='image' src='storage/espada1.png' width="30" height="30" />
+                  <img class='image' src='storage/espada1.png' width='30' height='30' />
                 </div
                 <div class='column'>
                   <p> Nombre: $tienda[0] </p>
