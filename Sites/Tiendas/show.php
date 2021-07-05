@@ -19,9 +19,8 @@
   $result -> execute();
   $Tiendas = $result -> fetchAll(); 
   $Tienda = $Tiendas[0]; 
-
-
-
+  $id = $Tienda[0];
+  echo $id;
   echo "
     <div align='center'>
         <p class='title is-3'>
