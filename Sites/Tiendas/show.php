@@ -124,13 +124,13 @@
         $nombre = $_POST['nombre'];
       
         $query = "SELECT nombre, descripcion, precio, id FROM comestibles 
-                  where nombre like '%$nombre%' ;";
+                  where nombre like '%$nombre%' and id_tienda = $id;";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $comestibles = $result -> fetchAll(); 
 
         $query = "SELECT nombre, descripcion, precio, id FROM no_comestibles 
-                  where nombre like '%$nombre%' ;";
+                  where nombre like '%$nombre%' and id_tienda = $id;";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $no_comestibles = $result -> fetchAll();
