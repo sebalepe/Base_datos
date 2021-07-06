@@ -23,7 +23,8 @@
 
 	$query = "SELECT direccion FROM direcciones where id = $direct_id;";
 	$result = $db2 -> prepare($query);
-	$dir = $result -> execute();
+	$result -> execute();
+	$dir = $result -> fetchAll();
 	$direccion = $dir[0][0];
 	echo count($dir);
 
