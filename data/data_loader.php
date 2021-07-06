@@ -120,7 +120,7 @@ function generateRandomString($length = 30) {
         $dato6 = 0;
         for($i=1; $i<count($direc); $i+=2){
             if ($direc[$i] == $p[5]) {
-                $dato6 = $dato6 + $direc[$i-1];
+                $dato6 = $direc[$i-1];
             }
         }
 
