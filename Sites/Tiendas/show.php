@@ -331,7 +331,7 @@ echo "</p>
               <div class='field-body'>
                   <div class='field'>
                       <p class='control'>
-                        <input class='input' type='number' name='cantidad'>
+                        <input class='input' type='number' name='cantidad' value='10'>
                       </p>
                   </div>
               </div>
@@ -340,7 +340,7 @@ echo "</p>
             </form>
 <?php
             #";
-            if(isset($_POST['cantidad'])){
+            if(!empty($_POST['cantidad'])){
               $cantidad = $_POST['cantidad'];
               echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
             }         
