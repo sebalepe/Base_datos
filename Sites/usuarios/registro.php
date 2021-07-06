@@ -16,7 +16,7 @@
                 </div>
                 <div class="tile is-child box m-6">
                     <form align="center" action="validacion_ingreso.php" method="post">
-                        <div class="field-body">
+                        <div class="field-body" style="display: block;">
                             <div class="field">
                                 <p class="control">
                                     <input class="input" type="text" placeholder="Ingresa tu nombre" name="nombre">
