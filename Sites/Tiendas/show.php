@@ -58,8 +58,8 @@ echo "</p>
     </div>";
 ?>
 
-<div class="tile is-ancestor">
-  <div class="tile is-parent is-vertical">
+<div class="tile is-ancestor m-6">
+  <div class="tile is-parent is-vertical m-6">
     <div align="center" class="tile is-child box">
       <div id="modal" class="modal">
         <div class="modal-background"></div>
@@ -347,7 +347,7 @@ echo "</p>
           echo "<p> no vendo donde estas </p>";
         }
       }
-        
+
       if(isset($_POST['cantidad'])){
           $cantidad = $_POST['cantidad'];
           echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
