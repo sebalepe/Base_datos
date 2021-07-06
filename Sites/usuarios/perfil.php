@@ -131,11 +131,6 @@
 			</div>
 			    <?php if ($jefe == 1): ?>
 			        <?php
-			        echo"
-			        <div class='tile is-child m-3 box'>
-			            <p class='subtitle is-5 has-text-black'>
-				            Que onda viejo, aqui estan tus soldados:
-			            </p>";
                         $query = "SELECT unidad, nombre FROM unidades, direcciones, (SELECT unidad FROM personal, p_clasificados where personal.rut = '$rut' and personal.rut = p_clasificados.rut) as jefe_uni
                                   where unidades.uid = jefe_uni.unidad and unidades.direccion_id = direcciones.id;";
 
