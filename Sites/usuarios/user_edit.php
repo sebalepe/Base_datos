@@ -6,7 +6,7 @@
     <div class="m-5" align="center">
 
         <div class="tile is-ancestor">
-            <div class="tile is-parent is-vertical">
+            <div class="tile is-parent is-vertical" align="center">
                 <div class="tile is-child is-6 m-6" align="center">
                     <h3 class="title is-3">
                         Editar mi Perfil
@@ -32,7 +32,7 @@
                                     </p>
                                 </div>
                             </div>
-                        </p>
+                        </p><br><br>
                         <p>
                             <div class="field-body">
                                 <div class="field">
