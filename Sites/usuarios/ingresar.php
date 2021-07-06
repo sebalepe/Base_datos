@@ -24,7 +24,8 @@
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa tu contraseña" name="contraseña">
+                                    <input class="input" type="password" placeholder="Ingresa tu contraseña" 
+                                    name="contraseña">
                                 </p>
                             </div>
                         </div>

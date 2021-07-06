@@ -16,7 +16,7 @@ $new_direccion = $_POST['direccion'];
 $new_comuna = $_POST['comuna'];
 $test = $_POST['test'];
 
-if (preg_match("/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{3,}$/", $test)) {
+if (preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{3,}$/', $test)) {
     echo "La cadena contiene al menos un caracter especial, un número y una letra";
 } 
 else {

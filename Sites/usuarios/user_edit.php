@@ -21,14 +21,14 @@
                             <div class="field-body">
                                 <div class="field">
                                     <p class="control">
-                                        <input class="input" type="password" placeholder="Ingresa tu contraseña anterior" 
-                                        name="old_contraseña">
+                                        <input class="input" type="password" pattern="[A-Za-z0-9]{1,30}"
+                                        placeholder="Ingresa tu contraseña anterior" name="old_contraseña">
                                     </p>
                                 </div>
                                 <div class="field">
                                     <p class="control">
-                                        <input class="input" type="password" placeholder="Ingresa tu contraseña nueva" 
-                                        name="new_contraseña">
+                                        <input class="input" type="password" pattern="[A-Za-z0-9]{1,30}"
+                                        placeholder="Ingresa tu contraseña nueva" name="new_contraseña">
                                     </p>
                                 </div>
                             </div>
