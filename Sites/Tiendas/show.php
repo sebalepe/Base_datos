@@ -341,6 +341,7 @@ echo "</p>
 <?php
             #";
             if(isset($_POST['cantidad'])){
+              echo "<meta http-equiv='refresh' content='0;url=../home.php'>"
               $cantidad = $_POST['cantidad'];
               echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
             }         
