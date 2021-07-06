@@ -47,4 +47,10 @@
   }
   ?>
 
-<?php include('../templates/footer.html'); ?>
+<br>
+<br>
+<button class="button is-small is-info is-light" onclick="history.go(0);">Back </button>
+</section>
+</body>
+
+</html>
