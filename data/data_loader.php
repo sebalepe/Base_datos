@@ -109,7 +109,7 @@ function generateRandomString($length = 30) {
     $result = $db->prepare($query);
     $result->execute();
     $Personal = $result->fetchAll();
-    $contador = 345;
+    $contador = 365;
     foreach ($Personal as $p) {
         $dato1 = $contador; #ID
         $contador = $contador + 1; 
@@ -117,20 +117,22 @@ function generateRandomString($length = 30) {
         $dato3 = $p[2]; # nombre
         $dato4 = substr($p[3], 0, 1); # sexo
         $dato5 = $p[4]; # edad
-        $dato6 = $p[5]; # direccion
-        echo $dato6;
-        for ($i; $i < count($direc); $i++){
-            if (strval($direct[$i]) == $dato6) {
-                $dato6 = intval($direct[$i-1]);
+        $dato6 = 0;
+        for($i=1; $i<count($direc); $i+=2){
+            if ($direc[$i] == $p[5]) {
+                $dato6 = $dato6 + $direc[$i-1];
             }
         }
+
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
         #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
 
-        $query = "INSERT INTO usuarios(ru,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');";
+        $query = "INSERT INTO usuarios(rut,direcciones,nombre,edad,sexo,direccion,id,contraseña,es_jefe,carrito) VALUES('$dato2','','$dato3',$dato5,'$dato4','$dato6',$dato1,'$dato7',$dato8,'');";
+        echo $query;
         $result = $db2 ->prepare($query);
         $result ->execute();
     }
 ?>
+
 
