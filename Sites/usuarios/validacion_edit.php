@@ -33,9 +33,9 @@ if (!empty($old_contraseña) and !empty($new_contraseña)){
 				 where rut = '$rut';";
 		$result = $db2 -> prepare($query);
 		$result -> execute();
-		echo "<p> Contraseña actual actualizada a <p> "
+		echo "<p> Contraseña actual actualizada a <p> ";
 	else{
-		echo "<p> Contraseña actual no concuerda <p>"
+		echo "<p> Contraseña actual no concuerda <p>";
 	}
 	}
 }
@@ -52,7 +52,7 @@ if (!empty($new_direccion)){
 			  where id = $id_direccion;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	echo "<p> Direccion actual actualizada a $new_direccion <p> "
+	echo "<p> Direccion actual actualizada a $new_direccion <p> ";
 }
 
 if (!empty($new_comuna)){
@@ -67,7 +67,7 @@ if (!empty($new_comuna)){
 			  where id = $id_direccion;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	echo "<p> Contraseña actual actualizada a $new_comuna <p> "
+	echo "<p> Contraseña actual actualizada a $new_comuna <p> ";
 }
 
 
