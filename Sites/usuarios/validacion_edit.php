@@ -11,7 +11,7 @@ require("../config/conexion.php");
 
 
 $old_contraseña = $_POST['old_contraseña'];
-$new_constraseña = $_POST['new_constraseña'];
+$new_constraseña = $_POST['new_contraseña'];
 $new_direccion = $_POST['direccion'];
 $new_comuna = $_POST['comuna'];
 
@@ -34,6 +34,7 @@ if (!empty($old_contraseña) and !empty($new_contraseña)){
 		$result = $db2 -> prepare($query);
 		$result -> execute();
 		echo "<p> Contraseña actual actualizada a <p> ";
+		$_SESSION['current_password'] =  $new_contraseña;
 	}
 	else{
 		echo "<p> Contraseña actual no concuerda <p>";
