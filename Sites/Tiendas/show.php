@@ -15,11 +15,12 @@
 
   if (isset($_POST["id"])){
     $id = $_POST["id"];
-    if(strlen($id) <> 0){
     $_SESSION['tienda_actual'] = $id;
-    }
   }
-
+  if(!isset($_POST["id"])){
+    $id = $_SESSION['tienda_actual'];
+  }
+  
   $query = "SELECT id, direccion, nombre, comunas, comuna_tienda 
             from tiendas where id = '$id' ;";
 
@@ -37,9 +38,10 @@
         <p class='subtitle is-5'>
           20% de descuento con CMR en todos los productos
         </p>
-    </div"
+    </div";
 
 ?>
+
 <div class="tile is-ancestor">
   <div class="tile is-parent is-vertical">
     <div align="center" class="tile is-child box">
