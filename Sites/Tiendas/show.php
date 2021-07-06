@@ -327,24 +327,18 @@ echo "</p>
 
             #echo "
 ?>
-            <form align='center' action="" method='post'>
+            <form align='center' action='../usuarios/perfil.php' method='post'>
               <div class='field-body'>
                   <div class='field'>
                       <p class='control'>
-                        <input class='input' type='number' name='test'>
+                        <input class='input' type='number' name='cantidad'>
                       </p>
                   </div>
               </div>
               <br/><br/>
               <input class='button is-danger' type='submit' value='Comprar' >
             </form>
-<?php
-            #";
-            if(isset($_POST['test'])){
-              echo "<meta http-equiv='refresh' content='0;url=../home.php'>";
-              $cantidad = $_POST['cantidad'];
-              echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
-            }         
+<?php        
         }
         else {
           echo "<p> no vendo donde estas </p>";
