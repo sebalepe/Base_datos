@@ -1,4 +1,6 @@
-
+<?php 
+  session_start();
+?>
 <?php include('templates/header.html');   ?>
 <?php include('templates/navbar.html');   ?>
 <?php #include('../data/data_loader2.php');   ?>
