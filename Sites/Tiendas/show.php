@@ -331,7 +331,7 @@ echo "</p>
               <div class='field-body'>
                   <div class='field'>
                       <p class='control'>
-                          <input class='input' type='number' max= '$max_cant' min='1' name='test'>
+                          <input class='input' type='number' name='test'>
                       </p>
                   </div>
               </div>
