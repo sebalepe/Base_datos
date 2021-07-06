@@ -92,7 +92,7 @@
                    }
 
                   $query = "SELECT direccion from direcciones
-                            where id = $direccion;"; 
+                            where id = '$direccion' ;"; 
 
                   $result = $db2 -> prepare($query);
                   $result -> execute();
