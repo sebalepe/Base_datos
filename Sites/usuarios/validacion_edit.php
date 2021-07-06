@@ -46,7 +46,8 @@ if (!empty($new_direccion)){
 	$query = "SELECT direccion from usuarios where rut = '$rut' ;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	$id_direccion = intval($result[0][0]);
+	$dir = $result -> fetchAll();
+	$id_direccion = intval($dir[0][0]);
 
 	$query = "UPDATE direcciones
 			  set direccion = '$new_direccion'
@@ -61,7 +62,8 @@ if (!empty($new_comuna)){
 	$query = "SELECT direccion from usuarios where rut = '$rut' ;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	$id_direccion = intval($result[0][0]);
+	$dir = $result -> fetchAll();
+	$id_direccion = intval($dir[0][0]);
 
 	$query = "UPDATE direcciones
 			  set comuna = '$new_comuna'
