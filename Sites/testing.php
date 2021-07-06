@@ -1,8 +1,13 @@
 
 <?php include('templates/header.html');   ?>
 <?php include('templates/navbar.html');   ?>
+<<<<<<< HEAD
 <?php include("../data/data_loader.php");   ?>
+=======
+<?php #include('../data/data_loader2.php');   ?>
+>>>>>>> master
 
+<p> Funciona </p>
 <?php $array = [[1,2,3],[4,5,6]];
       $value = 0?>;
 
@@ -17,69 +22,72 @@
     <div class="hero-head">
         <h1 class="title is-1" align="center">CheemsCO </h1>
           <p class='subtitle is-5' style="text-align:center;">
-            Donde te gustaria comprar?
+            Usuarios:
           </p>
+          <div class="columns">
+            <div class="column">
+              <p>
+                <?php
+                  require("config/conexion.php");
+                  $query = "SELECT rut, contraseña FROM usuarios;";
+                  $result= $db2 -> prepare($query);
+                  $result -> execute();
+                  $años = $result -> fetchAll();   
+                  
+                  
+                  foreach ($años as $año) {
+                    echo "<p> $año[0], $año[1] </p> ";
+                  }
+                ?>
+              </p>
+            </div>
+            <div class="column">
+              <?php
+                  require("config/conexion.php");
+                  $query = "SELECT * FROM comestibles;";
+                  $result= $db2 -> prepare($query);
+                  $result -> execute();
+                  $años = $result -> fetchAll();   
+                  
+                  
+                  foreach ($años as $año) {
+                    echo "<p> $año[0], $año[1] </p> ";
+                  }
+                ?>
+            </div>
+
+            <div class="column">
+              <?php
+                  $rut = $_SESSION['current_user'];
+
+                  $query = "SELECT * from usuarios, direcciones
+                            where rut = '$rut' and direcciones.id = usuarios.direccion;"; 
+
+                  $result = $db2 -> prepare($query);
+                  $result -> execute();
+                  $comunas = $result -> fetchAll(); 
+                  $comuna = $comunas[0]; 
+                  $n_comuna = $comuna[0]; 
+                  echo count($comunas); 
+
+                  foreach ($comunas as $comuna) {
+                     echo "<p> $comuna[0], $comuna[1] <p>";
+                   } 
+                  
+                ?>
+            </div>
+          </div>
+
     </div>
     <div class="hero-body">
       
-      <div class='tile is-ancestor'>
-        <div class='tile is-parent is-vertical'>
-          <?php 
-            foreach ($array as $lista) {
-              echo "
-                  <div align='center' class='tile is-child box'>
-                    <form align='center' action='' method='get'>
-                      <button class='button is-danger' id='lanuchModal' name='algo' value='$value'> presiona aqui</button>
-                    </form>
-                  </div> ";
-              $value = $value + 1;
-            }
-          ?>
-        </div>
-      </div>
-
-      <div id='modal' class='modal'>
-        <div class='modal-background'></div>
-        <div class='modal-content'>
-          <div class='box'>
-            <article class='media' >
-                <div class='media-content'>       
-                  <div class='content'>               
-                    <p class='title is-6 has-text-black'> Info </p>
-                           
-                  </div>                 
-                </div>              
-            </article>                
-          </div>
-          <button class='button is-danger is-small' id='closebtn'>Close Modal</button>                
-        </div>                
-        <button class='modal-close is-large' aria-label='close'></button>                
-      </div>
-
-
-    </div>
+     
 
     </div>
   </section>
 
 
-<script>
 
-
-$("#lanuchModal").click(function() {
-
-$(".modal").addClass("is-active");                 
-});
-
-$(".modal-close").click(function() {
-
- $(".modal").removeClass("is-active");               
-});
-
-$("#closebtn").click(function() {
- $(".modal").removeClass("is-active");              
-});
-</script>
 
 </body>
 </html>

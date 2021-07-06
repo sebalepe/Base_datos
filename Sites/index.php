@@ -1,14 +1,18 @@
 <?php include("../data/data_loader.php");   ?>
 <?php
+
 session_start();
 
 $_SESSION['current_user'] = '1';
 $_SESSION['current_password'] = '1';
-$_SESSION['boss'] = '';
+$_SESSION['boss'] = '1';
+$_SESSION['tienda_actual'] = '1';
+
 ?>
 
 
 <?php include('templates/header.html');   ?>
+<?php #include('../data/data_loader2.php');   ?>
 
 
 <body>
@@ -27,29 +31,11 @@ $_SESSION['boss'] = '';
     </div>
     <div class="hero-body">
           <div class="tile is-ancestor">
-            <div class="tile is-parent">
-              <div class='tile is-child'>
-              <h3 class="title is-4 has-text-black" align="center">
-                <?php
-                        require("config/conexion.php");
-                        $query = "SELECT rut, contraseña FROM usuarios;";
-                        $result= $db2 -> prepare($query);
-                        $result -> execute();
-                        $años = $result -> fetchAll();   
-                        
-                        
-                        foreach ($años as $año) {
-                          echo "<p> $año[0], $año[1] </p> ";
-                        }
-                ?>
-                </h3>
-              </div>
-            </div>
-            <div class="tile is-parent is-2">
+            <div class="tile is-parent" align="center">
                 <div class="tile is-child is-box">
                     <div align="center">
-                          <a class="button" href="usuarios/registracion.php">
-                            registracion
+                          <a class="button" href="usuarios/registro.php">
+                            registro
                           </a>
                           <a class="button" href="usuarios/ingresar.php">
                             ingreso
@@ -57,16 +43,12 @@ $_SESSION['boss'] = '';
                     </div>
                 </div>
             </div>
-            <div class="tle is-parent">
-              <div class='tile is-child'>
-              </div>
-            </div>
-
           </div>
-        <br/><br/>
-        <br/><br/>
-        <br/><br/>
+
     </div>
+        <br/><br/>
+        <br/><br/>
+        <br/><br/>
   </section>
 </body>
 </html>

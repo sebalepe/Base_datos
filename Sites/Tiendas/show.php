@@ -1,3 +1,8 @@
+<?php
+  session_start();
+?>
+
+
 <?php include('../templates/header.html');   ?>
 <?php include('../templates/navbar.html');   ?>
 
@@ -10,17 +15,18 @@
 
   
   $id = $_POST["id"];
+  if(strlen($id) <> 0){
+    $_SESSION['tienda_actual'] = $id;
+  }
 
-  $query = "SELECT * from tiendas where id = '$id' ;";
+  $query = "SELECT id, direccion, nombre, comunas, comuna_tienda 
+            from tiendas where id = '$id' ;";
 
  
   $result = $db2 -> prepare($query);
   $result -> execute();
   $Tiendas = $result -> fetchAll(); 
   $Tienda = $Tiendas[0]; 
-
-
-
   echo "
     <div align='center'>
         <p class='title is-3'>
@@ -33,40 +39,71 @@
     </div"
 
 ?>
+<div class="tile is-ancestor">
   <div class="tile is-parent is-vertical">
-    <div align="center" class="tile is-child m-3">
+    <div align="center" class="tile is-child box">
       <div id="modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
-          <div class="box">
-            <article class="media" >
+            <article class="media notification" >
                 <div class="media-content">       
                   <div class="content">               
                     <p class="title is-6 has-text-black"> Productos Comestibles </p>
-                    <p>  Producto Barato 1</p> 
-                    <p>  Producto Barato 2</p>  
-                    <p>  Producto Barato 3</p>                
+                    <?php 
+                        $id = $_SESSION['tienda_actual'];
+                        $query = "SELECT nombre, precio, id  from comestibles where id_tienda = '$id' 
+                                  order by precio limit 3;";
+                        $result = $db2 -> prepare($query);
+                        $result -> execute();
+                        $productos = $result -> fetchAll(); 
+                        
+                        foreach ($productos as $producto) {
+                          echo "
+                                <p> $producto[0]: $ $producto[1] 
+                                  <form align='center' action='../Tiendas/eateable.php' method='post'>
+                                      <button class='button is-danger' name='id' type='submit' value='$producto[2]'> Ver Producto 
+                                      </button>
+                                  </form>  
+                                </p>                       
+                          ";
+                        }
+
+                    ?>
                   </div>                 
                 </div> 
                 <div class="media-content">       
                   <div class="content"> 
                     <p class="title is-6 has-text-black"> Productos Toxicos </p>              
-                    <p>  Producto Barato 1</p> 
-                    <p>  Producto Barato 2</p>  
-                    <p>  Producto Barato 3</p>                
+                    <?php 
+                        $id = $_SESSION['tienda_actual'];
+                        $query = "SELECT nombre, precio, id  from no_comestibles where id_tienda = '$id' 
+                                  order by precio limit 3;";
+                        $result = $db2 -> prepare($query);
+                        $result -> execute();
+                        $productos = $result -> fetchAll(); 
+                        
+                        foreach ($productos as $producto) {
+                          echo "
+                                <p> $producto[0]: $ $producto[1] 
+                                  <form align='center' action='../Tiendas/toxic.php' method='post'>
+                                      <button class='button is-danger' name='id' type='submit' value='$producto[2]'> Ver Producto 
+                                      </button>
+                                  </form>  
+                                </p>                       
+                          ";
+                        }
+                    ?>               
                   </div>                 
                 </div>                 
             </article>                
-          </div>
           <button class="button is-danger is-small" id="closebtn">Close Modal</button>                
         </div>                
         <button class="modal-close is-large" aria-label="close"></button>                
       </div> 
-
-      <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos mas baratos (pobre qlo)</button>
+      <button class="button is-danger is-large" id="lanuchModal">Revisa nuestros productos más baratos</button>
     </div>
 
-    <div class="tile is-child box m-3">
+    <div class="tile is-child box m-6">
       <form align="center" action="" method="post">
         <div class="field-body">
             <div class="field">
@@ -80,21 +117,101 @@
       </form>
 
       <?php 
-    if(isset($_POST['nombre'])){
+      if(isset($_POST['nombre'])){
+        $id = $_SESSION['tienda_actual'];
+        $nombre = $_POST['nombre'];
+        $nombre = strtolower($nombre);
+      
+        $query = "SELECT nombre, descripcion, precio, id FROM comestibles 
+                  where nombre like '%$nombre%' and id_tienda = $id;";
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $comestibles = $result -> fetchAll(); 
 
-      echo $_POST['nombre'];
+        $query = "SELECT nombre, descripcion, precio, id FROM no_comestibles 
+                  where nombre like '%$nombre%' and id_tienda = $id;";
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $no_comestibles = $result -> fetchAll();
 
-    }
+        $len1 = count($comestibles);
+        $len2 = count($no_comestibles);
 
+        foreach ($comestibles as $com) {
+          echo "<p>  
+                  <div class='columns'>
+                    <div class='column'>
+                      <p> $com[0]: $com[1] </p>
+                    </div>
+                    <div class='column'>
+                      <p> $: $com[2] </p>
+                    </div>
+                    <div class='column'>
+                      <button class='button is-danger'> Comprar </button>
+                    </div>
+                    <div class='column'>
+                      <button class='button is-danger'> Agregar al Carrito </button>
+                    </div>
+                  </div> 
+                </p>";
+        }
+        foreach ($no_comestibles as $com) {
+          echo "<p>  
+                  <div class='columns'>
+                    <div class='column'>
+                      <p> $com[0]: $com[1] </p>
+                    </div>
+                    <div class='column'>
+                      <p> $: $com[2] </p>
+                    </div>
+                    <div class='column'>
+                      <button class='button is-danger'> Comprar </button>
+                    </div>
+                    <div class='column'>
+                      <button class='button is-danger'> Agregar al Carrito </button>
+                    </div>
+                  </div> 
+                </p>";
+        }
+
+        if($len1 == 0 and $len2 == 0){
+          echo "<p> No vendemos el producto $nombre </p>";
+        }
+      }
     ?>
     </div>
 
-    <div class="tile is-child box m-3">
+    <div class="tile is-child box m-6">
         <form align="center" action="" method="post">
           <div class="field-body">
               <div class="field">
                   <p class="control">
-                      <input class="input" type="text" placeholder="Ingresa un ID" name="id">
+                    <?php 
+                      $query = "SELECT id from comestibles
+                                where id_tienda = '$id';"; 
+                      $result = $db2 -> prepare($query);
+                      $result -> execute();
+                      $pro_com = $result -> fetchAll();
+
+                      $query = "SELECT id from no_comestibles
+                                where id_tienda = '$id';"; 
+                      $result = $db2 -> prepare($query);
+                      $result -> execute();
+                      $pro_no_com = $result -> fetchAll();
+
+                     ?>
+                     <div class="select">
+                       <select name="id2" id="cars">
+                        <option disabled selected>Selecciona un id </option>
+                        <?php foreach ($pro_com as $value): ?>
+                          <option> <?php echo "$value[0]"; ?></option>
+                        <?php endforeach; ?>
+                        <?php foreach ($pro_no_com as $value): ?>
+                          <option> <?php echo "$value[0]"; ?></option>
+                        <?php endforeach; ?>
+                      </select> 
+                    </div>
+                      <!-- <input class="input" type="text" placeholder="Ingresa un ID" name="id2"> -->
                   </p>
               </div>
           </div>
@@ -103,15 +220,76 @@
         </form>
 
         <?php 
-      if(isset($_POST['id'])){
+      if(isset($_POST['id2'])){
+        $id_producto = $_POST['id2'];
+        $id = $_SESSION['tienda_actual'];
+        $rut = $_SESSION['current_user'];
 
-        echo $_POST['id'];
+        #parte1
+        $query = "SELECT * from comestibles
+                  where id = '$id_producto' and id_tienda = '$id';"; 
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $pro_com = $result -> fetchAll();
+        $len1 = count($pro_com);
+        
+        $query = "SELECT * from no_comestibles
+                  where id = '$id_producto' and id_tienda = '$id';"; 
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $pro_no_com = $result -> fetchAll();
+        $len2 = count($pro_no_com);
+
+        if($len1 <> 0 or $len2 <> 0){
+            echo " <p> Tenemos disponible este producto </p>";
+            #parte2
+            $query = "SELECT direccion from usuarios
+                      where rut = '$rut' ;"; 
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $direcciones = $result -> fetchAll();
+            $comuna = $direcciones[0]; 
+            $id_comuna = $comuna[0]; 
+            $id_comuna = intval($n_comuna); 
+
+            $query = "SELECT direcciones.comuna from direcciones
+                      where  direcciones.id = $id_comuna;"; 
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $comunas = $result -> fetchAll();
+            $comuna = $comunas[0]; 
+            $n_comuna = $comuna[0]; 
+            
+            $query = "SELECT comunas from tiendas 
+                      where id = '$id';";  
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $comunas = $result -> fetchAll();
+            $lista_comunas = $comunas[0]; 
+            $l_comunas = $lista_comunas[0]; 
+            $comunas = explode(",", $l_comunas);
+          
+        
+            if (in_array($n_comuna, $comunas)){
+              echo "<p> Si vendo donde tu estas </p>";
+                #generar compra// Parte 3
+            }
+            else {
+              echo "<p> no vendo donde estas </p>";
+            }
+
+        }
+        else{
+          echo "<p> no tenemos tu producto </p>";
+        }
+
 
       }
 
       ?>
       </div>
   </div>
+</div>
  
 
 <script>                 
@@ -133,27 +311,6 @@ $("#closebtn").click(function() {
 
 
 
-</section>
-</body>
-
-
-
-  <!--
- 	$query = "SELECT * from tiendas where id = '$id' ;";
-
- 
-	$result = $db2 -> prepare($query);
-	$result -> execute();
-	$Tiendas = $result -> fetchAll(); 
-  $Tienda = $Tiendas[0]; 
-  
-
-  foreach ($Tienda as $value) {
-     echo "<p> $value </p>";
-  }
-
-?>
--->
-
 
 <?php include('../templates/footer.html'); ?>
+

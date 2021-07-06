@@ -28,26 +28,35 @@
 	          		$query = "SELECT nombre, comuna_tienda, id from tiendas;"; 
 
 	          		$result = $db2 -> prepare($query);
-					$result -> execute();
-					$Tiendas = $result -> fetchAll();
+      					$result -> execute();
+      					$Tiendas = $result -> fetchAll();
 
 
-					foreach ($Tiendas as $tienda) {
-						echo "<div class='tile is-child box'>
-								<p> Nombre: $tienda[0] </p>
-								<p> Comuna: $tienda[1] </p>
-								<form align='center' action='Tiendas/show.php' method='post'>
-								    <button class='button is-danger'   name='id' type='submit' value='$tienda[2]'> Ver Tienda </button>
-								</form>
-							 </div>";
-					}
-	          	?>
+      					foreach ($Tiendas as $tienda) {
+      						echo "
+                  <div class='tile is-child box'>
+      							<div class='columns is-gapless'>	
+                      <div class='column is-one-quarter'>
+                        <img class='image' src='storage/tienda.png' width='50' height='50' />
+                      </div>
+                      <div class='column'>
+                        <p> Nombre: $tienda[0] </p>
+        								<p> Comuna: $tienda[1] </p>
+        								<form align='center' action='Tiendas/show.php' method='post'>
+        								    <button class='button is-danger'   name='id' type='submit' value='$tienda[2]'> Ver Tienda </button>
+        								</form>
+                      </div>
+                    </div>
+      						</div>";
+      					}
+      	          	?>
 	          </div>	
           </div>
         <br/><br/>
         <br/><br/>
         <br/><br/>
     </div>
-  </section>
-</body>
-</html>
+
+<?php include('templates/footer.html'); ?>
+
+
