@@ -22,7 +22,7 @@
 
 	$direct_id = intval($info2[5]);
 
-	$query = "SELECT direccion FROM direcciones where id = '$direct_id' ;";
+	$query = "SELECT direccion FROM direcciones where id = $direct_id ;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$dir = $result -> fetchAll();
@@ -33,7 +33,7 @@
 	<p class='title is-2'> Bienvenido a Tu Perfil! </p>
 
 	<?php 
-	echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
+	echo "<p class='subtitle is-4'> $info2[2] pasalo bien </p> ";
 	?>
 
 	<p> <a class="button is-info" href="http://codd.ing.puc.cl/~grupo62/usuarios/user_edit.php">Editar mi Perfil</a> </p>
