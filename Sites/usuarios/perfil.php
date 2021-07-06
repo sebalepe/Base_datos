@@ -19,7 +19,7 @@
 	$info2 = $info[0];
 	$id = $info2[4];
 
-	$direct_id = intval($info2[3])
+	$direct_id = intval($info2[3]);
 
 	$query = "SELECT direccion FROM direcciones where id = $direct_id;";
 	$result = $db2 -> prepare($query);
