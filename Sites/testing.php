@@ -79,16 +79,24 @@
               <?php
                   $rut = $_SESSION['current_user'];
 
-                  $query = "SELECT direccion from usuarios
+                  $query = "SELECT * from usuarios
                             where rut = '$rut';"; 
 
                   $result = $db2 -> prepare($query);
                   $result -> execute();
-                  $direcciones = $result -> fetchAll(); 
-                  $direccion = $direcciones[0][0];
+                  $direcciones = $result -> fetchAll();
+                  $direccion = $direcciones[0];
 
                   foreach ($direcciones as $a) {
-                     echo "<p> $direccion <p>";
+                     echo "<p> $direccion[0] <p>
+                          <p> $direccion[1] <p>
+                          <p> $direccion[2] <p>
+                          <p> $direccion[3] <p>
+                          <p> $direccion[4] <p>
+                          <p> $direccion[7] <p>
+                          <p> $direccion[8] <p>
+                          <p> $direccion[9] <p>
+                     ";
                    }
 
                   $query = "SELECT * from direcciones order by id;"; 
