@@ -120,7 +120,7 @@
                   echo "</table>";
                 
 
-                $query = "SELECT * from direcciones
+                $query = "SELECT direccion from direcciones
                             where id = 937 ;"; 
                 $result = $db2 -> prepare($query);
                 $result -> execute();
