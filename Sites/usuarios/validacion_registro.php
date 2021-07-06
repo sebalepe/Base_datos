@@ -29,7 +29,7 @@
     $result -> execute();
     $ids = $result -> fetchAll();
     $cantidad = count($ids) + 1;
-    $id_direccion = $cantidad
+    $id_direccion = $cantidad;
     $query = "INSERT INTO direcciones(id, direccion, comuna) VALUES (". intval($cantidad) .", '". $_POST["direccion"] ."', '". $_POST["comuna"] ."');";
     $result = $db2 -> prepare($query);
     $result -> execute();
