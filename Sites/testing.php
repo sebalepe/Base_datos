@@ -86,10 +86,10 @@
                   $result -> execute();
                   $direcciones = $result -> fetchAll(); 
                   $direccion = $direcciones[0][0];
-                  echo count($direcciones); 
+                  
 
-                  foreach ($comunas as $comuna) {
-                     echo "<p> $comuna[0], $comuna[1] <p>";
+                  foreach ($direcciones as $a) {
+                     echo "<p> $direccion <p>";
                    } 
                 ?>
             </div>
