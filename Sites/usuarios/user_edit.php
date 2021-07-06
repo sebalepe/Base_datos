@@ -48,7 +48,7 @@
                             </div>
                         </p>
                         <br/><br/>
-                        <input class="button is-danger" type="submit" value="Ingresar" >
+                        <input class="button is-danger" type="submit" value="Cambiar datos" >
                     </form>
                </div>
             </div>

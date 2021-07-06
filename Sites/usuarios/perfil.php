@@ -12,20 +12,29 @@
 <section class="hero is-danger is-fullheight">
 <?php
   	require("../config/conexion.php");
-	$query = "SELECT nombre, edad, rut, direccion, id FROM usuarios where rut = '$rut';";
-
-
+	$query = "SELECT * FROM usuarios where rut = '$rut';";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$info = $result -> fetchAll();
 	$info2 = $info[0];
-	$id = $info2[4];
+	$id = $info2[3];
+
+
+	$direct_id = intval($info2[5]);
+	echo $direct_id;
+
+	$query = "SELECT direccion FROM direcciones where id = $direct_id ;";
+	$result = $db2 -> prepare($query);
+	$result -> execute();
+	$dir = $result -> fetchAll();
+	$direccion = $dir[0][0];
+
   ?>
 <div align="center">
 	<p class='title is-2'> Bienvenido a Tu Perfil! </p>
 
 	<?php 
-	echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
+	echo "<p class='subtitle is-4'> $info2[2] pasalo bien </p> ";
 	?>
 
 	<p> <a class="button is-info" href="http://codd.ing.puc.cl/~grupo62/usuarios/user_edit.php">Editar mi Perfil</a> </p>
@@ -35,10 +44,10 @@
 			<div class='tile is-child box m-3'>
 				<?php 
 				for ($i=0; $i<1; $i++) {
-			        echo "<p> Nombre: ". $info[$i][0] . "</p>";
-			        echo "<p> Edad: ". $info[$i][1] . "</p>";
-			        echo "<p> Rut: ". $info[$i][2] . "</p>";
-			        echo "<p> Direccion: ". $info[$i][3] . "</p>";
+			        echo "<p> Nombre: ". $info[$i][2] . "</p>";
+			        echo "<p> Edad: ". $info[$i][3] . "</p>";
+			        echo "<p> Rut: ". $info[$i][0] . "</p>";
+			        echo "<p> Direccion: ". $info[$i][5] . "</p>";
 			    }
 
 				?>
@@ -123,7 +132,7 @@
 			    <?php if ($jefe == 1): ?>
 			        <?php
 			        echo"
-			        <div class='tile is-child is-3 m-3 box'>
+			        <div class='tile is-child m-3 box'>
 			            <p class='subtitle is-5 has-text-black'>
 				            Que onda viejo, aqui estan tus soldados:
 			            </p>";
@@ -138,7 +147,7 @@
 
                         echo"
 			                <p class='subtitle is-5 has-text-black'>
-				                Ubicacion de la Unidad: $direc_boss
+				                Direccion de tu Unidad: $direc_boss
 			                </p>";
 
 
@@ -168,9 +177,6 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
-
-
 			        </div>
 			    <?php endif; ?>
 		</div>
