@@ -58,7 +58,7 @@
 			</p>
 			<?php 
 				$query = "SELECT id_producto, cantidad_producto
-						FROM compras where id_comprador = '$id' order by id;";
+						FROM compras where id_comprador = '$id' order by id desc;";
 				$result = $db2 -> prepare($query);
 				$result -> execute();
 				$compras = $result -> fetchAll();

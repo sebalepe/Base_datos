@@ -327,7 +327,7 @@ echo "</p>
 
             #echo "
 ?>
-            <form align='center' action='../usuarios/perfil.php' method='post'>
+            <form align='center' action='' method='post'>
               <div class='field-body'>
                   <div class='field'>
                       <p class='control'>
@@ -338,7 +338,12 @@ echo "</p>
               <br/><br/>
               <input class='button is-danger' type='submit' value='Comprar' >
             </form>
-<?php        
+<?php
+            #";
+            if(isset($_POST['cantidad'])){
+              $cantidad = $_POST['cantidad'];
+              echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
+            }         
         }
         else {
           echo "<p> no vendo donde estas </p>";
