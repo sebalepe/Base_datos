@@ -55,7 +55,7 @@
                             <br>
                             <div class="select">
                                 <select required="required" name="sexo" id="cars">
-                                    <option disabled="" selected="">Sexoooooooo ;) </option>
+                                    <option disabled="" selected="">Género</option>
                                     <option> h</option>
                                     <option> m</option>
                                 </select>
