@@ -19,32 +19,32 @@
                         <div class="field-body" style="display: block;">
                             <div class="field">
                                 <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa tu nombre" name="nombre">
+                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu nombre" name="nombre">
                                 </p>
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa tu rut" name="rut">
+                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu rut" name="rut">
                                 </p>
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa tu edad" name="edad">
+                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu edad" name="edad">
                                 </p>
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa tu dirección" name="direccion">
+                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu dirección" name="direccion">
                                 </p>
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa el nombre de tu comuna" name="comuna">
+                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa el nombre de tu comuna" name="comuna">
                                 </p>
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa tu contraseña" name="contraseña">
+                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu contraseña" name="contraseña">
                                 </p>
                             </div>
                         </div>
