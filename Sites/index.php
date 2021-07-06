@@ -11,7 +11,7 @@ $_SESSION['tienda_actual'] = '1';
 
 
 <?php include('templates/header.html');   ?>
-<?php include('../data/data_loader.php');   ?>
+<?php #include('../data/data_loader.php');   ?>
 
 
 <body>
