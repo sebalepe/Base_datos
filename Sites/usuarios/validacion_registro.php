@@ -20,7 +20,7 @@
         $validador = $validador + 1;
     }
   }
-  if ($validador == 1){
+  if ($validador > 0){
     echo "<p> No se pudo </p>";
   }
    else {
