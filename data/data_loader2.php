@@ -18,7 +18,7 @@ function generateRandomNum($length = 3) {
     require ("../Sites/config/conexion.php");
 
     #Se construye la consulta como un string
-    $query = "SELECT rut FROM comestibles;";
+    $query = "SELECT id FROM comestibles;";
 
     #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
     $result = $db2->prepare($query);
