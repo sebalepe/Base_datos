@@ -133,7 +133,7 @@
                         $result = $db -> prepare($query);
                         $result -> execute();
                         $unidad = $result -> fetchAll();
-                        $uni = $unidad[0];
+                        $uni = $unidad[0][0];
                         $direc_boss = $unidad[0][1];
                         echo $uni;
 

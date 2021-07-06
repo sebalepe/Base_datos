@@ -12,7 +12,7 @@
 
   $rut = $_POST["rut"];
   $contraseña = $_POST["contraseña"];
- 	$query = "SELECT rut, contraseña FROM usuarios where rut = '$rut';";
+ 	$query = "SELECT rut, contraseña, es_jefe FROM usuarios where rut = '$rut';";
 
 
 	$result = $db2 -> prepare($query);
@@ -31,6 +31,7 @@
         <?php 
         $_SESSION['current_user'] =  $usuario[0][0];
         $_SESSION['current_password'] =  $usuario[0][1];
+        $_SESSION['boss'] = $usuario[0][2];
         ?>
         <meta http-equiv="refresh" content="0;url=../home.php">
     <?php endif ?>
