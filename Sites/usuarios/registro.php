@@ -24,7 +24,7 @@
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <input required="required" pattern="^\d{1,2}\\d{3}\\d{3}[-][0-9kK]{1}$" class="input" type="text" placeholder="Ingresa tu rut" name="rut">
+                                    <input required="required" pattern="^\d{7,8}[-][0-9kK]{1}$" class="input" type="text" placeholder="Ingresa tu rut" name="rut">
                                 </p>
                             </div>
                             <div class="field">
