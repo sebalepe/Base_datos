@@ -120,9 +120,8 @@
 				}
 			?>
 			</div>
-			<!--
-			<?php
-			    if ($jefe == 1) {
+			    <?php if ($jefe == 1): ?>
+			        <?php
 			        echo"
 			        <div class='tile is-child is-3 m-3 box'>
 			            <p class='subtitle is-5 has-text-black'>
@@ -142,25 +141,31 @@
                         $result = $db -> prepare($query);
                         $result -> execute();
                         $nombres_clasi = $result -> fetchAll();
-                        $nombre_clasi = $unidad[0];
 
-                        $query = "SELECT nombre FROM vehiculos, (SELECT vehiculo, nombre FROM personal, p_repartidor where personal.rut = p_repartidor.rut) as vehi_repar
-                                 where vehiculos.id = vehi_repar.vehiculo and vehiculos.unidad = '$uni';";
+                        $value = 0;
 
-                        $result = $db -> prepare($query);
-                        $result -> execute();
-                        $nombres_repar = $result -> fetchAll();[[]]
-                        $nombre_repar = $nombres_repar[0];
-
+                    ?>
+                        <?php foreach ($nombres_clasi as $nombre):?>
+                            <div class='columns'>
+                                <div class='column'>
+                                    <p> <?php $nombres_clasi[$value] ?></p>
+                                    <?php $value = $value + 1;?>
+                                </div>
+                                <div class='column'>
+                                    <p> <?php $nombres_clasi[$value] ?></p>
+                                    <?php $value = $value + 1;?>
+                                </div>
+                                <div class='column'>
+                                    <p> <?php $nombres_clasi[$value] ?></p>
+                                    <?php $value = $value + 1;?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
 
 
 
 			        </div>
-			    }
-
-
-			?>
-		    -->
+			    <?php endif; ?>
 		</div>
 	</div>
 </div>
