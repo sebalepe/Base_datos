@@ -22,31 +22,37 @@
                                     <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu nombre" name="nombre">
                                 </p>
                             </div>
+                            <br>
                             <div class="field">
                                 <p class="control">
                                     <input required="required" pattern="^\d{7,8}[-][0-9kK]{1}$" class="input" type="text" placeholder="Ingresa tu rut" name="rut">
                                 </p>
                             </div>
+                            <br>
                             <div class="field">
                                 <p class="control">
                                     <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu edad" name="edad">
                                 </p>
                             </div>
+                            <br>
                             <div class="field">
                                 <p class="control">
                                     <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu dirección" name="direccion">
                                 </p>
                             </div>
+                            <br>
                             <div class="field">
                                 <p class="control">
                                     <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa el nombre de tu comuna" name="comuna">
                                 </p>
                             </div>
+                            <br>
                             <div class="field">
                                 <p class="control">
                                     <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu contraseña" name="contraseña">
                                 </p>
                             </div>
+                            <br>
                             <div class="select">
                                 <select name="sexo" id="cars">
                                     <option disabled="" selected="">Sexoooooooo ;) </option>
