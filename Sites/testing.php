@@ -118,6 +118,15 @@
 
 
                   echo "</table>";
+                
+
+                $query = "SELECT * from direcciones
+                            where id = 937 ;"; 
+                $result = $db2 -> prepare($query);
+                $result -> execute();
+                $d = $result -> fetchAll();
+                $direccion = $d[0][0];
+                echo $direccion;
                 ?>
             </div>
           </div>
