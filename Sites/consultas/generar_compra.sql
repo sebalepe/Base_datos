@@ -23,7 +23,8 @@ IF tipo=1 THEN
             WHERE no_comestibles.id = id_producto;
         END IF;
 END IF;
-INSERT INTO compras VALUES (id, id_comprador, id_tienda, id_producto, cantidad_producto);
+INSERT INTO compras(id, id_producto, cantidad_producto, tienda, id_comprador)
+VALUES (id, id_producto, cantidad_producto, id_tienda, id_comprador);
 
 END;
 
