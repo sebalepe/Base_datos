@@ -21,7 +21,6 @@
 
 
 	$direct_id = intval($info2[5]);
-	echo $direct_id;
 
 	$query = "SELECT direccion FROM direcciones where id = $direct_id ;";
 	$result = $db2 -> prepare($query);
@@ -47,7 +46,7 @@
 			        echo "<p> Nombre: ". $info[$i][2] . "</p>";
 			        echo "<p> Edad: ". $info[$i][3] . "</p>";
 			        echo "<p> Rut: ". $info[$i][0] . "</p>";
-			        echo "<p> Direccion: ". $info[$i][5] . "</p>";
+			        echo "<p> Direccion: ". $direccion . "</p>";
 			    }
 
 				?>
@@ -131,6 +130,11 @@
 			</div>
 			    <?php if ($jefe == 1): ?>
 			        <?php
+			        echo"
+			        <div class='tile is-child m-3 box'>
+			            <p class='subtitle is-5 has-text-black'>
+				            Que onda viejo, aqui estan tus soldados:
+			            </p>";
                         $query = "SELECT unidad, nombre FROM unidades, direcciones, (SELECT unidad FROM personal, p_clasificados where personal.rut = '$rut' and personal.rut = p_clasificados.rut) as jefe_uni
                                   where unidades.uid = jefe_uni.unidad and unidades.direccion_id = direcciones.id;";
 
@@ -141,13 +145,8 @@
                         $direc_boss = $unidad[0][1];
 
                         echo"
-                            <div class='tile is-child m-3 box'>
 			                <p class='subtitle is-5 has-text-black'>
-				                Direccion de tu Unidad  -->  $direc_boss
-			                </p>";
-			            echo"
-			                <p class='subtitle is-5 has-text-black'>
-				                Que onda viejo, aqui estan tus soldados:
+				                Direccion de tu Unidad: $direc_boss
 			                </p>";
 
 
