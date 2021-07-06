@@ -21,6 +21,7 @@
 
 
 	$direct_id = $info2[3];
+	echo $direct_id;
 
 	$query = "SELECT direccion FROM direcciones where id = '$direct_id' ;";
 	$result = $db2 -> prepare($query);
