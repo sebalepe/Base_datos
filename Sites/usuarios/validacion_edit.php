@@ -11,7 +11,7 @@ require("../config/conexion.php");
 
 
 $old_contraseña = $_POST['old_contraseña'];
-$new_constraseña = $_POST['new_contraseña'];
+$new_contraseña = $_POST['new_contraseña'];
 $new_direccion = $_POST['direccion'];
 $new_comuna = $_POST['comuna'];
 
