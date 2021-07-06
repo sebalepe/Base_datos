@@ -16,21 +16,6 @@ $new_direccion = $_POST['direccion'];
 $new_comuna = $_POST['comuna'];
 $test = $_POST['test'];
 
-?>
-<section class='hero notification is-fullheight'>
-	<div class='tile is-ancestor'>
-		<div class='tile is-child box'>
-		</div>
-	</div>
-
-<?php if(!empty($test)): ?>
-	<p> hago cosas </p>
-<?php endif ?>
-<?php if(empty($test)): ?>
-	<p> no hago nada </p>
-<?php endif ?>
- 
-<!--
 echo "
 
 <section class='hero notification is-fullheight'>
@@ -90,5 +75,5 @@ echo "
 <section class='hero notification is-fullheight'>
 ";
 ?>
--->
+
 <?php include('../templates/footer.html'); ?>
