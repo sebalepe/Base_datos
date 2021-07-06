@@ -135,7 +135,12 @@
                         $unidad = $result -> fetchAll();
                         $uni = $unidad[0][0];
                         $direc_boss = $unidad[0][1];
-                        echo $uni;
+
+                        echo"
+			            <div class='tile is-child is-3 m-3 box'>
+			                <p class='subtitle is-5 has-text-black'>
+				                Direccion Unidad: $direc_boss
+			                </p>";
 
 
                         $query = "SELECT nombre FROM personal, p_clasificados where personal.rut = p_clasificados.rut and unidad = '$uni' and p_clasificados.rut <> '$rut';";
@@ -144,7 +149,6 @@
                         $result -> execute();
                         $nombres_clasi = $result -> fetchAll();
                         $len = count($nombres_clasi);
-                        echo $len;
 
                         $value = 0;
 
