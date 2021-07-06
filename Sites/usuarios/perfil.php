@@ -133,9 +133,9 @@
                         $result = $db -> prepare($query);
                         $result -> execute();
                         $unidad = $result -> fetchAll();
-                        $uni = $unidad[0][0];
+                        $uni = $unidad[0];
                         $direc_boss = $unidad[0][1];
-                        echo $unidad;
+                        echo $uni;
 
 
                         $query = "SELECT nombre FROM personal, p_clasificados where personal.rut = p_clasificados.rut and unidad = '$uni' and p_clasificados.rut <> '$rut';";
