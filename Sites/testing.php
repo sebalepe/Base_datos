@@ -91,17 +91,15 @@
                      echo "<p> $direccion <p>";
                    }
 
-                  $query = "SELECT direccion from direcciones
-                            where id = '$direccion' ;"; 
+                  $query = "SELECT direccion from direcciones;"; 
 
                   $result = $db2 -> prepare($query);
                   $result -> execute();
                   $names = $result -> fetchAll(); 
-                  $name = $names[0][0];
                   echo count($names);
 
-                  foreach ($direcciones as $a) {
-                     echo "<p> $name <p>";
+                  foreach ($names as $name) {
+                     echo "<p> $name[0] <p>";
                    } 
                 ?>
             </div>
