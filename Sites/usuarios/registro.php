@@ -43,7 +43,7 @@
                             <br>
                             <div class="field">
                                 <p class="control">
-                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa el nombre de tu comuna (sin mayúsculas)" name="comuna">
+                                    <input required="required" pattern="[a-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa el nombre de tu comuna (sin mayúsculas)" name="comuna">
                                 </p>
                             </div>
                             <br>
@@ -54,7 +54,7 @@
                             </div>
                             <br>
                             <div class="select">
-                                <select name="sexo" id="cars">
+                                <select required="required" name="sexo" id="cars">
                                     <option disabled="" selected="">Sexoooooooo ;) </option>
                                     <option> h</option>
                                     <option> m</option>
