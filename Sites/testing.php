@@ -98,7 +98,7 @@
                   $result -> execute();
                   $names = $result -> fetchAll(); 
                   $name = $names[0][0];
-                  
+                  echo count($names);
 
                   foreach ($direcciones as $a) {
                      echo "<p> $name <p>";
