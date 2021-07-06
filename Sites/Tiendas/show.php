@@ -297,7 +297,6 @@ echo "</p>
         $result -> execute();
         $comunas = $result -> fetchAll();
         $n_comuna = $comunas[0][0];
-        echo $n_comuna; 
         
         $query = "SELECT comunas from tiendas 
                   where id = '$id';";  
@@ -328,7 +327,7 @@ echo "</p>
 
             echo "
 
-            <form align='center' action=' method='post'>
+            <form align='center' action='' method='post'>
               <div class='field-body'>
                   <div class='field'>
                       <p class='control'>
