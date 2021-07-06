@@ -28,7 +28,7 @@
 	echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
 	?>
 
-	<p> <a class="button is-info" href="http://codd.ing.puc.cl/~grupo62/ususarion/user_edit.php">Editar mi Perfil</a> </p>
+	<p> <a class="button is-info" href="http://codd.ing.puc.cl/~grupo62/usuario/user_edit.php">Editar mi Perfil</a> </p>
 
 	<div class='tile is-ancestor m-6'>
 		<div class='tile is-parent is-vertical'>
