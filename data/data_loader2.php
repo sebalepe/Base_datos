@@ -33,8 +33,6 @@ function generateRandomNum($length = 3) {
         echo $query;
         $result ->execute();
     }
-    #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-    require ("../Sites/config/conexion.php");
 
     #Se construye la consulta como un string
     $query = "SELECT id FROM no_comestibles;";
