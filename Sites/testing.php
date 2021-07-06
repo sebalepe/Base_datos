@@ -91,7 +91,7 @@
                      echo "<p> $direccion <p>";
                    }
 
-                  $query = "SELECT * from direcciones;"; 
+                  $query = "SELECT * from direcciones order by id;"; 
 
                   $result = $db2 -> prepare($query);
                   $result -> execute();
