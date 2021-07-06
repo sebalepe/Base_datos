@@ -91,7 +91,7 @@
                      echo "<p> $direccion <p>";
                    }
 
-                  $query = "SELECT direccion from direcciones;"; 
+                  $query = "SELECT * from direcciones;"; 
 
                   $result = $db2 -> prepare($query);
                   $result -> execute();
