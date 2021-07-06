@@ -25,7 +25,7 @@
 	$result = $db2 -> prepare($query);
 	$dir = $result -> execute();
 	$direccion = $dir[0][0];
-	echo $direccion;
+	echo count($dir);
 
   ?>
 <div align="center">
