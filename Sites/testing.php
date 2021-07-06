@@ -83,7 +83,7 @@
                   $result = $db2 -> prepare($query);
                   $result -> execute();
                   $direcciones = $result -> fetchAll(); 
-                  $direccion = $direcciones[0][0]
+                  $direccion = $direcciones[0][0];
                   echo count($direcciones); 
 
                   foreach ($comunas as $comuna) {
