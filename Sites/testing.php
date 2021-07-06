@@ -99,6 +99,10 @@
                         <th>7</th>
                         <th>8</th>
                         <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12</th>
+
                       </tr>
                       ";
                         
@@ -113,6 +117,9 @@
                                   <td>$persona[7]</td>
                                   <td>$persona[8]</td>
                                   <td>$persona[9]</td>
+                                  <td>$persona[10]</td>
+                                  <td>$persona[11]</td>
+                                  <td>$persona[12]</td>
                               </tr>";
                     }
 
