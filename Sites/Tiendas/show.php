@@ -318,34 +318,31 @@ echo "</p>
             #tipo = $tipo
             #id_tienda = $id
             #id_producto = $id_producto
-            #maxima cantiad = #max_cant
+            #maxima cantiad = $max_cant
             $query = "SELECT id from usuarios where rut = '$rut';";
             $result = $db2 -> prepare($query);
             $result -> execute();
             $usuarios = $result -> fetchAll(); 
             $id_user = $usuarios[0][0];
 
-            echo "
-
+            #echo "
+?>
             <form align='center' action='' method='post'>
               <div class='field-body'>
                   <div class='field'>
                       <p class='control'>
-                          <input class='input' type='number' max='$max_cant' min='1' name='cantidad'>
+                          <input class='input' type='number' max= '$max_cant' min='1' name='cantidad'>
                       </p>
                   </div>
               </div>
               <br/><br/>
               <input class='button is-danger' type='submit' value='Comprar' >
             </form>
-            ";
-
+<?php
+            #";
             if(isset($_POST['cantidad'])){
               $cantidad = $_POST['cantidad'];
               echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
-            }
-            else{
-              echo "<p> cantidad vacia </p> ";
             }         
         }
         else {
