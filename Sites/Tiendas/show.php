@@ -342,7 +342,7 @@ echo "</p>
 
             if(isset($_POST['cantidad'])){
               $cantidad = $_POST['cantidad'];
-              echo "procedemos a hacer tu compra de $cantidad productos ";
+              echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
             }         
         }
         else {
