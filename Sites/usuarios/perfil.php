@@ -28,6 +28,8 @@
 	echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
 	?>
 
+	<p> <a class="button is-info" href="http://codd.ing.puc.cl/~grupo62/ususarion/user_edit.php">Editar mi Perfil</a> </p>
+
 	<div class='tile is-ancestor m-6'>
 		<div class='tile is-parent is-vertical'>
 			<div class='tile is-child box m-3'>
@@ -118,7 +120,22 @@
 				}
 			?>
 			</div>
-			<div class='tile is-child is-3 m-3'>
+			<?php
+			    if ($jefe == 1) {
+			        <div class='tile is-child is-3 m-3 box'>
+			            <p class="subtitle is-5 has-text-black">
+				            Que onda viejo, aqui estan tus soldados:
+			            </p>
+
+			        </div>
+			    }
+
+
+			?>
+			<div class='tile is-child is-3 m-3 box'>
+			<p class="subtitle is-5 has-text-black">
+				Tus compras:
+			</p>
 			</div>
 		</div>
 	</div>
