@@ -127,6 +127,14 @@
                 $d = $result -> fetchAll();
                 $direccion = $d[0][0];
                 echo $direccion;
+
+                $query = "SELECT direccion from usuarios
+                            where rut = '$rut' ;"; 
+                $result = $db2 -> prepare($query);
+                $result -> execute();
+                $d = $result -> fetchAll();
+                $direccion = $d[0][0];
+                echo $direccion;
                 ?>
             </div>
           </div>
