@@ -26,7 +26,7 @@ function generateRandomNum($length = 3) {
     $Comida = $result->fetchAll();
     
     foreach ($Comida as $c) {
-        $dato = generateRandomNum(); # Contraseña
+        $dato = intval(generateRandomNum()); # Contraseña
         $query = "INSERT INTO comestibles(cantidad) VALUES($dato);";
         $result = $db2 ->prepare($query);
         echo $dato;
