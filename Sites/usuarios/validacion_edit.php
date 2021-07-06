@@ -14,8 +14,23 @@ $old_contraseña = $_POST['old_contraseña'];
 $new_constraseña = $_POST['new_constraseña'];
 $new_direccion = $_POST['direccion'];
 $new_comuna = $_POST['comuna'];
+$test = $_POST['test'];
 
+?>
+<section class='hero notification is-fullheight'>
+	<div class='tile is-ancestor'>
+		<div class='tile is-child box'>
+		</div>
+	</div>
 
+<?php if(!empty($test)): ?>
+	<p> hago cosas </p>
+<?php endif ?>
+<?php if(empty($test)): ?>
+	<p> no hago nada </p>
+<?php endif ?>
+ 
+<!--
 echo "
 
 <section class='hero notification is-fullheight'>
@@ -43,11 +58,11 @@ if (!empty($new_direccion)){
 	$query = "SELECT direccion from usuarios where rut = '$rut' ;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	$id_direccion = $result[0][0];
+	$id_direccion = intval($result[0][0]);
 
 	$query = "UPDATE direcciones
 			  set direccion = '$new_direccion'
-			  where id = '$id_direccion';";
+			  where id = $id_direccion;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	echo "<p> Direccion actual actualizada a $new_direccion <p> "
@@ -58,11 +73,11 @@ if (!empty($new_comuna)){
 	$query = "SELECT direccion from usuarios where rut = '$rut' ;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	$id_direccion = $result[0][0];
+	$id_direccion = intval($result[0][0]);
 
 	$query = "UPDATE direcciones
 			  set comuna = '$new_comuna'
-			  where id = '$id_direccion';";
+			  where id = $id_direccion;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	echo "<p> Contraseña actual actualizada a $new_comuna <p> "
@@ -75,5 +90,5 @@ echo "
 <section class='hero notification is-fullheight'>
 ";
 ?>
-
+-->
 <?php include('../templates/footer.html'); ?>

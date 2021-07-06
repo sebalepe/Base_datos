@@ -47,6 +47,15 @@
                                 </div>
                             </div>
                         </p>
+                        <p>
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="test field" name="test">
+                                    </p>
+                                </div>
+                            </div>
+                        </p>
                         <br/><br/>
                         <input class="button is-danger" type="submit" value="Cambiar datos" >
                     </form>
