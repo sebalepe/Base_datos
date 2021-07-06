@@ -47,6 +47,13 @@
                                     <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa tu contraseña" name="contraseña">
                                 </p>
                             </div>
+                            <div class="select">
+                                <select name="sexo" id="cars">
+                                    <option disabled="" selected="">Sexoooooooo ;) </option>
+                                    <option> h</option>
+                                    <option> m</option>
+                                </select>
+                            </div>
                         </div>
                         <br/><br/>
                         <input class="button is-danger" type="submit" value="Registrarse" >

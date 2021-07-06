@@ -24,7 +24,12 @@
     echo "<p> No se pudo </p>";
   }
    else {
-    echo "<p> Sí se pudo </p>";
+    $query = "INSERT INTO usuarios(rut, direcciones, nombre, edad, sexo, direccion, id, contraseña, es_jefe, carrito) VALUES ('$_POST["rut"]', '', '$_POST["nombre"]', intval($_POST["edad"]), $_POST["sexo"], $_POST["rut"]);";
+
+    $result = $db2 -> prepare($query);
+    $result -> execute();
+    $ruts = $result -> fetchAll();
+    echo "<p> Sí se pudo </p>;
   }
   ?>
 
