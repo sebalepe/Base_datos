@@ -351,7 +351,7 @@ echo "</p>
       if(isset($_POST['cantidad'])){
           $cantidad = $_POST['cantidad'];
           echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
-          $query = "SELECT generar_compra(". intval($id_compra) .", ". intval($id_user) .", ". intval($id) .", ". intval($id_producto) .", ". intval($cantidad) .", ". intval($tipo) .", ". intval($max_cant)) .";";
+          $query = "SELECT generar_compra(". intval($id_compra) .", ". intval($id_user) .", ". intval($id) .", ". intval($id_producto) .", ". intval($cantidad) .", ". intval($tipo) .", ". intval($max_cant) .");";
           #$query = "SELECT generar_compra(2001, 2001, 2001, 2001, 2001, 2001, 2001);";
           $result = $db2 -> prepare($query);
           $result -> execute();
