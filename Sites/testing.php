@@ -79,8 +79,8 @@
               <?php
                   $rut = $_SESSION['current_user'];
 
-                  $query = "SELECT direccion from usuarios
-                            where rut = '$rut';"; 
+                  $query = "SELECT direcciones.direccion from usuarios, direcciones
+                            where rut = '$rut' and  direcciones.id = usuarios.direccion;"; 
 
                   $result = $db2 -> prepare($query);
                   $result -> execute();
