@@ -29,6 +29,8 @@ function generateRandomNum($length = 3) {
         $dato = generateRandomString(); # Contraseña
         $query = "INSERT INTO comestibles(cantidad) VALUES($dato);";
         $result = $db2 ->prepare($query);
+        echo $dato;
+        echo $query;
         $result ->execute();
     }
 
