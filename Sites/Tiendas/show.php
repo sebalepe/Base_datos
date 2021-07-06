@@ -125,13 +125,13 @@
         $nombre = $_POST['nombre'];
         $nombre = strtolower($nombre);
       
-        $query = "SELECT nombre, descripcion, precio, id FROM comestibles 
+        $query = "SELECT nombre, descripcion, precio, id, cantidad FROM comestibles 
                   where nombre like '%$nombre%' and id_tienda = $id;";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $comestibles = $result -> fetchAll(); 
 
-        $query = "SELECT nombre, descripcion, precio, id FROM no_comestibles 
+        $query = "SELECT nombre, descripcion, precio, id, cantidad FROM no_comestibles 
                   where nombre like '%$nombre%' and id_tienda = $id;";
         $result = $db2 -> prepare($query);
         $result -> execute();
@@ -141,8 +141,12 @@
         $len2 = count($no_comestibles);
 
         foreach ($comestibles as $com) {
-          echo "<p>  
-                  <div class='columns'>
+          echo "<br><br>
+                <p>  
+                  <div class='columns is-gapless'>
+                    <div class='column'>
+                      <p> id: $com[3] </p>
+                    </div>
                     <div class='column'>
                       <p> $com[0]: $com[1] </p>
                     </div>
@@ -150,17 +154,24 @@
                       <p> $: $com[2] </p>
                     </div>
                     <div class='column'>
-                      <button class='button is-danger'> Comprar </button>
+                      p> tenemos: $com[4] </p>
                     </div>
                     <div class='column'>
-                      <button class='button is-danger'> Agregar al Carrito </button>
+                      <form align='center' action='eateable.php' method='post'>
+                            <button class='button is-danger'   name='id' type='submit' value='$com[3]'> 
+                              Ver Producto 
+                            </button>
+                      </form>
                     </div>
                   </div> 
                 </p>";
         }
         foreach ($no_comestibles as $com) {
           echo "<p>  
-                  <div class='columns'>
+                  <div class='columns is-gapless'>
+                    <div class='column'>
+                      <p> id: $com[3] </p>
+                    </div>
                     <div class='column'>
                       <p> $com[0]: $com[1] </p>
                     </div>
@@ -168,10 +179,14 @@
                       <p> $: $com[2] </p>
                     </div>
                     <div class='column'>
-                      <button class='button is-danger'> Comprar </button>
+                      p> tenemos: $com[4] </p>
                     </div>
                     <div class='column'>
-                      <button class='button is-danger'> Agregar al Carrito </button>
+                      <form align='center' action='eateable.php' method='post'>
+                            <button class='button is-danger'   name='id' type='submit' value='$com[3]'> 
+                              Ver Producto 
+                            </button>
+                      </form>
                     </div>
                   </div> 
                 </p>";
