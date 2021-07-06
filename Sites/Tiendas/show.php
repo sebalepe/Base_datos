@@ -347,8 +347,7 @@ echo "</p>
           echo "<p> no vendo donde estas </p>";
         }
       }
-      echo $_POST['cantidad'];
-
+        
       if(isset($_POST['cantidad'])){
           $cantidad = $_POST['cantidad'];
           echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
