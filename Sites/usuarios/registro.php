@@ -43,7 +43,7 @@
                             <br>
                             <div class="field">
                                 <p class="control">
-                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa el nombre de tu comuna" name="comuna">
+                                    <input required="required" pattern="[A-Za-z0-9]{1,20}" class="input" type="text" placeholder="Ingresa el nombre de tu comuna (sin mayúsculas)" name="comuna">
                                 </p>
                             </div>
                             <br>
