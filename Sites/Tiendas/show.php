@@ -289,17 +289,14 @@ echo "</p>
         $result = $db2 -> prepare($query);
         $result -> execute();
         $direcciones = $result -> fetchAll();
-        $comuna = $direcciones[0]; 
-        $id_comuna = $comuna[0]; 
-        $id_comuna = intval($n_comuna); 
+        $id_comuna = intval($direcciones[0][0]); 
 
-        $query = "SELECT direcciones.comuna from direcciones
-                  where  direcciones.id = $id_comuna;"; 
+        $query = "SELECT comuna from direcciones
+                  where id = $id_comuna;"; 
         $result = $db2 -> prepare($query);
         $result -> execute();
         $comunas = $result -> fetchAll();
-        $comuna = $comunas[0]; 
-        $n_comuna = $comuna[0];
+        $n_comuna = $comunas[0][0];
         echo $n_comuna; 
         
         $query = "SELECT comunas from tiendas 
