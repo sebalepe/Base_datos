@@ -327,11 +327,11 @@ echo "</p>
 
             #echo "
 ?>
-            <form align='center' action='' method='post'>
+            <form align='center' action="" method='post'>
               <div class='field-body'>
                   <div class='field'>
                       <p class='control'>
-                          <input class='input' type='number' name='test'>
+                        <input class='input' type='number' name='test'>
                       </p>
                   </div>
               </div>
