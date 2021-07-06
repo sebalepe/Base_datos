@@ -34,9 +34,10 @@ if (!empty($old_contraseña) and !empty($new_contraseña)){
 		$result = $db2 -> prepare($query);
 		$result -> execute();
 		echo "<p> Contraseña actual actualizada a <p> ";
+	}
 	else{
 		echo "<p> Contraseña actual no concuerda <p>";
-	}
+	
 	}
 }
 
