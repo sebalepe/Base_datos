@@ -54,6 +54,11 @@
                                         <input class="input" type="text" placeholder="test field" name="test">
                                     </p>
                                 </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="test field 2" name="test2">
+                                    </p>
+                                </div>
                             </div>
                         </p>
                         <br/><br/>

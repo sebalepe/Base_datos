@@ -15,7 +15,31 @@ $new_constraseña = $_POST['new_constraseña'];
 $new_direccion = $_POST['direccion'];
 $new_comuna = $_POST['comuna'];
 $test = $_POST['test'];
+$test2 = $_POST['test2'];
 
+
+?>
+<section class='hero notification is-fullheight'>
+	<div class='tile is-ancestor'>
+		<div class='tile is-child box'>
+			<?php if(!empty($test)): ?>
+				<p> hago cosas </p>
+			<?php endif ?>
+			<?php if(empty($test)): ?>
+				<p> no hago nada </p>
+			<?php endif ?>
+			<?php if(!empty($test) and !empty($test2)): ?>
+				<p> ambos llenos </p>
+			<?php endif ?>
+			<?php if(empty($test) and empty($test2)): ?>
+				<p> ambos vacios </p>
+			<?php endif ?>
+
+		</div>
+	</div>
+
+ 
+<!--
 echo "
 
 <section class='hero notification is-fullheight'>
@@ -75,5 +99,5 @@ echo "
 <section class='hero notification is-fullheight'>
 ";
 ?>
-
+-->
 <?php include('../templates/footer.html'); ?>
