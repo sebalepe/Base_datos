@@ -70,14 +70,18 @@ if (!empty($new_comuna)){
 			  where id = $id_direccion;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
-	echo "<p> Contraseña actual actualizada a $new_comuna <p> ";
+	echo "<p> Comuna actual actualizada a $new_comuna <p> ";
 }
 
 
 echo "
 		<div class='tile is-child box'>
 	<div class='tile is-ancestor'>
+	<a class='button is-danger is-medium' href='http://codd.ing.puc.cl/~grupo62/usuarios/perfil.php'>Volver a tu perfil</a>
+</section>
 ";
 ?>
 
-<?php include('../templates/footer.html'); ?>
+
+
+
