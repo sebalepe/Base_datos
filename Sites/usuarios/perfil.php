@@ -123,7 +123,7 @@
 			    <?php if ($jefe == 1): ?>
 			        <?php
 			        echo"
-			        <div class='tile is-child is-3 m-3 box'>
+			        <div class='tile is-child m-3 box'>
 			            <p class='subtitle is-5 has-text-black'>
 				            Que onda viejo, aqui estan tus soldados:
 			            </p>";
@@ -168,9 +168,6 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
-
-
 			        </div>
 			    <?php endif; ?>
 		</div>
