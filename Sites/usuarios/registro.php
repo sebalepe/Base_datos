@@ -8,10 +8,10 @@
             <div class="tile is-parent is-vertical">
                 <div class="tile is-child is-6 m-6" align="center">
                     <h3 class="title is-3">
-                        Registrate en nuestra página! 
+                        ¡Registrate en nuestra página! 
                     </h3>
                     <p class="subtitle is-4">
-                        Ingresa tus datos!
+                        ¡Ingresa tus datos!
                     </p>
                 </div>
                 <div class="tile is-child box m-6">

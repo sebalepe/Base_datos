@@ -41,7 +41,7 @@
     $query = "INSERT INTO direcciones(id, direccion, comuna) VALUES (intval($cantidad), '$_POST["direccion"]', '$_POST["comuna"]')"
     $result = $db2 -> prepare($query);
     $result -> execute();
-    echo "<p> Sí se pudo </p>;
+    echo "<p> ¡Registrado exitosamente! </p>;
   }
   ?>
 
