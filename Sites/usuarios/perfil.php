@@ -22,11 +22,12 @@
 
 	$direct_id = intval($info2[5]);
 
-	$query = "SELECT direccion FROM direcciones where id = $direct_id ;";
+	$query = "SELECT direccion, comuna FROM direcciones where id = $direct_id ;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$dir = $result -> fetchAll();
 	$direccion = $dir[0][0];
+	$comuna = $dir[0][1];
 
   ?>
 <div align="center">
@@ -47,6 +48,7 @@
 			        echo "<p> Edad: ". $info[$i][3] . "</p>";
 			        echo "<p> Rut: ". $info[$i][0] . "</p>";
 			        echo "<p> Direccion: ". $direccion . "</p>";
+			        echo "<p> Comuna: ". $comuna . "</p>";
 			    }
 
 				?>
