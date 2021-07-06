@@ -24,24 +24,25 @@
     echo "<p> No se pudo </p>";
   }
    else {
-    $query = "SELECT id FROM usuarios;";
-    $result = $db2 -> prepare($query);
-    $result -> execute();
-    $ids = $result -> fetchAll();
-    $cantidad = count($ids) + 1;
-    echo $cantidad;
-    $query = "INSERT INTO usuarios(rut, direcciones, nombre, edad, sexo, direccion, id, contraseña, es_jefe, carrito) VALUES ('". $_POST["rut"] ."', '', '". $_POST["nombre"] ."', ". intval($_POST["edad"]) .", '". $_POST["sexo"] ."', '". $_POST["direccion"] ."', ". intval($cantidad) .", '". $_POST["contraseña"] ."', 0, '');";
-    $result = $db2 -> prepare($query);
-    $result -> execute();
-
     $query = "SELECT id FROM direcciones;";
     $result = $db2 -> prepare($query);
     $result -> execute();
     $ids = $result -> fetchAll();
     $cantidad = count($ids) + 1;
+    $id_direccion = $cantidad
     $query = "INSERT INTO direcciones(id, direccion, comuna) VALUES (". intval($cantidad) .", '". $_POST["direccion"] ."', '". $_POST["comuna"] ."');";
     $result = $db2 -> prepare($query);
     $result -> execute();
+
+    $query = "SELECT id FROM usuarios;";
+    $result = $db2 -> prepare($query);
+    $result -> execute();
+    $ids = $result -> fetchAll();
+    $cantidad = count($ids) + 1;
+    $query = "INSERT INTO usuarios(rut, direcciones, nombre, edad, sexo, direccion, id, contraseña, es_jefe, carrito) VALUES ('". $_POST["rut"] ."', '', '". $_POST["nombre"] ."', ". intval($_POST["edad"]) .", '". $_POST["sexo"] ."', ". intval($id_direccion) .", ". intval($cantidad) .", '". $_POST["contraseña"] ."', 0, '');";
+    $result = $db2 -> prepare($query);
+    $result -> execute();
+
     echo "<p> ¡Registrado exitosamente! </p>";
   }
   ?>
