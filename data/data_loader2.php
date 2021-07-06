@@ -33,5 +33,24 @@ function generateRandomNum($length = 3) {
         echo $query;
         $result ->execute();
     }
+    #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+    require ("../Sites/config/conexion.php");
+
+    #Se construye la consulta como un string
+    $query = "SELECT id FROM no_comestibles;";
+
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+    $result = $db2->prepare($query);
+    $result->execute();
+    $Comida = $result->fetchAll();
+    
+    foreach ($Comida as $c) {
+        $dato = intval(generateRandomNum()); # Contraseña
+        $query = "UPDATE comestibles SET cantidad=$dato WHERE id=$c[0];";
+        $result = $db2 ->prepare($query);
+        echo $dato;
+        echo $query;
+        $result ->execute();
+    }
 
 ?>
