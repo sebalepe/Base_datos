@@ -128,13 +128,45 @@
                 $direccion = $d[0][0];
                 echo $direccion;
 
-                $query = "SELECT direccion from usuarios
-                            where rut = '$rut' ;"; 
-                $result = $db2 -> prepare($query);
-                $result -> execute();
-                $d = $result -> fetchAll();
-                $direccion = $d[0][0];
-                echo $direccion;
+                $$query = "SELECT nombre, rut, direccion, sexo, contraseña from usuarios
+                            where rut = '$rut';"; 
+
+                  $result = $db2 -> prepare($query);
+                  $result -> execute();
+                  $personal = $result -> fetchAll();
+                  echo "
+                  <table class = 'table'>
+
+                      <tr>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                      </tr>
+                      ";
+                        
+                      foreach ($personal as $persona) {
+                        echo "<tr>
+                                  <td>$persona[0]</td>
+                                  <td>$persona[1]</td>
+                                  <td>$persona[2]</td>
+                                  <td>$persona[3]</td>
+                                  <td>$persona[4]</td>
+                                  <td>$persona[6]</td>
+                                  <td>$persona[7]</td>
+                                  <td>$persona[8]</td>
+                                  <td>$persona[9]</td>
+                              </tr>";
+                    }
+
+
+                  echo "</table>";
                 ?>
             </div>
           </div>
