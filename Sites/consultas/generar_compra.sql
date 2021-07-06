@@ -7,6 +7,8 @@ RETURNS void AS $$
 
 BEGIN
 
+INSERT INTO test(cantidad) VALUES (10);
+
 IF tipo=0 THEN
         IF cantidad_producto = cantidad_tabla THEN
             DELETE FROM comestibles WHERE comestibles.id = id_producto;
