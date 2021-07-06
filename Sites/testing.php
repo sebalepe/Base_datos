@@ -85,7 +85,7 @@
                   $result = $db2 -> prepare($query);
                   $result -> execute();
                   $direcciones = $result -> fetchAll(); 
-                  $direccion = intval($direcciones[0][0]);
+                  $direccion = $direcciones[0][0];
 
                   foreach ($direcciones as $a) {
                      echo "<p> $direccion <p>";
