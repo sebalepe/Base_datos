@@ -48,7 +48,7 @@
                                 </p>
                             </div>
                             <div class="select">
-                                <select name="sexo" id="cars" style="position: fixed; left: 0;">
+                                <select name="sexo" id="cars">
                                     <option disabled="" selected="">Sexoooooooo ;) </option>
                                     <option> h</option>
                                     <option> m</option>
