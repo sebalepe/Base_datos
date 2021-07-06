@@ -128,8 +128,8 @@
                 $direccion = $d[0][0];
                 echo $direccion;
 
-                $query = "SELECT nombre, rut, direccion, sexo, contraseña from usuarios
-                            where rut = '$rut';"; 
+                $query = "SELECT nombre, rut, direccion, sexo, contraseña, direcciones 
+                from usuarios where rut = '$rut';"; 
 
                   $result = $db2 -> prepare($query);
                   $result -> execute();
