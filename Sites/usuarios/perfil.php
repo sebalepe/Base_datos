@@ -12,11 +12,11 @@
 <section class="hero is-danger is-fullheight">
 <?php
   	require("../config/conexion.php");
-	$query = "SELECT * FROM usuarios where rut = '$rut';"; [[1,2,2]]
+	$query = "SELECT * FROM usuarios where rut = '$rut';";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$info = $result -> fetchAll();
-	$info2 = $info[0];[1,123,]
+	$info2 = $info[0];
 	$id = $info2[3];
 
 
