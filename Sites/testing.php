@@ -97,17 +97,6 @@
                           <p> $direccion[8] <p>
                           <p> $direccion[9] <p>
                      ";
-                   }
-
-                  $query = "SELECT * from direcciones order by id;"; 
-
-                  $result = $db2 -> prepare($query);
-                  $result -> execute();
-                  $names = $result -> fetchAll(); 
-                  echo count($names);
-
-                  foreach ($names as $name) {
-                     echo "<p> $name[0] <p>";
                    } 
                 ?>
             </div>
