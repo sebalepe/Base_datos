@@ -120,23 +120,47 @@
 				}
 			?>
 			</div>
+			<!--
 			<?php
 			    if ($jefe == 1) {
+			        echo"
 			        <div class='tile is-child is-3 m-3 box'>
-			            <p class="subtitle is-5 has-text-black">
+			            <p class='subtitle is-5 has-text-black'>
 				            Que onda viejo, aqui estan tus soldados:
-			            </p>
+			            </p>";
+                        $query = "SELECT unidad, nombre FROM unidades, direcciones, (SELECT unidad FROM personal, p_clasificados where rut = '$rut') as jefe_uni
+                                  where unidades.id = jefe_uni.unidad and unidades.direccion_id = direcciones.id;";
+
+                        $result = $db -> prepare($query);
+                        $result -> execute();
+                        $unidad = $result -> fetchAll();
+                        $uni = $unidad[0][0];
+                        $direc_boss = $unidad[0][1];
+
+                        $query = "SELECT nombre FROM personal, p_clasificados where personal.rut = p_clasificados.rut and unidad = '$uni' and rut <> '$rut';";
+
+                        $result = $db -> prepare($query);
+                        $result -> execute();
+                        $nombres_clasi = $result -> fetchAll();
+                        $nombre_clasi = $unidad[0];
+
+                        $query = "SELECT nombre FROM vehiculos, (SELECT vehiculo, nombre FROM personal, p_repartidor where personal.rut = p_repartidor.rut) as vehi_repar
+                                 where vehiculos.id = vehi_repar.vehiculo and vehiculos.unidad = '$uni';";
+
+                        $result = $db -> prepare($query);
+                        $result -> execute();
+                        $nombres_repar = $result -> fetchAll();[[]]
+                        $nombre_repar = $nombres_repar[0];
+
+
+
 
 			        </div>
 			    }
 
 
 			?>
-			<div class='tile is-child is-3 m-3 box'>
-			<p class="subtitle is-5 has-text-black">
-				Tus compras:
-			</p>
-			</div>
+		    -->
 		</div>
 	</div>
 </div>
