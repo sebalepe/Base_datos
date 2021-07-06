@@ -84,19 +84,35 @@
 
                   $result = $db2 -> prepare($query);
                   $result -> execute();
-                  $direcciones = $result -> fetchAll();
+                  $personal = $result -> fetchAll();
+                  echo "
+                  <table class = 'table'>
 
-                  foreach ($direcciones as $direccion) {
-                     echo "<p> $direccion[0] <p>
-                          <p> $direccion[1] <p>
-                          <p> $direccion[2] <p>
-                          <p> $direccion[3] <p>
-                          <p> $direccion[4] <p>
-                          <p> $direccion[7] <p>
-                          <p> $direccion[8] <p>
-                          <p> $direccion[9] <p>
-                     ";
-                   } 
+                      <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                      </tr>
+                      ";
+                        
+                      foreach ($personal as $persona) {
+                        echo "<tr>
+                                  <td>$persona[0]</td>
+                                  <td>$vpersona1]</td>
+                                  <td>$persona[2]</td>
+                                  <td>$persona[3]</td>
+                                  <td>$persona[4]</td>
+                                  <td>$persona[6]</td>
+                                  <td>$persona[7]</td>
+                              </tr>";
+                    }
+
+
+                  echo "</table>";
                 ?>
             </div>
           </div>
