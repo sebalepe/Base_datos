@@ -72,6 +72,25 @@
                   
                 ?>
             </div>
+
+            <div class="column">
+              <?php
+                  $rut = $_SESSION['current_user'];
+
+                  $query = "SELECT direccion from usuarios
+                            where rut = '$rut';"; 
+
+                  $result = $db2 -> prepare($query);
+                  $result -> execute();
+                  $direcciones = $result -> fetchAll(); 
+                  $direccion = $direcciones[0][0]
+                  echo count($direcciones); 
+
+                  foreach ($comunas as $comuna) {
+                     echo "<p> $comuna[0], $comuna[1] <p>";
+                   } 
+                ?>
+            </div>
           </div>
 
     </div>
