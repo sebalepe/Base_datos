@@ -78,7 +78,6 @@
             <div class="column">
               <?php
                   $rut = $_SESSION['current_user'];
-                  echo $rut;
 
                   $query = "SELECT direccion from usuarios
                             where rut = '$rut';"; 
