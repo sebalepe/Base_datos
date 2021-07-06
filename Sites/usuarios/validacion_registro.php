@@ -38,7 +38,7 @@
     $result = $db2 -> prepare($query);
     $result -> execute();
     $ids = $result -> fetchAll();
-    $cantidad = count($ids) + 1;
+    $cantidad = count($ids) + 20;
     $query = "INSERT INTO usuarios(rut, direcciones, nombre, edad, sexo, direccion, id, contraseña, es_jefe, carrito) VALUES ('". $_POST["rut"] ."', '', '". $_POST["nombre"] ."', ". intval($_POST["edad"]) .", '". $_POST["sexo"] ."', ". intval($id_direccion) .", ". intval($cantidad) .", '". $_POST["contraseña"] ."', 0, '');";
     $result = $db2 -> prepare($query);
     $result -> execute();
