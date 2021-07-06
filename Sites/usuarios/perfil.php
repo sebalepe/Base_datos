@@ -28,7 +28,7 @@
 	echo "<p class='subtitle is-4'> $info2[0] pasalo bien </p> ";
 	?>
 
-	<p> <a class="button is-info" href="http://codd.ing.puc.cl/~grupo62/usuario/user_edit.php">Editar mi Perfil</a> </p>
+	<p> <a class="button is-info" href="http://codd.ing.puc.cl/~grupo62/usuarios/user_edit.php">Editar mi Perfil</a> </p>
 
 	<div class='tile is-ancestor m-6'>
 		<div class='tile is-parent is-vertical'>
@@ -136,7 +136,7 @@
                         $uni = $unidad[0][0];
                         $direc_boss = $unidad[0][1];
 
-                        $query = "SELECT nombre FROM personal, p_clasificados where personal.rut = p_clasificados.rut and unidad = '$uni' and rut <> '$rut';";
+                        $query = "SELECT nombre FROM personal, p_clasificados where personal.rut = p_clasificados.rut and unidad = '$uni' and p_clasificados.rut <> '$rut';";
 
                         $result = $db -> prepare($query);
                         $result -> execute();
