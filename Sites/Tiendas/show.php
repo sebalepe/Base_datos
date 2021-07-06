@@ -22,13 +22,23 @@
   }
   
   $query = "SELECT id, direccion, nombre, comunas, comuna_tienda 
-            from tiendas where id = '$id' ;";
-
- 
+            from tiendas where id = '$id' ;"; 
   $result = $db2 -> prepare($query);
   $result -> execute();
   $Tiendas = $result -> fetchAll(); 
-  $Tienda = $Tiendas[0]; 
+  $Tienda = $Tiendas[0];
+
+
+  $query = "SELECT comunas from tiendas 
+                  where id = '$id';";  
+  $result = $db2 -> prepare($query);
+  $result -> execute();
+  $comunas = $result -> fetchAll();
+  $lista_comunas = $comunas[0]; 
+  $l_comunas = $lista_comunas[0]; 
+  $comunas = explode(",", $l_comunas);
+
+
   echo "
     <div align='center'>
         <p class='title is-3'>
@@ -38,8 +48,14 @@
         <p class='subtitle is-5'>
           20% de descuento con CMR en todos los productos
         </p>
-    </div";
-
+        <p> Hacemos reparto a: ";
+  foreach ($comunas as $comuna) {
+   echo "
+   $comuna &nbsp
+   ";
+  }
+echo "</p>
+    </div>":
 ?>
 
 <div class="tile is-ancestor">
