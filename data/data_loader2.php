@@ -27,7 +27,7 @@ function generateRandomNum($length = 3) {
     
     foreach ($Comida as $c) {
         $dato = intval(generateRandomNum()); # Contraseña
-        $query = "UPDATE comestibles SET cantidad=$dato WHERE id=$c;";
+        $query = "UPDATE comestibles SET cantidad=$dato WHERE id=$c[0];";
         $result = $db2 ->prepare($query);
         echo $dato;
         echo $query;
