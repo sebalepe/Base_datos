@@ -14,6 +14,14 @@ $old_contraseña = $_POST['old_contraseña'];
 $new_contraseña = $_POST['new_contraseña'];
 $new_direccion = $_POST['direccion'];
 $new_comuna = $_POST['comuna'];
+$test = $_POST['test'];
+
+if (preg_match("/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{3,}$/", $test)) {
+    echo "La cadena contiene al menos un caracter especial, un número y una letra";
+} 
+else {
+    echo "La cadena no cumple con el patrón: debe tener al menos un caracter especial, un número y una letra";
+}
 
 
 
@@ -33,7 +41,7 @@ if (!empty($old_contraseña) and !empty($new_contraseña)){
 				 where rut = '$rut';";
 		$result = $db2 -> prepare($query);
 		$result -> execute();
-		echo "<p> Contraseña actual actualizada a <p> ";
+		echo "<p> Contraseña actual actualizada a '$new_contraseña' <p> ";
 		$_SESSION['current_password'] =  $new_contraseña;
 	}
 	else{

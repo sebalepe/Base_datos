@@ -21,13 +21,13 @@
                             <div class="field-body">
                                 <div class="field">
                                     <p class="control">
-                                        <input class="input" type="text" placeholder="Ingresa tu contraseña anterior" 
+                                        <input class="input" type="password" placeholder="Ingresa tu contraseña anterior" 
                                         name="old_contraseña">
                                     </p>
                                 </div>
                                 <div class="field">
                                     <p class="control">
-                                        <input class="input" type="text" placeholder="Ingresa tu contraseña nueva" 
+                                        <input class="input" type="password" placeholder="Ingresa tu contraseña nueva" 
                                         name="new_contraseña">
                                     </p>
                                 </div>
@@ -43,6 +43,16 @@
                                 <div class="field">
                                     <p class="control">
                                         <input class="input" type="text" placeholder="Ingresa tu comuna" name="comuna">
+                                    </p>
+                                </div>
+                            </div>
+                        </p>
+                        <br/><br/>
+                        <p>
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="test" name="test">
                                     </p>
                                 </div>
                             </div>
