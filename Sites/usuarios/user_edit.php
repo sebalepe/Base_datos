@@ -1,18 +1,5 @@
-<?php 
-    session_start();
-    $rut = $_SESSION['current_user'];
-?>
 
-
-<?php include('../templates/header.html');  
-
-$query = "SELECT * from usuarios where rut = '$rut' ";
-$result = $db2 -> prepare($query);
-$result -> execute();
-$info_ = $result -> fetchAll();
-$info = $info_[0]
-
- ?>
+<?php include('../templates/header.html'); ?>
 <body>
 
 <section class="hero notification is-fullheight">
@@ -30,18 +17,36 @@ $info = $info_[0]
                 </div>
                 <div class="tile is-child box m-6">
                     <form align="center" action="validacion_edit.php" method="post">
-                        <div class="field-body">
-                            <div class="field">
-                                <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa tu rut" name="rut">
-                                </p>
+                        <p>
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="Ingresa tu contraseña anterior" 
+                                        name="old_contraseña">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="Ingresa tu contraseña nueva" 
+                                        name="new_contraseña">
+                                    </p>
+                                </div>
                             </div>
-                            <div class="field">
-                                <p class="control">
-                                    <input class="input" type="text" placeholder="Ingresa tu contraseña" name="contraseña">
-                                </p>
+                        </p>
+                        <p>
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="Ingresa tu direccion" name="direccion">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" type="text" placeholder="Ingresa tu comuna" name="comuna">
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </p>
                         <br/><br/>
                         <input class="button is-danger" type="submit" value="Ingresar" >
                     </form>
@@ -49,4 +54,8 @@ $info = $info_[0]
             </div>
         </div>
     </div>
+
+
+
+
 <?php include('../templates/footer.html'); ?>
