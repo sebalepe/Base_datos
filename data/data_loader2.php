@@ -25,7 +25,7 @@
     $result = $db->prepare($query);
     $result->execute();
     $Personal = $result->fetchAll();
-    $contador = 367;
+    $contador = 365;
     foreach ($Personal as $p) {
         $dato1 = $contador; #ID
         $contador = $contador + 1; 
@@ -39,6 +39,7 @@
                 $dato6 = $dato6 + $direc[$i-1];
             }
         }
+
         $dato7 = $p[6]; # contraseña
         $dato8 = $p[7]; # es_jefe
         #send_base_87("INSERT INTO usuarios VALUES($dato2,'',$dato3,$dato5,$dato4,$dato6,$dato1,$dato7,$dato8,'');");
