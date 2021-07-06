@@ -23,8 +23,9 @@
 
 	$query = "SELECT direccion FROM direcciones where id = $direct_id;";
 	$result = $db2 -> prepare($query);
-	$value = $result -> execute();
-	$direccion = $value[0][0];
+	$dir = $result -> execute();
+	$direccion = $dir[0][0];
+	echo $direccion;
 
   ?>
 <div align="center">
