@@ -13,10 +13,11 @@
   
   require("../config/conexion.php");
 
-  
-  $id = $_POST["id"];
-  if(strlen($id) <> 0){
+  if (isset($_POST["id"])){
+    $id = $_POST["id"];
+    if(strlen($id) <> 0){
     $_SESSION['tienda_actual'] = $id;
+    }
   }
 
   $query = "SELECT id, direccion, nombre, comunas, comuna_tienda 
