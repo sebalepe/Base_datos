@@ -141,6 +141,8 @@
                         $result = $db -> prepare($query);
                         $result -> execute();
                         $nombres_clasi = $result -> fetchAll();
+                        $len = count($nombres_clasi);
+                        echo $len;
 
                         $value = 0;
 
@@ -148,15 +150,15 @@
                         <?php foreach ($nombres_clasi as $nombre):?>
                             <div class='columns'>
                                 <div class='column'>
-                                    <p> <?php $nombres_clasi[$value] ?></p>
+                                    <p> <?php echo $nombres_clasi[$value][0]; ?></p>
                                     <?php $value = $value + 1;?>
                                 </div>
                                 <div class='column'>
-                                    <p> <?php $nombres_clasi[$value] ?></p>
+                                    <p> <?php echo $nombres_clasi[$value][0]; ?></p>
                                     <?php $value = $value + 1;?>
                                 </div>
                                 <div class='column'>
-                                    <p> <?php $nombres_clasi[$value] ?></p>
+                                    <p> <?php echo $nombres_clasi[$value][0]; ?></p>
                                     <?php $value = $value + 1;?>
                                 </div>
                             </div>
