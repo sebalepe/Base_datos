@@ -154,7 +154,7 @@
                       <p> $: $com[2] </p>
                     </div>
                     <div class='column'>
-                      p> tenemos: $com[4] </p>
+                      <p> tenemos: $com[4] </p>
                     </div>
                     <div class='column'>
                       <form align='center' action='eateable.php' method='post'>
@@ -179,7 +179,7 @@
                       <p> $: $com[2] </p>
                     </div>
                     <div class='column'>
-                      p> tenemos: $com[4] </p>
+                      <p> tenemos: $com[4] </p>
                     </div>
                     <div class='column'>
                       <form align='center' action='eateable.php' method='post'>
@@ -237,68 +237,103 @@
           <input class="button is-danger" type="submit" value="Consultar Disponibilidad" >
         </form>
 
-        <?php 
+      <?php 
       if(isset($_POST['id2'])){
+        
         $id_producto = $_POST['id2'];
         $id = $_SESSION['tienda_actual'];
         $rut = $_SESSION['current_user'];
 
         #parte1
-        $query = "SELECT * from comestibles
+        $query = "SELECT cantidad from comestibles
                   where id = '$id_producto' and id_tienda = '$id';"; 
         $result = $db2 -> prepare($query);
         $result -> execute();
         $pro_com = $result -> fetchAll();
+        $max_cant = $pro_com[0][0]
         $len1 = count($pro_com);
+        $tipo = 0;
         
-        $query = "SELECT * from no_comestibles
+        if ($len1 == 0){
+          $tipo = 1;
+        }
+        if ($tipo == 1){
+          $query = "SELECT cantidad from no_comestibles
                   where id = '$id_producto' and id_tienda = '$id';"; 
+          $result = $db2 -> prepare($query);
+          $result -> execute();
+          $pro_no_com = $result -> fetchAll();
+          $max_cant = $pro_no_com[0][0]
+        }
+
+        echo " <p> Tenemos disponible este producto </p>";
+        #parte2
+        $query = "SELECT direccion from usuarios
+                  where rut = '$rut' ;"; 
         $result = $db2 -> prepare($query);
         $result -> execute();
-        $pro_no_com = $result -> fetchAll();
-        $len2 = count($pro_no_com);
+        $direcciones = $result -> fetchAll();
+        $comuna = $direcciones[0]; 
+        $id_comuna = $comuna[0]; 
+        $id_comuna = intval($n_comuna); 
 
-        if($len1 <> 0 or $len2 <> 0){
-            echo " <p> Tenemos disponible este producto </p>";
-            #parte2
-            $query = "SELECT direccion from usuarios
-                      where rut = '$rut' ;"; 
-            $result = $db2 -> prepare($query);
-            $result -> execute();
-            $direcciones = $result -> fetchAll();
-            $comuna = $direcciones[0]; 
-            $id_comuna = $comuna[0]; 
-            $id_comuna = intval($n_comuna); 
-
-            $query = "SELECT direcciones.comuna from direcciones
-                      where  direcciones.id = $id_comuna;"; 
-            $result = $db2 -> prepare($query);
-            $result -> execute();
-            $comunas = $result -> fetchAll();
-            $comuna = $comunas[0]; 
-            $n_comuna = $comuna[0]; 
-            
-            $query = "SELECT comunas from tiendas 
-                      where id = '$id';";  
-            $result = $db2 -> prepare($query);
-            $result -> execute();
-            $comunas = $result -> fetchAll();
-            $lista_comunas = $comunas[0]; 
-            $l_comunas = $lista_comunas[0]; 
-            $comunas = explode(",", $l_comunas);
-          
+        $query = "SELECT direcciones.comuna from direcciones
+                  where  direcciones.id = $id_comuna;"; 
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $comunas = $result -> fetchAll();
+        $comuna = $comunas[0]; 
+        $n_comuna = $comuna[0]; 
         
-            if (in_array($n_comuna, $comunas)){
-              echo "<p> Si vendo donde tu estas </p>";
-                #generar compra// Parte 3
-            }
-            else {
-              echo "<p> no vendo donde estas </p>";
-            }
+        $query = "SELECT comunas from tiendas 
+                  where id = '$id';";  
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+        $comunas = $result -> fetchAll();
+        $lista_comunas = $comunas[0]; 
+        $l_comunas = $lista_comunas[0]; 
+        $comunas = explode(",", $l_comunas);
+      
+    
+        if (in_array($n_comuna, $comunas)){
+          echo "<p> Si vendo donde tu estas </p>";
+            $query = "SELECT id from compras order by id desc limit 1;";  
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $ids = $result -> fetchAll();
+            $id_compra = $ids[0][0] + 1;
+            #tipo = $tipo
+            #id_tienda = $id
+            #id_producto = $id_producto
+            #maxima cantiad = #max_cant
+            $query = "SELECT id from usuarios where rut = '$rut';";
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $usuarios = $result -> fetchAll(); 
+            $id_user = $usuarios[0][0];
 
+            echo "
+
+            <form align='center' action=' method='post'>
+              <div class='field-body'>
+                  <div class='field'>
+                      <p class='control'>
+                          <input class='input' type='number' max=$max_cant min=1 name='cantidad'>
+                      </p>
+                  </div>
+              </div>
+              <br/><br/>
+              <input class='button is-danger' type='submit' value='Comprar' >
+            </form>
+            ";
+
+            if(isset($_POST['cantidad'])){
+              $cantidad = $_POST['cantidad'];
+              echo "procedemos a hacer tu compra de $cantidad productos ";
+            }         
         }
-        else{
-          echo "<p> no tenemos tu producto </p>";
+        else {
+          echo "<p> no vendo donde estas </p>";
         }
 
 

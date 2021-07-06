@@ -7,10 +7,10 @@ RETURNS void AS $$;
 BEGIN
 
 IF tipo=0 THEN
-            DELETE FROM comestible WHERE comestibles.id = id_producto;
+            DELETE FROM comestibles WHERE comestibles.id = id_producto;
         END IF;
 IF tipo=1 THEN
-            DELETE FROM comestible WHERE no_comestibles.id = id_producto;
+            DELETE FROM no_comestibles WHERE no_comestibles.id = id_producto;
         END IF;
 
 INSERT INTO compras VALUES (id, id_comprador, id_tienda, id_producto, cantidad_producto);
