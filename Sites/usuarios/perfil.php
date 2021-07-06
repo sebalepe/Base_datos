@@ -48,7 +48,7 @@
 			        echo "<p> Nombre: ". $info[$i][0] . "</p>";
 			        echo "<p> Edad: ". $info[$i][1] . "</p>";
 			        echo "<p> Rut: ". $info[$i][2] . "</p>";
-			        echo "<p> Direccion: ". $direccion . "</p>";
+			        echo "<p> Direccion: ". $info[$i][3]. "</p>";
 			    }
 
 				?>
