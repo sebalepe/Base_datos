@@ -146,8 +146,13 @@
                         $direc_boss = $unidad[0][1];
 
                         echo"
+                            <div class='tile is-child m-3 box'>
 			                <p class='subtitle is-5 has-text-black'>
 				                Direccion de tu Unidad: $direc_boss
+			                </p>";
+			            echo"
+			                <p class='subtitle is-5 has-text-black'>
+				                Que onda viejo, aqui estan tus soldados:
 			                </p>";
 
 
