@@ -55,7 +55,7 @@
    ";
   }
 echo "</p>
-    </div>":
+    </div>";
 ?>
 
 <div class="tile is-ancestor">
