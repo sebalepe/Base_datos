@@ -12,23 +12,21 @@
 <section class="hero is-danger is-fullheight">
 <?php
   	require("../config/conexion.php");
-	$query = "SELECT nombre, edad, rut, direccion, id FROM usuarios where rut = '$rut';";
+	$query = "SELECT * FROM usuarios where rut = '$rut';"; [[1,2,2]]
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$info = $result -> fetchAll();
-	$info2 = $info[0];
-	$id = $info2[4];
+	$info2 = $info[0];[1,123,]
+	$id = $info2[3];
 
 
-	$direct_id = $info2[3];
-	echo $direct_id;
+	$direct_id = intval($info2[5]);
 
 	$query = "SELECT direccion FROM direcciones where id = '$direct_id' ;";
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$dir = $result -> fetchAll();
 	$direccion = $dir[0][0];
-	echo count($dir);
 
   ?>
 <div align="center">
@@ -45,10 +43,10 @@
 			<div class='tile is-child box m-3'>
 				<?php 
 				for ($i=0; $i<1; $i++) {
-			        echo "<p> Nombre: ". $info[$i][0] . "</p>";
-			        echo "<p> Edad: ". $info[$i][1] . "</p>";
-			        echo "<p> Rut: ". $info[$i][2] . "</p>";
-			        echo "<p> Direccion: ". $info[$i][3]. "</p>";
+			        echo "<p> Nombre: ". $info[$i][2] . "</p>";
+			        echo "<p> Edad: ". $info[$i][3] . "</p>";
+			        echo "<p> Rut: ". $info[$i][0] . "</p>";
+			        echo "<p> Direccion: ". $direccion . "</p>";
 			    }
 
 				?>
