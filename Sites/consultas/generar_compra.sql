@@ -7,7 +7,7 @@ RETURNS void AS $$
 
 BEGIN
 
-INSERT INTO test(cantidad) VALUES (10);
+INSERT INTO test(cantidad) VALUES (126);
 
 IF tipo=0 THEN
         IF cantidad_producto = cantidad_tabla THEN

@@ -351,7 +351,8 @@ echo "</p>
       if(isset($_POST['cantidad'])){
           $cantidad = $_POST['cantidad'];
           echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
-          $query = "SELECT generar_compra($id_compra, $id_user, $id, $id_producto, $cantidad, $tipo, $max_cant);";
+          #$query = "SELECT generar_compra($id_compra, $id_user, $id, $id_producto, $cantidad, $tipo, $max_cant);";
+          $query = "SELECT generar_compra(2001, 2001, 2001, 2001, 2001, 2001, 2001);";
           $result = $db2 -> prepare($query);
           $result -> execute();
         }
