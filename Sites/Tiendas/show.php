@@ -250,7 +250,7 @@
         $result = $db2 -> prepare($query);
         $result -> execute();
         $pro_com = $result -> fetchAll();
-        $max_cant = $pro_com[0][0]
+        $max_cant = $pro_com[0][0];
         $len1 = count($pro_com);
         $tipo = 0;
         
@@ -263,7 +263,7 @@
           $result = $db2 -> prepare($query);
           $result -> execute();
           $pro_no_com = $result -> fetchAll();
-          $max_cant = $pro_no_com[0][0]
+          $max_cant = $pro_no_com[0][0];
         }
 
         echo " <p> Tenemos disponible este producto </p>";
