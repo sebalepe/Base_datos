@@ -85,11 +85,23 @@
                   $result = $db2 -> prepare($query);
                   $result -> execute();
                   $direcciones = $result -> fetchAll(); 
-                  $direccion = $direcciones[0][0];
-                  
+                  $direccion = intval($direcciones[0][0]);
 
                   foreach ($direcciones as $a) {
                      echo "<p> $direccion <p>";
+                   }
+
+                  $query = "SELECT direccion from direcciones
+                            where id = $direccion;"; 
+
+                  $result = $db2 -> prepare($query);
+                  $result -> execute();
+                  $names = $result -> fetchAll(); 
+                  $name = $names[0][0];
+                  
+
+                  foreach ($direcciones as $a) {
+                     echo "<p> $name <p>";
                    } 
                 ?>
             </div>
