@@ -13,13 +13,19 @@
 <?php
   	require("../config/conexion.php");
 	$query = "SELECT nombre, edad, rut, direccion, id FROM usuarios where rut = '$rut';";
-
-
 	$result = $db2 -> prepare($query);
 	$result -> execute();
 	$info = $result -> fetchAll();
 	$info2 = $info[0];
 	$id = $info2[4];
+
+	$direct_id = intval($info2[3])
+
+	$query = "SELECT direccion FROM direcciones where id = $direct_id;";
+	$result = $db2 -> prepare($query);
+	$result -> execute();
+	$direccion = $result[0][0];
+
   ?>
 <div align="center">
 	<p class='title is-2'> Bienvenido a Tu Perfil! </p>
@@ -38,7 +44,7 @@
 			        echo "<p> Nombre: ". $info[$i][0] . "</p>";
 			        echo "<p> Edad: ". $info[$i][1] . "</p>";
 			        echo "<p> Rut: ". $info[$i][2] . "</p>";
-			        echo "<p> Direccion: ". $info[$i][3] . "</p>";
+			        echo "<p> Direccion: ". $direccion . "</p>";
 			    }
 
 				?>
@@ -138,7 +144,7 @@
 
                         echo"
 			                <p class='subtitle is-5 has-text-black'>
-				                Ubicacion de la Unidad: $direc_boss
+				                Direccion de tu Unidad: $direc_boss
 			                </p>";
 
 
