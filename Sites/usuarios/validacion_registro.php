@@ -44,12 +44,13 @@
     $result -> execute();
 
     echo "<p> ¡Registrado exitosamente! </p>";
+    
   }
   ?>
 
 <br>
 <br>
-<button class="button is-small is-info is-light" onclick="history.go(0);">Back </button>
+<meta http-equiv="refresh" content="0;url=../home.php">
 </section>
 </body>
 
