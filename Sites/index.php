@@ -33,7 +33,7 @@ $_SESSION['tienda_actual'] = '1';
             <div class="tile is-parent" align="center">
                 <div class="tile is-child is-box">
                     <div align="center">
-                          <a class="button" href="usuarios/registracion.php">
+                          <a class="button" href="usuarios/registro.php">
                             registracion
                           </a>
                           <a class="button" href="usuarios/ingresar.php">
