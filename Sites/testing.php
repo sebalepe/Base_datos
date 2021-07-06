@@ -3,7 +3,7 @@
 <?php include('templates/navbar.html');   ?>
 <?php #include('../data/data_loader2.php');   ?>
 
-
+<p> Funciona </p>
 <?php $array = [[1,2,3],[4,5,6]];
       $value = 0?>;
 
