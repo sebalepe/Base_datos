@@ -15,7 +15,7 @@
                     </p>
                 </div>
                 <div class="tile is-child box m-6">
-                    <form align="center" action="validacion_ingreso.php" method="post">
+                    <form align="center" action="validacion_registro.php" method="post">
                         <div class="field-body" style="display: block;">
                             <div class="field">
                                 <p class="control">
