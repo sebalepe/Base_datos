@@ -139,7 +139,7 @@
                         echo"
 			            <div class='tile is-child is-3 m-3 box'>
 			                <p class='subtitle is-5 has-text-black'>
-				                Direccion Unidad: $direc_boss
+				                Ubicacion de la Unidad: $direc_boss
 			                </p>";
 
 
