@@ -51,7 +51,7 @@
         <p> Hacemos reparto a: ";
   foreach ($comunas as $comuna) {
    echo "
-   $comuna &nbsp
+   $comuna, &nbsp
    ";
   }
 echo "</p>
@@ -299,7 +299,8 @@ echo "</p>
         $result -> execute();
         $comunas = $result -> fetchAll();
         $comuna = $comunas[0]; 
-        $n_comuna = $comuna[0]; 
+        $n_comuna = $comuna[0];
+        echo $n_comuna; 
         
         $query = "SELECT comunas from tiendas 
                   where id = '$id';";  
