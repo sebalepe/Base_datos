@@ -89,6 +89,7 @@
                   <table class = 'table'>
 
                       <tr>
+                        <th>0</th>
                         <th>1</th>
                         <th>2</th>
                         <th>3</th>
@@ -96,18 +97,22 @@
                         <th>5</th>
                         <th>6</th>
                         <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
                       </tr>
                       ";
                         
                       foreach ($personal as $persona) {
                         echo "<tr>
                                   <td>$persona[0]</td>
-                                  <td>$vpersona1]</td>
+                                  <td>$persona[1]</td>
                                   <td>$persona[2]</td>
                                   <td>$persona[3]</td>
                                   <td>$persona[4]</td>
                                   <td>$persona[6]</td>
                                   <td>$persona[7]</td>
+                                  <td>$persona[8]</td>
+                                  <td>$persona[9]</td>
                               </tr>";
                     }
 
