@@ -331,7 +331,7 @@ echo "</p>
               <div class='field-body'>
                   <div class='field'>
                       <p class='control'>
-                          <input class='input' type='number' max= '$max_cant' min='1' name='cantidad'>
+                          <input class='input' type='number' max= '$max_cant' min='1' name='test'>
                       </p>
                   </div>
               </div>
@@ -340,7 +340,7 @@ echo "</p>
             </form>
 <?php
             #";
-            if(!isset($_POST['cantidad'])){
+            if(isset($_POST['test'])){
               echo "<meta http-equiv='refresh' content='0;url=../home.php'>";
               $cantidad = $_POST['cantidad'];
               echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
