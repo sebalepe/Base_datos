@@ -288,78 +288,83 @@ echo "</p>
           $pro_no_com = $result -> fetchAll();
           $max_cant = $pro_no_com[0][0];
         }
+        if ($max_cant == 0) {
+          echo "<p> no disponible</p>";
+        }
+        else{
 
-        echo " <p> Tenemos disponible este producto </p>";
-        #parte2
-        $query = "SELECT direccion from usuarios
-                  where rut = '$rut' ;"; 
-        $result = $db2 -> prepare($query);
-        $result -> execute();
-        $direcciones = $result -> fetchAll();
-        $id_comuna = intval($direcciones[0][0]); 
+          echo " <p> Tenemos disponible este producto </p>";
+          #parte2
+          $query = "SELECT direccion from usuarios
+                    where rut = '$rut' ;"; 
+          $result = $db2 -> prepare($query);
+          $result -> execute();
+          $direcciones = $result -> fetchAll();
+          $id_comuna = intval($direcciones[0][0]); 
 
-        $query = "SELECT comuna from direcciones
-                  where id = $id_comuna;"; 
-        $result = $db2 -> prepare($query);
-        $result -> execute();
-        $comunas = $result -> fetchAll();
-        $n_comuna = $comunas[0][0];
+          $query = "SELECT comuna from direcciones
+                    where id = $id_comuna;"; 
+          $result = $db2 -> prepare($query);
+          $result -> execute();
+          $comunas = $result -> fetchAll();
+          $n_comuna = $comunas[0][0];
+          
+          $query = "SELECT comunas from tiendas 
+                    where id = '$id';";  
+          $result = $db2 -> prepare($query);
+          $result -> execute();
+          $comunas = $result -> fetchAll();
+          $lista_comunas = $comunas[0]; 
+          $l_comunas = $lista_comunas[0]; 
+          $comunas = explode(",", $l_comunas);
         
-        $query = "SELECT comunas from tiendas 
-                  where id = '$id';";  
-        $result = $db2 -> prepare($query);
-        $result -> execute();
-        $comunas = $result -> fetchAll();
-        $lista_comunas = $comunas[0]; 
-        $l_comunas = $lista_comunas[0]; 
-        $comunas = explode(",", $l_comunas);
       
-    
-        if (in_array($n_comuna, $comunas)){
-          echo "<p> Si vendo donde tu estas </p>";
-            $query = "SELECT id from compras order by id desc limit 1;";  
-            $result = $db2 -> prepare($query);
-            $result -> execute();
-            $ids = $result -> fetchAll();
-            $id_compra = $ids[0][0] + 1;
-            #tipo = $tipo
-            #id_tienda = $id
-            #id_producto = $id_producto
-            #maxima cantiad = $max_cant
-            $query = "SELECT id from usuarios where rut = '$rut';";
-            $result = $db2 -> prepare($query);
-            $result -> execute();
-            $usuarios = $result -> fetchAll(); 
-            $id_user = $usuarios[0][0];
-            array_push($_SESSION['compra'], intval($id_compra));
-            array_push($_SESSION['compra'], intval($id_user));
-            array_push($_SESSION['compra'], intval($id));
-            array_push($_SESSION['compra'], intval($id_producto));
-            array_push($_SESSION['compra'], intval(0));
-            array_push($_SESSION['compra'], intval($tipo));
-            array_push($_SESSION['compra'], intval($max_cant));
+          if (in_array($n_comuna, $comunas)){
+            echo "<p> Si vendo donde tu estas </p>";
+              $query = "SELECT id from compras order by id desc limit 1;";  
+              $result = $db2 -> prepare($query);
+              $result -> execute();
+              $ids = $result -> fetchAll();
+              $id_compra = $ids[0][0] + 1;
+              #tipo = $tipo
+              #id_tienda = $id
+              #id_producto = $id_producto
+              #maxima cantiad = $max_cant
+              $query = "SELECT id from usuarios where rut = '$rut';";
+              $result = $db2 -> prepare($query);
+              $result -> execute();
+              $usuarios = $result -> fetchAll(); 
+              $id_user = $usuarios[0][0];
+              array_push($_SESSION['compra'], intval($id_compra));
+              array_push($_SESSION['compra'], intval($id_user));
+              array_push($_SESSION['compra'], intval($id));
+              array_push($_SESSION['compra'], intval($id_producto));
+              array_push($_SESSION['compra'], intval(0));
+              array_push($_SESSION['compra'], intval($tipo));
+              array_push($_SESSION['compra'], intval($max_cant));
 
-            echo "
+              echo "
 
-            <form align='center' action='' method='post'>
-              <div class='field-body'>
-                  <div class='field'>
-                      <p class='control'>
-                        <input class='input' type='number' name='cantidad'>
-                      </p>
-                  </div>
-              </div>
-              <br/><br/>
-              <input class='button is-danger' type='submit' value='Comprar' >
-            </form>
+              <form align='center' action='' method='post'>
+                <div class='field-body'>
+                    <div class='field'>
+                        <p class='control'>
+                          <input class='input' type='number' name='cantidad'>
+                        </p>
+                    </div>
+                </div>
+                <br/><br/>
+                <input class='button is-danger' type='submit' value='Comprar' >
+              </form>
 
-            ";
-                   
+              ";
+            }
+          else {
+            echo "<p> no vendo donde estas </p>";
+        }         
         }
 
-        else {
-          echo "<p> no vendo donde estas </p>";
-        }
+        
       }
 
       if(isset($_POST['cantidad'])){
