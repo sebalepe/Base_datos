@@ -369,7 +369,7 @@ echo "</p>
                 $result = $db2 -> prepare($query);
                 $result -> execute();
             } catch (Exception $e) {
-              echo $e;
+              echo "<p> $e </p>";
             }
           $_SESSION['compra'] = array();
         
