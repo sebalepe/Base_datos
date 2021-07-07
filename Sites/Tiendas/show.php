@@ -371,6 +371,12 @@ echo "</p>
             } catch (Exception $e) {
               echo "<p> $e </p>";
             }
+            catch (\Throwable $e) {
+              echo "<p> $e </p>";
+            }
+            catch (\Error $e) {
+              echo "<p> $e </p>";
+            }
           $_SESSION['compra'] = array();
         
       }
