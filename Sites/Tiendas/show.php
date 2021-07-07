@@ -173,7 +173,7 @@ echo "</p>
                       <p> $: $com[2] c/u </p>
                     </div>
                     <div class='column'>
-                      <p> tenemos: $com[4] </p>
+                      <p> Nos quedan: $com[4] disponibles </p>
                     </div>
                     <div class='column'>
                       <form align='center' action='eateable.php' method='post'>
