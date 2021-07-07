@@ -362,6 +362,7 @@ echo "</p>
           $query = "SELECT generar_compra($compra[0], $compra[1], $compra[2], $compra[3], $compra[4], $compra[5],$compra[6]);";
           #$query = "SELECT generar_compra(". intval($id_compra) .", ". intval($id_user) .", ". intval($id) .", ". intval($id_producto) .", ". intval($cantidad) .", ". intval($tipo) .", ". intval($max_cant) .");";
           echo $query;
+          
           #$query = "SELECT generar_compra(2001, 2001, 2001, 2001, 2001, 2001, 2001);";
           $result = $db2 -> prepare($query);
           $result -> execute();
