@@ -170,7 +170,7 @@ echo "</p>
                       <p> $com[0]: $com[1] </p>
                     </div>
                     <div class='column'>
-                      <p> $: $com[2] </p>
+                      <p> $: $com[2] c/u </p>
                     </div>
                     <div class='column'>
                       <p> tenemos: $com[4] </p>
@@ -198,10 +198,10 @@ echo "</p>
                       <p> $com[0]: $com[1] </p>
                     </div>
                     <div class='column'>
-                      <p> $: $com[2] </p>
+                      <p> $: $com[2] c/u </p>
                     </div>
                     <div class='column'>
-                      <p> tenemos: $com[4] </p>
+                      <p> Nos quedan: $com[4] disponibles </p>
                     </div>
                     <div class='column'>
                       <form align='center' action='eateable.php' method='post'>
