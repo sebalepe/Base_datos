@@ -44,6 +44,7 @@
 
                 $tienda_random_final = $mini_tiendas[rand(0, count($mini_tiendas) - 1)];
                 echo "
+                <br>
                 <form align='center' action='Tiendas/show.php' method='post'>
                     <button class='button is-info'  style='left: 50px;' name='id' type='submit' value=$tienda_random_final>Random Search</button>
                 </form>
