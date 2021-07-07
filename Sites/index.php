@@ -34,10 +34,10 @@ $_SESSION['compra'] = array();
             <div class="tile is-parent" align="center">
                 <div class="tile is-child is-box">
                     <div align="center">
-                          <a class="button is-medium is-primary is-outlined " href="usuarios/registro.php">
+                          <a class="button is-medium is-dark" href="usuarios/registro.php">
                             Registrate
                           </a> &nbsp;
-                          <a class="button is-medium is-primary is-outlined" href="usuarios/ingresar.php">
+                          <a class="button is-medium is-dark" href="usuarios/ingresar.php">
                             Ingresa
                           </a>
                     </div>
