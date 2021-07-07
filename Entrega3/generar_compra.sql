@@ -8,7 +8,6 @@ DECLARE
     cant1 INT;
 BEGIN
 cant1 = cantidad_tabla - cantidad_producto;
-INSERT INTO test(cantidad) VALUES (127);
 
 IF tipo=0 THEN
         IF cantidad_producto = cantidad_tabla THEN
