@@ -159,7 +159,7 @@ echo "</p>
         foreach ($comestibles as $com) {
           echo "<br><br>
                 <p>  
-                  <div class='columns is-gapless'>
+                  <div class='columns '>
                     <div class='column'>
                       <p> Comestible </p>
                     </div>
@@ -187,7 +187,7 @@ echo "</p>
         }
         foreach ($no_comestibles as $com) {
           echo "<p>  
-                  <div class='columns is-gapless'>
+                  <div class='columns '>
                     <div class='column'>
                       <p> No comestible </p>
                     </div>
