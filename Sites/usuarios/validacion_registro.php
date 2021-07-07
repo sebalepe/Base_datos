@@ -44,6 +44,8 @@
     $result -> execute();
 
     echo "<p> ¡Registrado exitosamente! </p>";
+    $_SESSION['current_user'] =  $_POST["rut"];
+    $_SESSION['current_password'] =  $_POST["contraseña"];
     
   }
   ?>
