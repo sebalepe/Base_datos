@@ -358,16 +358,16 @@ echo "</p>
       if(isset($_POST['cantidad'])){
           $cantidad = $_POST['cantidad'];
           $compra = array_replace($_SESSION['compra'], array(4 => intval($cantidad)));
-          if (is_int($compra[0]){
+          if (is_int($compra[0])){
             echo "probando compra[0]";
           }
-          if (is_int(1){
+          if (is_int(1)){
             echo "probando numero-";
           }
-          if (is_int('1'){
+          if (is_int('1')){
             echo "probando numero string-";
           }
-          if (is_int('hola'){
+          if (is_int('hola')){
             echo "probando string-";
           }
 
