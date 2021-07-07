@@ -42,7 +42,7 @@
                 $randomId = $tiendas_random[rand(0, count($tiendas_random) - 1)];
                 array_push($mini_tiendas, $randomId[0]);
 
-                $tienda_random_final = $mini_tiendas[rand(0, count($mini_tiendas) - 1)][0];
+                $tienda_random_final = $mini_tiendas[rand(0, count($mini_tiendas) - 1)];
                 echo $mini_tiendas[0];
                 echo $mini_tiendas[1];
                 echo "
