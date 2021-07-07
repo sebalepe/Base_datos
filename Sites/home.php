@@ -19,18 +19,39 @@
           <p class='subtitle is-5' style="text-align:center;">
             Donde te gustaria comprar?
           </p>
-          <form align='center' action='random.php' method='post'>
-              <button class='button is-info'  style="left: 50px;" name='otro' type='submit' value='Random Search'>Random Search</button>
-          </form>
     </div>
     <div class="hero-body">
           <div class="tile is-ancestor">
 	          <div class="tile is-parent is-vertical">
 
 	          	<?php 
-	          		require("config/conexion.php");
-	          		$query = "SELECT nombre, comuna_tienda, id from tiendas;"; 
+                require("config/conexion.php");
+                $mini_tiendas = array();
 
+                $query = "SELECT id_tienda from comestibles;";  
+                $result = $db2 -> prepare($query);
+                $result -> execute();
+                $tiendas_random = $result -> fetchAll();
+                $randomId = $tiendas_random[rand(0, count($tiendas_random) - 1)];
+                array_push($mini_tiendas, $randomId);
+
+                $query = "SELECT id_tienda from no_comestibles;";  
+                $result = $db2 -> prepare($query);
+                $result -> execute();
+                $tiendas_random = $result -> fetchAll();
+                $randomId = $tiendas_random[rand(0, count($tiendas_random) - 1)];
+                array_push($mini_tiendas, $randomId);
+
+                $tienda_random_final = $mini_tiendas[rand(0, count($mini_tiendas) - 1)];
+                echo "
+                <form align='center' action='Tiendas/show.php' method='post'>
+                    <button class='button is-info'  style="left: 50px;" name='id' type='submit' value=$tienda_random_final>Random Search</button>
+                </form>
+                ";
+
+
+
+	          		$query = "SELECT nombre, comuna_tienda, id from tiendas;"; 
 	          		$result = $db2 -> prepare($query);
       					$result -> execute();
       					$Tiendas = $result -> fetchAll();
