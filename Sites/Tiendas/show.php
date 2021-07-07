@@ -345,7 +345,7 @@ echo "</p>
                 <div class='field-body'>
                     <div class='field'>
                         <p class='control'>
-                          <input class='input' type='number' name='cantidad' min='1' max='$max_cant' value='1'>
+                          <input required='required' class='input' type='number' name='cantidad' min='1' max='$max_cant' value='1'>
                         </p>
                     </div>
                 </div>
