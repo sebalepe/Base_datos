@@ -19,6 +19,9 @@
           <p class='subtitle is-5' style="text-align:center;">
             Donde te gustaria comprar?
           </p>
+          <form align='center' action='' method='post'>
+              <button class='button is-danger'  style="left: 100px" name='otro' type='submit' value='hola'> Hola </button>
+          </form>
     </div>
     <div class="hero-body">
           <div class="tile is-ancestor">
@@ -31,10 +34,6 @@
 	          		$result = $db2 -> prepare($query);
       					$result -> execute();
       					$Tiendas = $result -> fetchAll();
-
-                <form align='center' action='' method='post'>
-                            <button class='button is-danger'   name='otro' type='submit' value='hola'> Hola </button>
-                        </form>
       					foreach ($Tiendas as $tienda) {
       						echo "
                   <div class='tile is-child box'>
