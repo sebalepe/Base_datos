@@ -32,7 +32,9 @@
       					$result -> execute();
       					$Tiendas = $result -> fetchAll();
 
-
+                <form align='center' action='' method='post'>
+                            <button class='button is-danger'   name='otro' type='submit' value='hola'> Hola </button>
+                        </form>
       					foreach ($Tiendas as $tienda) {
       						echo "
                   <div class='tile is-child box'>
