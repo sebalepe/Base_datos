@@ -101,7 +101,7 @@ function generateRandomString($length = 30) {
 
 
     require ("../Sites/config/conexion.php");
-
+a
     #Se construye la consulta como un string
     $query = "SELECT * FROM personal;";
 
