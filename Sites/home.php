@@ -1,5 +1,6 @@
 <?php
 	session_start();
+  $_SESSION['compra'] = array();
 ?>
 
 <?php include('templates/header.html');   ?>
