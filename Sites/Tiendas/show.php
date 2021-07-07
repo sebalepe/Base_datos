@@ -368,13 +368,13 @@ echo "</p>
           try{  
                 $result = $db -> prepare($query);
                 $result -> execute();
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
               echo "<p> $e </p>";
             }
-            catch (\Throwable $e) {
+            catch (Throwable $e) {
               echo "<p> $e </p>";
             }
-            catch (\Error $e) {
+            catch (Error $e) {
               echo "<p> $e </p>";
             }
           $_SESSION['compra'] = array();
