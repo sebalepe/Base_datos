@@ -161,13 +161,13 @@ echo "</p>
                 <p>  
                   <div class='columns '>
                     <div class='column'>
-                      <p> Comestible </p>
-                    </div>
-                    <div class='column'>
                       <p> id: $com[3] </p>
                     </div>
                     <div class='column'>
                       <p> $com[0]: $com[1] </p>
+                    </div>
+                    <div class='column'>
+                      <p> Comestible </p>
                     </div>
                     <div class='column'>
                       <p> $: $com[2] c/u </p>
@@ -189,13 +189,13 @@ echo "</p>
           echo "<p>  
                   <div class='columns '>
                     <div class='column'>
-                      <p> No comestible </p>
-                    </div>
-                    <div class='column'>
                       <p> id: $com[3] </p>
                     </div>
                     <div class='column'>
                       <p> $com[0]: $com[1] </p>
+                    </div>
+                    <div class='column'>
+                      <p> No comestible </p>
                     </div>
                     <div class='column'>
                       <p> $: $com[2] c/u </p>
