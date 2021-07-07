@@ -368,7 +368,7 @@ echo "</p>
           try{  
                 $result = $db -> prepare($query);
                 $result -> execute();
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
               echo "<p> $e </p>";
             }
             catch (\Throwable $e) {
