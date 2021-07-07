@@ -187,7 +187,8 @@ echo "</p>
                 </p>";
         }
         foreach ($no_comestibles as $com) {
-          echo "<p>  
+          echo "<br><br>
+                <p>  
                   <div class='columns '>
                     <div class='column'>
                       <p> id: $com[3] </p>
@@ -252,7 +253,6 @@ echo "</p>
                         <?php endforeach; ?>
                       </select> 
                     </div>
-                      <!-- <input class="input" type="text" placeholder="Ingresa un ID" name="id2"> -->
                   </p>
               </div>
           </div>
@@ -345,7 +345,7 @@ echo "</p>
                 <div class='field-body'>
                     <div class='field'>
                         <p class='control'>
-                          <input required='required' class='input' type='number' name='cantidad' min='1' max='$max_cant' value='1' placeholder='Cuantos deseas comprar?'>
+                          <input required='required' class='input' type='number' name='cantidad' min='1' max='$max_cant' value='1'>
                         </p>
                     </div>
                 </div>
