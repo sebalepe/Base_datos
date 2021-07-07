@@ -37,3 +37,6 @@
     <?php endif ?>
   <?php endif ?>
 </body>
+
+
+<?php include('../templates/footer.html'); ?>
