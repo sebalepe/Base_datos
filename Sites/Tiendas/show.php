@@ -365,13 +365,10 @@ echo "</p>
           echo $query;
           
           #$query = "SELECT generar_compra(2001, 2001, 2001, 2001, 2001, 2001, 2001);";
-         
-          $result = $db2 -> prepare($query);
-          #$result -> execute();
-          try{
+          try{  
+                $result = $db2 -> prepare($query);
                 $result -> execute();
-            }
-            catch (Exception $e) {
+            } catch (Exception $e) {
               echo $e;
             }
           $_SESSION['compra'] = array();
