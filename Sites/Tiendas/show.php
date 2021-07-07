@@ -40,8 +40,9 @@
 
 
   echo "
+    <br><br>
     <div align='center'>
-        <p class='title is-3'>
+        <p class='title is-1'>
             Bienvenido a $Tienda[2] 
         </p>
 
