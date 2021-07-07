@@ -30,7 +30,7 @@
 	$comuna = $dir[0][1];
 
   ?>
-<div align="center">
+<div align="center" class="m-6">
 	<p class='title is-2'> Bienvenido a Tu Perfil! </p>
 
 	<?php 
