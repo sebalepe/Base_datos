@@ -364,14 +364,15 @@ echo "</p>
           echo $query;
           
           #$query = "SELECT generar_compra(2001, 2001, 2001, 2001, 2001, 2001, 2001);";
-          try { 
-            $result = $db2 -> prepare($query);
-            $result -> execute();
-            $_SESSION['compra'] = array();
-          } 
-          catch (Exception $e) {
-                echo 'Excepción capturada: ',  $e->getMessage(), "\n";
-            }
+         
+          #$result = $db2 -> prepare($query);
+          #$result -> execute();
+          $stmt = sqlsrv_prepare($db2, $query, array());
+          if(!$stmt ) {
+              die( print_r( sqlsrv_errors(), true));
+          }
+          $_SESSION['compra'] = array();
+        
       }
 
       ?>
