@@ -374,6 +374,7 @@ echo "</p>
           $result = $db2 -> prepare($query);
           $result -> execute();   
           $_SESSION['compra'] = array();
+          echo "<meta http-equiv='refresh' content='0;url=../usuarios/perfil.php'>";
         
       }
 
