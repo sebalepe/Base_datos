@@ -326,10 +326,6 @@ echo "</p>
               $result -> execute();
               $ids = $result -> fetchAll();
               $id_compra = $ids[0][0] + 1;
-              #tipo = $tipo
-              #id_tienda = $id
-              #id_producto = $id_producto
-              #maxima cantiad = $max_cant
               $query = "SELECT id from usuarios where rut = '$rut';";
               $result = $db2 -> prepare($query);
               $result -> execute();
@@ -349,7 +345,7 @@ echo "</p>
                 <div class='field-body'>
                     <div class='field'>
                         <p class='control'>
-                          <input class='input' type='number' name='cantidad'>
+                          <input class='input' type='number' name='cantidad' min='1', max='$max_cant'>
                         </p>
                     </div>
                 </div>
