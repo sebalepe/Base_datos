@@ -161,6 +161,9 @@ echo "</p>
                 <p>  
                   <div class='columns is-gapless'>
                     <div class='column'>
+                      <p> Comestible </p>
+                    </div>
+                    <div class='column'>
                       <p> id: $com[3] </p>
                     </div>
                     <div class='column'>
@@ -185,6 +188,9 @@ echo "</p>
         foreach ($no_comestibles as $com) {
           echo "<p>  
                   <div class='columns is-gapless'>
+                    <div class='column'>
+                      <p> No comestible </p>
+                    </div>
                     <div class='column'>
                       <p> id: $com[3] </p>
                     </div>
@@ -356,27 +362,18 @@ echo "</p>
       }
 
       if(isset($_POST['cantidad'])){
+
           $cantidad = $_POST['cantidad'];
           $compra = array_replace($_SESSION['compra'], array(4 => intval($cantidad)));
           echo "<p> procedemos a hacer tu compra de $cantidad productos </p> ";
-          #$query = "SELECT generar_compra('1', $compra[1], $compra[2], $compra[3], $compra[4], $compra[5], $compra[6]);";
+          $query = "SELECT generar_compra($compra[0], $compra[1], $compra[2], $compra[3], $compra[4], $compra[5], $compra[6]);";
           $query = "SELECT * from";
           #$query = "SELECT generar_compra(". intval($id_compra) .", ". intval($id_user) .", ". intval($id) .", ". intval($id_producto) .", ". intval($cantidad) .", ". intval($tipo) .", ". intval($max_cant) .");";
           echo $query;
           
           #$query = "SELECT generar_compra(2001, 2001, 2001, 2001, 2001, 2001, 2001);";
-          try{  
-                $result = $db2 -> prepare($query);
-                $result -> execute();
-            } catch (\Exception $e) {
-              echo "<p> $e </p>";
-            }
-            catch (\Throwable $e) {
-              echo "<p> $e </p>";
-            }
-            catch (\Error $e) {
-              echo "<p> $e </p>";
-            }
+          $result = $db2 -> prepare($query);
+          $result -> execute();   
           $_SESSION['compra'] = array();
         
       }
