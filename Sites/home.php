@@ -19,8 +19,8 @@
           <p class='subtitle is-5' style="text-align:center;">
             Donde te gustaria comprar?
           </p>
-          <form align='center' action='' method='post'>
-              <button class='button is-info'  style="left: 50px;" name='otro' type='submit' value='hola'> Hola </button>
+          <form align='center' action='random.php' method='post'>
+              <button class='button is-info'  style="left: 50px;" name='otro' type='submit' value='Random Search'>Random Search</button>
           </form>
     </div>
     <div class="hero-body">
