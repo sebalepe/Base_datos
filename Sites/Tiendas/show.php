@@ -372,7 +372,7 @@ echo "</p>
                 $result -> execute();
             }
             catch (Exception $e) {
-              echo $
+              echo $e;
             }
           $_SESSION['compra'] = array();
         
