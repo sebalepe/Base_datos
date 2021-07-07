@@ -375,7 +375,7 @@ echo "</p>
           $result = $db2 -> prepare($query);
           $result -> execute();   
           $hola = $result -> fetchAll();
-          echo $hola;
+          echo count($hola);
           $_SESSION['compra'] = array();
         
       }
