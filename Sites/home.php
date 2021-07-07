@@ -20,7 +20,7 @@
             Donde te gustaria comprar?
           </p>
           <form align='center' action='' method='post'>
-              <button class='button is-danger'  style="left: 100px" name='otro' type='submit' value='hola'> Hola </button>
+              <button class='button is_info'  style="left: 50px;" name='otro' type='submit' value='hola'> Hola </button>
           </form>
     </div>
     <div class="hero-body">
