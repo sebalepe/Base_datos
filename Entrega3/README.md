@@ -77,6 +77,7 @@ Al crear un nuevo usuario el rut debe estar sin puntos y con guión; contraseña
 ###Fábrica
 Todos los datos se pueden restaurar. Comunicar con grupo.
 
+---
 
 ##Corrección
 ###Index
