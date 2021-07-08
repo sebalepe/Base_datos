@@ -30,7 +30,7 @@ http://codd.ing.puc.cl/~grupo62/index.php
 
 
 
-###Algunos Jefes
+### Algunos Jefes
 
 Nombre                    | Rut                  | Contraseña
 ------------------------- | ---------------------|-------------------------------
@@ -39,7 +39,7 @@ Kimora Ridley             | 33461543-k           | gPtfe7o8RCY7HfvzMH0eusZlPuhBn
 Skye Gray     		        | 48007583-8           | iNFX5ZcggNwFRVaNVByyuUCQ0Qc2wt
 
 
-###Algunos Usuarios Normales
+### Algunos Usuarios Normales
 
 Nombre                    | Rut                  | Contraseña
 ------------------------- | ---------------------|-------------------------------
@@ -52,7 +52,7 @@ Arjan Mcdermott           | 80291272-2           | 8Uq9gHsVzfvlxgNPug3TCKWkECNj2
 
 ## Tomar En Cuenta
 
-###Generar contraseñas
+### Generar contraseñas
 Se hace en ../data/data_loader.php .
 Para generar las contraseñas se usó la función generateRandomString(), que se 
 encuentra en ../data/data_loader.php, que crea un string de largo 30. Con el string
@@ -60,49 +60,49 @@ se actualiza la contraseña en personal(grupo 62) y en usuarios(grupo 87) antes 
 migración de datos.
 
 
-###Migración De Personal a Usuarios
+### Migración De Personal a Usuarios
 Se hace en ../data/data_loader.php .
 Se obtienen todas las filas de personal(grupo 62) y se modifican para poder insertarlas en usuarios(grupo 87).
 
-###Problema Consultas Con POST
+### Problema Consultas Con POST
 Cuando se actualiza la página en una pestaña con una consulta POST, se debe esperar a la 
 notificación de confirmar reenvío de formulario. Se debe refrescar cada pestaña al usar el botón back.
 
-###Funcionalidad Adicional
+### Funcionalidad Adicional
 Agregamos un botón 'Random Search' en Home que crea una consulta de una tienda random.
 
-###Registro
+### Registro
 Al crear un nuevo usuario el rut debe estar sin puntos y con guión; contraseña entre 1 y 30, con letras y números.
 
-###Fábrica
+### Fábrica
 Todos los datos se pueden restaurar. Comunicar con grupo.
 
 ---
 
-##Corrección
+## Corrección
 
-###Index
+### Index
 Opción para registrar o ingresar en la página.
 
-###Registro
+### Registro
 Se registra en la página. 
 
-###Ingresar
+### Ingresar
 Se ingresa a la página.
 
-###Home
+### Home
 Página de compras.
 
-###Menu
+### Menu
 https://www.youtube.com/watch?v=rGCxtPLzwO8
 
-###Perfil
+### Perfil
 Perfil del usuario.
 
-###Cerrar Sesion
+### Cerrar Sesion
 Cierra la sesión actual.
 
-###Editar Perfil
+### Editar Perfil
 Se pueden cambiar los datos del usuario.
 
 ---
