@@ -80,20 +80,29 @@ Todos los datos se pueden restaurar. Comunicar con grupo.
 ---
 
 ##Corrección
+
 ###Index
 Opción para registrar o ingresar en la página.
+
 ###Registro
 Se registra en la página. 
+
 ###Ingresar
 Se ingresa a la página.
+
 ###Home
 Página de compras.
+
 ###Menu
 https://www.youtube.com/watch?v=rGCxtPLzwO8
+
 ###Perfil
 Perfil del usuario.
+
 ###Cerrar Sesion
 Cierra la sesión actual.
+
 ###Editar Perfil
 Se pueden cambiar los datos del usuario.
+
 ---
