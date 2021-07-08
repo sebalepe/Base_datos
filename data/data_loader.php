@@ -136,7 +136,7 @@ a
 ?>
 
 
-<?php # Cargar acontraseñas
+<?php 
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
     require ("../Sites/config/conexion.php");
 
