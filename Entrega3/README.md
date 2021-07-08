@@ -2,8 +2,8 @@
 http://codd.ing.puc.cl/~grupo62/index.php
 ## Tabla de contenidos
 
-- [Usuarios](#Usuarios)
-  - [Algunos Jefes](#Algunos_Jefes)
+- [Usuarios](##Usuarios)
+  - [Algunos Jefes](###Algunos_Jefes)
   - [Algunos Usuarios Normales](#AlgunosUsuariosNormales)
 - [Tomar En Cuenta](#TomarEnCuenta)
   - [Generar contraseñas](#Generarcontraseñas)
